@@ -8,9 +8,10 @@
 - [x] Add the chosen domain to the GitHub Pages settings.
 - [x] Configure DNS records for the apex domain and `www` subdomain.
 - [x] Add a `CNAME` file to this repository.
-- [ ] Enable and verify HTTPS after DNS propagation.
-- [ ] Redirect the unused hostname (`www` or apex) to the canonical hostname.
-- [ ] Update canonical URLs, metadata, README links, and ecosystem links.
+- [x] Enable and verify HTTPS after DNS propagation.
+- [x] Redirect `www.stats4PT.org` to canonical `https://stats4PT.org/`.
+- [x] Update the README and main portfolio to use the canonical URL.
+- [ ] Add canonical metadata to the stats4PT pages.
 
 ### Registrar recommendation
 
@@ -38,7 +39,7 @@ if its caching or security features are actually needed.
       contributions to Models4PT; Models4PT performs integrative model building;
       and the Clinical Inference Engine supports patient-specific practice
       reasoning.
-- [ ] Add stats4PT to the main portfolio at <https://scollinspt.github.io/> and
+- [x] Add stats4PT to the main portfolio at <https://scollinspt.github.io/> and
       its research/projects pages.
 - [x] Add an ecosystem section to the stats4PT homepage with clear descriptions,
       boundaries, and links to each related project.
@@ -52,8 +53,9 @@ if its caching or security features are actually needed.
       Inference Engine repository at
       <https://github.com/scollinspt/Clinical-Inference-Engine>, explicitly
       distinguishing education about Bayesian reasoning from practice reasoning.
-- [ ] Add reciprocal links back to stats4PT from Physiolog, Models4PT, the
-      Clinical Inference Engine, and the main portfolio.
+- [x] Add a reciprocal link back to stats4PT from the main portfolio.
+- [ ] Add reciprocal links back to stats4PT from Physiolog, Models4PT, and the
+      Clinical Inference Engine.
 - [x] Add author attribution and canonical portfolio, About, research,
       publications, GitHub, LinkedIn, public-writing, and contact links to the
       stats4PT site.
