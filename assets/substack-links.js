@@ -3,7 +3,7 @@
   if (!list) return;
 
   try {
-    const sourceUrl = new URL("../stats4PT main page info.txt", window.location.href);
+    const sourceUrl = new URL("../stats4PT%20main%20page%20info.txt", window.location.href);
     const response = await fetch(sourceUrl);
     if (!response.ok) {
       throw new Error("Could not read source file.");
@@ -16,8 +16,14 @@
       .filter((line) => line && !line.startsWith("#"));
 
     const entries = lines
-      .map((line) => line.split("|").map((part) => part.trim()))
-      .filter((parts) => parts.length === 2 && /^https:\/\//i.test(parts[1]));
+      .map((line) => {
+        const separatorIndex = line.indexOf("|");
+        if (separatorIndex === -1) return null;
+        const title = line.slice(0, separatorIndex).trim();
+        const url = line.slice(separatorIndex + 1).trim();
+        return [title, url];
+      })
+      .filter((parts) => parts && parts[0] && /^https:\/\//i.test(parts[1]));
 
     if (!entries.length) {
       const item = document.createElement("li");
