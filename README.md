@@ -52,7 +52,7 @@ pushed to `main`.
 
 The published site is available at:
 
-<https://scollinspt.github.io/stats4PT/>
+<https://stats4PT.org/>
 
 ## Refreshing the lesson content
 

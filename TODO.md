@@ -2,12 +2,12 @@
 
 ## Custom domain
 
-- [ ] Choose and register a domain for stats4PT.
-- [ ] Decide whether stats4PT should use its own domain or a subdomain within the
+- [x] Choose and register a domain for stats4PT: `stats4PT.org`.
+- [x] Decide whether stats4PT should use its own domain or a subdomain within the
       broader clinical inquiry ecosystem.
-- [ ] Add the chosen domain to the GitHub Pages settings.
-- [ ] Configure DNS records for the apex domain and `www` subdomain.
-- [ ] Add a `CNAME` file to this repository.
+- [x] Add the chosen domain to the GitHub Pages settings.
+- [x] Configure DNS records for the apex domain and `www` subdomain.
+- [x] Add a `CNAME` file to this repository.
 - [ ] Enable and verify HTTPS after DNS propagation.
 - [ ] Redirect the unused hostname (`www` or apex) to the canonical hostname.
 - [ ] Update canonical URLs, metadata, README links, and ecosystem links.
