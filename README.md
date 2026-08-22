@@ -2,13 +2,14 @@
 
 A simple GitHub Pages site starter for a free physical therapy statistics learning hub.
 
-## What this repo now includes
+## What this repo includes
 
-- A dedicated homepage (`/index.html`) for the stats4PT project
-- A starter lessons page (`/lessons/getting-started.html`)
+- A dedicated course homepage (`/index.html`) for the stats4PT project
+- Eight complete, self-hosted lesson pages in `/lessons`
+- Local copies of all lesson figures in `/img/lessons`
 - Lightweight shared styling (`/assets/styles.css`)
 - An image folder for logos (`/img`)
-- A source-text file for Substack lesson links (`/stats4PT main page info.txt`)
+- A repeatable content importer (`/tools/import_substack.py`)
 
 ## Publishing with GitHub Pages
 
@@ -23,24 +24,22 @@ Your site will be available at:
 
 `https://<your-github-username>.github.io/stats4PT/`
 
-## Bringing in your Substack content
+## Refreshing the lesson content
 
-1. Put your welcome-page lesson links in:
+The lesson text and images are stored in this repository, so visitors do not
+need Substack to read the course. To refresh all local lessons from the original
+public posts, run:
 
-`/stats4PT main page info.txt`
+```sh
+python3 tools/import_substack.py
+```
 
-Use one lesson per line:
+To refresh one lesson while working on the importer, use its Substack slug:
 
-`Lesson title | https://...`
+```sh
+python3 tools/import_substack.py --slug introduction-to-statistical-inference
+```
 
-2. Put your logo files in:
-
-`/img`
-
-3. Use each lesson page in `/lessons` as a dedicated destination for a cleaned-up version of your Substack posts:
-
-- Keep a short learning summary
-- Add practical PT-focused examples
-- Include a “Read original post” link back to Substack
-
-Duplicate and adapt `/lessons/getting-started.html` for each new topic.
+The importer reads Substack's structured public post data, downloads article
+figures, preserves the article HTML, and rewrites links between the eight lessons
+to local URLs. Substack is an import source, not a runtime dependency of the site.

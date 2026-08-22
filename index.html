@@ -3,59 +3,67 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>stats4PT | Learn Statistics for Physical Therapy</title>
+    <title>stats4PT | Statistics for Physical Therapy</title>
     <meta
       name="description"
-      content="Free, practical statistics learning for physical therapists."
+      content="A free eight-lesson course connecting statistics, causal reasoning, and physical therapy practice."
     />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <header class="container">
-      <h1>stats4PT</h1>
-      <p class="lead">
-        Free, practical statistics education for physical therapists.
-      </p>
-      <img
-        class="logo"
-        src="img/stats4pt-logo.png"
-        alt="stats4PT logo"
-        onerror="this.style.display='none'"
-      />
+    <header class="site-header">
+      <div class="container masthead">
+        <img class="brand-mark" src="img/Stats4PTb.png" alt="" />
+        <div>
+          <p class="eyebrow">Free learning series</p>
+          <h1>stats4PT</h1>
+          <p class="lead">
+            Statistical reasoning meets clinical inquiry for physical therapists,
+            educators, students, and researchers.
+          </p>
+        </div>
+      </div>
     </header>
 
-    <main class="container">
-      <section class="card">
-        <h2>Start here</h2>
-        <p>
-          This site is your dedicated home for PT-focused statistics lessons,
-          adapted from existing Substack posts into a cleaner learning format.
-        </p>
-        <p><a href="lessons/getting-started.html">Open first lesson →</a></p>
+    <main>
+      <section class="intro-band">
+        <div class="container intro-grid">
+          <div>
+            <h2>Evidence is more than a number</h2>
+            <p>
+              Stats4PT connects statistical inference, Bayesian reasoning,
+              causal models, and critical realism to the decisions clinicians
+              make with the person in front of them.
+            </p>
+          </div>
+          <aside>
+            <strong>Eight lessons</strong>
+            <span>Read in order or choose the question most relevant to you.</span>
+          </aside>
+        </div>
       </section>
 
-      <section class="card">
-        <h2>Lesson links from Substack</h2>
-        <p>
-          Add your welcome-page lesson links to
-          <code>/stats4PT main page info.txt</code> using the format
-          <code>Lesson title | https://...</code>.
-        </p>
-        <ul id="substack-links">
-          <li>Loading links from source file...</li>
-        </ul>
-      </section>
+      <section class="container course-section" aria-labelledby="course-title">
+        <div class="section-heading">
+          <p class="eyebrow">The course</p>
+          <h2 id="course-title">Build from inference to causal reasoning</h2>
+        </div>
 
-      <section class="card">
-        <h2>Planned learning path</h2>
-        <ul>
-          <li>Descriptive statistics in rehab settings</li>
-          <li>Confidence intervals and clinical interpretation</li>
-          <li>P values, effect sizes, and real-world decisions</li>
-          <li>Reading and applying research outcomes</li>
-        </ul>
+        <ol class="lesson-list">
+          <li><a href="lessons/lesson-1-introduction-to-statistical-inference.html"><span class="lesson-number">01</span><span><strong>Introduction to Statistical Inference &amp; Induction</strong><small>How we draw conclusions from data and connect structured evidence to clinical learning.</small></span></a></li>
+          <li><a href="lessons/lesson-2-understanding-causality-in-clinical.html"><span class="lesson-number">02</span><span><strong>Understanding Causality in Clinical Research</strong><small>Move beyond association to mechanisms, contexts, and causal models.</small></span></a></li>
+          <li><a href="lessons/lesson-3-bayesian-reasoning-for-clinical-decision.html"><span class="lesson-number">03</span><span><strong>Bayesian Reasoning for Clinical Decision-Making</strong><small>Use evolving evidence to update beliefs under uncertainty.</small></span></a></li>
+          <li><a href="lessons/lesson-4-bayesian-applications-in-research.html"><span class="lesson-number">04</span><span><strong>Bayesian Applications in Research and Evidence Synthesis</strong><small>Explore adaptive trials, meta-analysis, and critical realist reviews.</small></span></a></li>
+          <li><a href="lessons/lesson-5-bayes-theorem-in-clinical-decision.html"><span class="lesson-number">05</span><span><strong>Bayes’ Theorem in Clinical Decision-Making</strong><small>Apply prior, likelihood, and posterior probability to diagnosis and prognosis.</small></span></a></li>
+          <li><a href="lessons/lesson-6-beyond-data-mechanisms-and-structures.html"><span class="lesson-number">06</span><span><strong>Beyond Data: Mechanisms and Structures in Evidence</strong><small>Know when a population model applies and when a mechanism matters.</small></span></a></li>
+          <li><a href="lessons/lesson-7-practical-applications-building-a.html"><span class="lesson-number">07</span><span><strong>Building a Causal Model for Clinical Research</strong><small>Make assumptions visible with directed acyclic graphs and worked examples.</small></span></a></li>
+          <li><a href="lessons/lesson-8-statistical-fallacies-and-biases.html"><span class="lesson-number">08</span><span><strong>Statistical Fallacies and Biases in Clinical Research</strong><small>Recognize causal illusions in design, interpretation, and personal experience.</small></span></a></li>
+        </ol>
       </section>
     </main>
-    <script src="assets/substack-links.js"></script>
+
+    <footer class="site-footer">
+      <div class="container">stats4PT · Free statistics education for physical therapy</div>
+    </footer>
   </body>
 </html>
