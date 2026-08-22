@@ -3,7 +3,8 @@
   if (!list) return;
 
   try {
-    const response = await fetch("stats4PT%20main%20page%20info.txt");
+    const sourceUrl = new URL("../stats4PT main page info.txt", window.location.href);
+    const response = await fetch(sourceUrl);
     if (!response.ok) {
       throw new Error("Could not read source file.");
     }
@@ -16,7 +17,7 @@
 
     const entries = lines
       .map((line) => line.split("|").map((part) => part.trim()))
-      .filter((parts) => parts.length === 2 && /^https?:\/\//i.test(parts[1]));
+      .filter((parts) => parts.length === 2 && /^https:\/\//i.test(parts[1]));
 
     if (!entries.length) {
       const item = document.createElement("li");
