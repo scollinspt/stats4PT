@@ -3,7 +3,7 @@
   if (!list) return;
 
   try {
-    const sourceUrl = new URL("../stats4PT%20main%20page%20info.txt", window.location.href);
+    const sourceUrl = new URL("./stats4PT%20main%20page%20info.txt", window.location.href);
     const response = await fetch(sourceUrl);
     if (!response.ok) {
       throw new Error("Could not read source file.");
