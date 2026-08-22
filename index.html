@@ -16,6 +16,15 @@
       <p class="lead">
         Free, practical statistics education for physical therapists.
       </p>
+      <p class="small-note">
+        Add your logo files to <code>/img</code> and update the image path below.
+      </p>
+      <img
+        class="logo"
+        src="img/stats4pt-logo.png"
+        alt="stats4PT logo"
+        onerror="this.style.display='none'"
+      />
     </header>
 
     <main class="container">
@@ -29,6 +38,18 @@
       </section>
 
       <section class="card">
+        <h2>Lesson links from Substack</h2>
+        <p>
+          Add your welcome-page lesson links to
+          <code>/stats4PT main page info.txt</code> using the format
+          <code>Lesson title | https://...</code>.
+        </p>
+        <ul id="substack-links">
+          <li>Loading links from source file...</li>
+        </ul>
+      </section>
+
+      <section class="card">
         <h2>Planned learning path</h2>
         <ul>
           <li>Descriptive statistics in rehab settings</li>
@@ -38,5 +59,6 @@
         </ul>
       </section>
     </main>
+    <script src="assets/substack-links.js"></script>
   </body>
 </html>

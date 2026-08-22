@@ -37,6 +37,17 @@ body {
   font-size: 1.1rem;
 }
 
+.small-note {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.logo {
+  max-width: 220px;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
 .card {
   background: var(--card);
   border-radius: 0.75rem;

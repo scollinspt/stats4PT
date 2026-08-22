@@ -1,0 +1,4 @@
+# Paste links from your Stats4PT Substack welcome page here.
+# Format: Lesson title | URL
+# Example:
+# Descriptive Statistics for PTs | https://your-substack-url
