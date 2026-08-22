@@ -1,6 +1,27 @@
 # stats4PT
 
-A simple GitHub Pages site starter for a free physical therapy statistics learning hub.
+A free learning resource about the language and methods of scientific inquiry
+in physical therapy. stats4PT focuses on how we move from observations toward
+warranted scientific claims through statistical inference, uncertainty,
+Bayesian reasoning, causal reasoning, and critical reflection.
+
+## Place in the clinical inquiry ecosystem
+
+Using Boyer's model of scholarship, stats4PT is primarily about **discovery**.
+It contributes evidence, estimates, uncertainty, and candidate causal knowledge
+to model building, but does not own the integrative model-building process.
+
+- **stats4PT - discovery:** moves from observations toward scientific claims.
+- **Physiolog - generative mechanisms:** contributes physiological knowledge
+   about how and why effects occur.
+- **Models4PT - integration:** combines evidence, mechanisms, context,
+   provenance, uncertainty, and disagreement into comprehensive population
+   causal models.
+- **Clinical Inference Engine - practice:** combines population knowledge with
+   individual information to support patient-specific practice reasoning.
+
+See [`docs/ECOSYSTEM_PRINCIPLES.md`](docs/ECOSYSTEM_PRINCIPLES.md) for the
+project boundaries and integration rules that govern site copy and future work.
 
 ## What this repo includes
 
@@ -13,16 +34,12 @@ A simple GitHub Pages site starter for a free physical therapy statistics learni
 
 ## Publishing with GitHub Pages
 
-1. Push this repository to GitHub.
-2. In **Settings → Pages**, set:
-   - **Source**: `Deploy from a branch`
-   - **Branch**: `main` (or your default branch)
-   - **Folder**: `/ (root)`
-3. Save settings and wait for deployment.
+The site deploys through `.github/workflows/pages.yml` whenever changes are
+pushed to `main`.
 
-Your site will be available at:
+The published site is available at:
 
-`https://<your-github-username>.github.io/stats4PT/`
+<https://scollinspt.github.io/stats4PT/>
 
 ## Refreshing the lesson content
 
