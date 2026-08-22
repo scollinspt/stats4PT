@@ -54,6 +54,9 @@ if its caching or security features are actually needed.
       distinguishing education about Bayesian reasoning from practice reasoning.
 - [ ] Add reciprocal links back to stats4PT from Physiolog, Models4PT, the
       Clinical Inference Engine, and the main portfolio.
+- [x] Add author attribution and canonical portfolio, About, research,
+      publications, GitHub, LinkedIn, public-writing, and contact links to the
+      stats4PT site.
 - [ ] Apply the shared terminology for observations, evidence, claims,
       generative mechanisms, population causal knowledge, individual
       information, uncertainty, and practice reasoning across every project.

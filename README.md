@@ -23,6 +23,19 @@ to model building, but does not own the integrative model-building process.
 See [`docs/ECOSYSTEM_PRINCIPLES.md`](docs/ECOSYSTEM_PRINCIPLES.md) for the
 project boundaries and integration rules that govern site copy and future work.
 
+## Author
+
+stats4PT is created by [Sean M. Collins, PT, ScD](https://scollinspt.github.io/),
+a physical therapist and Professor of Clinical Inquiry in the Doctor of Physical
+Therapy Program at Plymouth State University.
+
+- [About](https://scollinspt.github.io/about.html)
+- [Research program](https://scollinspt.github.io/research.html)
+- [Publications](https://scollinspt.github.io/publications.html)
+- [GitHub](https://github.com/scollinspt)
+- [LinkedIn](https://www.linkedin.com/in/sean-collins-868b3a391/)
+- [The Peripatetic Physical Therapist](https://peripateticpt.substack.com/)
+
 ## What this repo includes
 
 - A dedicated course homepage (`/index.html`) for the stats4PT project
