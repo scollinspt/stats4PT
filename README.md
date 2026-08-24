@@ -13,12 +13,12 @@ to model building, but does not own the integrative model-building process.
 
 - **stats4PT - discovery:** moves from observations toward scientific claims.
 - **Physiolog - generative mechanisms:** contributes physiological knowledge
-   about how and why effects occur.
+  about how and why effects occur.
 - **Models4PT - integration:** combines evidence, mechanisms, context,
-   provenance, uncertainty, and disagreement into comprehensive population
-   causal models.
+  provenance, uncertainty, and disagreement into comprehensive population
+  causal models.
 - **Clinical Inference Engine - practice:** combines population knowledge with
-   individual information to support patient-specific practice reasoning.
+  individual information to support patient-specific practice reasoning.
 
 See [`docs/ECOSYSTEM_PRINCIPLES.md`](docs/ECOSYSTEM_PRINCIPLES.md) for the
 project boundaries and integration rules that govern site copy and future work.
@@ -34,7 +34,6 @@ Therapy Program at Plymouth State University.
 - [Publications](https://scollinspt.github.io/publications.html)
 - [GitHub](https://github.com/scollinspt)
 - [LinkedIn](https://www.linkedin.com/in/sean-collins-868b3a391/)
-- [The Peripatetic Physical Therapist](https://peripateticpt.substack.com/)
 
 ## What this repo includes
 
@@ -43,7 +42,13 @@ Therapy Program at Plymouth State University.
 - Local copies of all lesson figures in `/img/lessons`
 - Lightweight shared styling (`/assets/styles.css`)
 - An image folder for logos (`/img`)
-- A repeatable content importer (`/tools/import_substack.py`)
+
+## Source of truth
+
+This repository is the canonical source for all stats4PT content, design, and
+functionality. Development begins with the tracked files here and ends with the
+deployment to <https://stats4PT.org/>. The lessons do not depend on an external
+publishing platform, import process, or content synchronization service.
 
 ## Publishing with GitHub Pages
 
@@ -53,23 +58,3 @@ pushed to `main`.
 The published site is available at:
 
 <https://stats4PT.org/>
-
-## Refreshing the lesson content
-
-The lesson text and images are stored in this repository, so visitors do not
-need Substack to read the course. To refresh all local lessons from the original
-public posts, run:
-
-```sh
-python3 tools/import_substack.py
-```
-
-To refresh one lesson while working on the importer, use its Substack slug:
-
-```sh
-python3 tools/import_substack.py --slug introduction-to-statistical-inference
-```
-
-The importer reads Substack's structured public post data, downloads article
-figures, preserves the article HTML, and rewrites links between the eight lessons
-to local URLs. Substack is an import source, not a runtime dependency of the site.

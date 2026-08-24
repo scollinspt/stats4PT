@@ -119,12 +119,17 @@ if its caching or security features are actually needed.
 
 ## Content and maintenance
 
-- [ ] Review imported lesson text for references to Substack-specific behavior,
-      subscriptions, comments, or future publication dates.
+- [x] Revise the eight-lesson sequence for progressive flow, distinct lesson
+      purposes, accurate causal and critical-realist terminology, and explicit
+      cross-project boundaries.
+- [x] Add lesson learning metadata: estimated time, objectives, prerequisites,
+      and key terms.
+- [x] Remove the obsolete Substack import workflow, bootstrap artifacts,
+      platform-specific lesson prose, and dead links. The repository is the sole
+      source of truth for stats4PT.
+- [ ] Add a last-reviewed date to each lesson.
 - [ ] Correct equation markup and render mathematical notation consistently.
 - [ ] Add a table of contents and in-page navigation to long lessons.
-- [ ] Add lesson metadata: estimated time, objectives, prerequisites, key terms,
-      and last-reviewed date.
 - [ ] Add citations or reference sections in a consistent format.
 - [ ] Add automated checks for broken internal links and missing local assets.
 - [ ] Add basic privacy-respecting traffic analytics only if the resulting data
