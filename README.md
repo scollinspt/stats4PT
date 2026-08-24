@@ -22,6 +22,8 @@ to model building, but does not own the integrative model-building process.
 
 See [`docs/ECOSYSTEM_PRINCIPLES.md`](docs/ECOSYSTEM_PRINCIPLES.md) for the
 project boundaries and integration rules that govern site copy and future work.
+See [`docs/PROJECT_LOG.md`](docs/PROJECT_LOG.md) for completed milestones,
+validation records, and releases.
 
 ## Author
 
