@@ -1,5 +1,10 @@
 # stats4PT TODO
 
+## Next session
+
+- [ ] Replace the contact email addresses across stats4PT with Sean's personal
+      email address.
+
 ## Custom domain
 
 - [x] Choose and register a domain for stats4PT: `stats4PT.org`.
