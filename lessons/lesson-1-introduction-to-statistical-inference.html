@@ -8,7 +8,37 @@
       name="description"
       content="Learn how observations become descriptive summaries and uncertain statistical claims in physical therapy."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-1-introduction-to-statistical-inference.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Statistical Inference: From Observations to Claims | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Learn how observations become descriptive summaries and uncertain statistical claims in physical therapy."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-1-introduction-to-statistical-inference.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="../assets/sampling-lab.js" defer></script>
   </head>
   <body>
     <header class="container lesson-header">
@@ -683,11 +713,191 @@
         </p>
         <p>
           I’d like you to explore with a hands on exercise - using dice
-          preferably since if you have at least 2 and take the sum of each roll,
-          you’ve got a system that has a normal distribution. As you can see
-          here - the more dice you roll, the more normal the distribution gets
-          (“more normal” as a distribution as in smooth and symmetrical).
+          preferably. The sums from two dice form a discrete triangular
+          distribution. As you add more dice, the distribution of their sums
+          becomes smoother and more bell-shaped. Separately, as you increase the
+          number of observations in each sample, the distribution of sample
+          means becomes more concentrated around the population mean.
         </p>
+        <section
+          class="sampling-lab"
+          data-sampling-lab
+          aria-labelledby="sampling-lab-title"
+        >
+          <header class="sampling-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="sampling-lab-title">Sampling Lab</h3>
+            <p>
+              Move from individual observations to a sample estimate, then
+              repeat the process to see uncertainty and confidence-interval
+              coverage emerge.
+            </p>
+          </header>
+
+          <noscript>
+            <p class="sampling-lab__notice">
+              The Sampling Lab requires JavaScript. The physical dice activity
+              below covers the same core ideas.
+            </p>
+          </noscript>
+
+          <div class="sampling-lab__controls" aria-label="Lab settings">
+            <label>
+              Dice per observation
+              <select data-dice-count>
+                <option value="1">1 die</option>
+                <option value="2" selected>2 dice</option>
+                <option value="3">3 dice</option>
+                <option value="4">4 dice</option>
+                <option value="5">5 dice</option>
+              </select>
+            </label>
+            <label>
+              Observations per sample
+              <select data-sample-size>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25" selected>25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </label>
+          </div>
+
+          <section class="sampling-lab__stage" aria-labelledby="lab-population">
+            <div class="sampling-lab__stage-heading">
+              <span>1</span>
+              <div>
+                <h4 id="lab-population">Inspect the population</h4>
+                <p data-population-description></p>
+              </div>
+            </div>
+            <div
+              class="sampling-lab__histogram sampling-lab__histogram--population"
+              data-population-chart
+              role="img"
+            ></div>
+            <div class="sampling-lab__axis" aria-hidden="true">
+              <span data-population-min></span>
+              <span><b data-population-mean></b> population mean</span>
+              <span data-population-max></span>
+            </div>
+          </section>
+
+          <section class="sampling-lab__stage" aria-labelledby="lab-sample">
+            <div class="sampling-lab__stage-heading">
+              <span>2</span>
+              <div>
+                <h4 id="lab-sample">Draw a sample</h4>
+                <p>
+                  Roll slowly to watch observations accumulate, or draw a
+                  complete sample at once.
+                </p>
+              </div>
+            </div>
+            <div class="sampling-lab__actions">
+              <button type="button" data-action="roll">Roll once</button>
+              <button type="button" data-action="sample">
+                Draw one sample
+              </button>
+            </div>
+            <p class="sampling-lab__count" data-observation-count></p>
+            <div class="sampling-lab__observations" data-observations></div>
+            <dl class="sampling-lab__metrics">
+              <div>
+                <dt>Sample mean</dt>
+                <dd data-metric="mean">—</dd>
+              </div>
+              <div>
+                <dt>Sample SD</dt>
+                <dd data-metric="sd">—</dd>
+              </div>
+              <div>
+                <dt>Standard error</dt>
+                <dd data-metric="se">—</dd>
+              </div>
+              <div>
+                <dt>95% CI</dt>
+                <dd data-metric="ci">—</dd>
+              </div>
+            </dl>
+            <p class="sampling-lab__result" data-metric="result">
+              Draw a complete sample
+            </p>
+          </section>
+
+          <section class="sampling-lab__stage" aria-labelledby="lab-repeat">
+            <div class="sampling-lab__stage-heading">
+              <span>3</span>
+              <div>
+                <h4 id="lab-repeat">Repeat the process</h4>
+                <p>
+                  Build a distribution of sample means and watch which intervals
+                  capture the fixed population mean.
+                </p>
+              </div>
+            </div>
+            <div class="sampling-lab__actions">
+              <button type="button" data-action="batch">Run 100 samples</button>
+              <button
+                class="sampling-lab__button--quiet"
+                type="button"
+                data-action="reset"
+              >
+                Reset
+              </button>
+            </div>
+            <div class="sampling-lab__repeat-grid">
+              <div>
+                <h5>Distribution of sample means</h5>
+                <div
+                  class="sampling-lab__histogram sampling-lab__histogram--sampling"
+                  data-sampling-chart
+                  role="img"
+                ></div>
+                <div class="sampling-lab__axis" aria-hidden="true">
+                  <span>Low</span>
+                  <span>Population mean</span>
+                  <span>High</span>
+                </div>
+              </div>
+              <div>
+                <h5>12 most recent 95% CIs</h5>
+                <div
+                  class="sampling-lab__interval-plot"
+                  data-interval-plot
+                  role="img"
+                ></div>
+                <p class="sampling-lab__legend">
+                  <span></span> Captures mean <span></span> Misses mean
+                </p>
+              </div>
+            </div>
+            <dl class="sampling-lab__metrics sampling-lab__metrics--coverage">
+              <div>
+                <dt>Samples drawn</dt>
+                <dd data-metric="samples">0</dd>
+              </div>
+              <div>
+                <dt>Intervals capturing the mean</dt>
+                <dd data-metric="coverage">—</dd>
+              </div>
+            </dl>
+            <p class="sampling-lab__reflection" data-interpretation>
+              Before you run 100 samples, predict what will vary and what will
+              remain fixed.
+            </p>
+          </section>
+          <p
+            class="sampling-lab__status"
+            data-lab-status
+            aria-live="polite"
+          ></p>
+          <p class="sampling-lab__method">
+            Each interval uses the sample standard deviation, standard error,
+            and the 95% t critical value for the selected sample size.
+          </p>
+        </section>
         <div class="captioned-image-container">
           <figure>
             <a
@@ -850,13 +1060,10 @@
           </li>
         </ol>
         <p>
-          If you want to avoid all this dice rolling - you can probably find a
-          simulation tool for dice rolling. Or you can just jump to simulating
-          samples taken from a population for which you set the parameters at
-          this website -
-          <a href="https://shiny.rit.albany.edu/stat/sampdist/%20"
-            >Simulated Sampling Distributions</a
-          >.
+          The browser lab lets you repeat this process quickly, but doing the
+          activity by hand at least once can make the distinction between an
+          observation, a sample, and a collection of repeated samples more
+          tangible.
         </p>
         <h4>Hypothesis testing</h4>
         <p>

@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Bayesian Methods in Clinical Research and Evidence Synthesis | stats4PT
+    </title>
+    <meta
+      name="description"
+      content="Examine Bayesian clinical trials, meta-analysis, heterogeneity, and transparent uncertainty in evidence synthesis."
+    />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-5-bayesian-applications-in-research.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Bayesian Methods in Clinical Research and Evidence Synthesis | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Examine Bayesian clinical trials, meta-analysis, heterogeneity, and transparent uncertainty in evidence synthesis."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-5-bayesian-applications-in-research.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="container lesson-header">
+      <a class="back-link" href="../index.html">&larr; All lessons</a>
+      <p class="eyebrow">Lesson 5 of 8</p>
+      <h1>Bayesian Methods in Clinical Research and Evidence Synthesis</h1>
+    </header>
+    <main class="container lesson-layout">
+      <article class="lesson-content">
+        <section class="lesson-overview">
+          <h2>Learning objectives</h2>
+          <p>By the end of this lesson, you should be able to:</p>
+          <ul>
+            <li>
+              Explain how priors and accumulating data can be used in an
+              adaptive clinical trial.
+            </li>
+            <li>
+              Describe how Bayesian meta-analysis represents heterogeneity and
+              uncertainty.
+            </li>
+            <li>
+              Interpret posterior probabilities, credible intervals, and
+              predictive intervals as answers to distinct research questions.
+            </li>
+            <li>
+              Distinguish probabilistic estimation from causal identification.
+            </li>
+            <li>
+              Identify assumptions that should be reported when Bayesian methods
+              are used in evidence synthesis.
+            </li>
+          </ul>
+          <p><strong>Estimated time:</strong> 35-45 minutes</p>
+          <p><strong>Prerequisite:</strong> Lesson 4</p>
+          <p>
+            <strong>Key terms:</strong> prior distribution, adaptive trial,
+            posterior distribution, hierarchical model, heterogeneity, evidence
+            synthesis
+          </p>
+        </section>
+        <h2>Why Bayesian Methods Matter in Clinical Research</h2>
+        <p>
+          Bayesian reasoning isn’t just a tool for better clinical judgment—it
+          offers a powerful framework for improving how research is designed,
+          analyzed, and synthesized. Frequentist and Bayesian approaches can
+          both support rich estimation and adaptive designs, but they express
+          uncertainty and answer inferential questions differently.
+        </p>
+        <p>
+          Bayesian methods make prior assumptions explicit and update
+          probability distributions as new data emerge. They can shift the
+          question from whether a result crosses a significance threshold to the
+          probability that an effect exists, exceeds a clinically meaningful
+          threshold, or will recur in a new setting. This can improve clinical
+          relevance when the model and prior are defensible.
+        </p>
+        <p>In this lesson, we explore how Bayesian thinking transforms:</p>
+        <ul>
+          <li>
+            <p>Clinical trials, through adaptive and more efficient designs</p>
+          </li>
+          <li>
+            <p>
+              Meta-analysis, by incorporating uncertainty and prior evidence
+            </p>
+          </li>
+          <li>
+            <p>
+              Causal modeling, through Bayesian networks and probabilistic
+              inference
+            </p>
+          </li>
+          <li>
+            <p>
+              Critical realist reviews, by integrating context, mechanisms, and
+              structured reasoning
+            </p>
+          </li>
+        </ul>
+        <h2>Bayesian Clinical Trials: A More Adaptive Approach</h2>
+        <p>
+          Clinical trials can use fixed or adaptive designs under either
+          frequentist or Bayesian frameworks. Bayesian methods are especially
+          well suited to adaptive designs because posterior probabilities can be
+          updated as prespecified interim data accumulate. Adaptations such as
+          changing allocation, stopping early, or refining enrollment remain
+          design choices that require explicit rules and calibration; they are
+          not automatic consequences of using Bayesian statistics.
+        </p>
+        <h3>Key Advantages of Bayesian Trials:</h3>
+        <ul>
+          <li>
+            <p>
+              Early Stopping for Efficacy or Futility – Bayesian frameworks
+              allow for ethical responsiveness: trials can stop early if a
+              treatment is clearly effective—or clearly not.
+            </p>
+          </li>
+          <li>
+            <p>
+              Potentially More Efficient Sample Sizes – When prior information
+              is defensible and the design is calibrated appropriately,
+              accumulating evidence may support earlier decisions. Efficiency is
+              not automatic and must be evaluated through design operating
+              characteristics.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prespecified Updating – In an adaptive Bayesian design, posterior
+              probabilities can be updated at planned interim analyses as
+              participant outcomes accumulate.
+            </p>
+          </li>
+        </ul>
+        <h4>Example: Adaptive Trial for Pain Management</h4>
+        <p>
+          Imagine a Bayesian trial for a new manual therapy technique. The study
+          might:
+        </p>
+        <ol>
+          <li>
+            <p>Begin with prior data from pilot studies and expert opinion.</p>
+          </li>
+          <li>
+            <p>
+              Continuously refine the estimated effect size as patients report
+              outcomes.
+            </p>
+          </li>
+          <li>
+            <p>
+              Adapt recruitment—perhaps oversampling subgroups who appear to
+              respond best.
+            </p>
+          </li>
+          <li>
+            <p>
+              Stop early if strong evidence accumulates for or against the
+              treatment.
+            </p>
+          </li>
+        </ol>
+        <p>
+          The potential result is a more efficient or ethically responsive
+          trial, but only when the adaptation rules, prior assumptions, error
+          characteristics, and decision thresholds are prospectively specified
+          and evaluated.
+        </p>
+        <h2>Bayesian Meta-Analysis: Moving Beyond Pooled Averages</h2>
+        <p>
+          Both frequentist and Bayesian meta-analyses can weight studies by
+          precision, estimate pooled effects, and model between-study
+          heterogeneity. Their inferential interpretations differ: frequentist
+          intervals describe procedure performance under repeated sampling,
+          whereas Bayesian models produce posterior distributions conditional on
+          the specified likelihood, prior, and model.
+        </p>
+        <p>
+          Bayesian meta-analyses take a different approach. They synthesize
+          findings probabilistically, formally weighting prior knowledge,
+          incorporating methodological nuance, and modeling heterogeneity more
+          directly.
+        </p>
+        <h4>What Bayesian Meta-Analysis Can Add:</h4>
+        <ul>
+          <li>
+            <p>
+              Integrates Prior Knowledge – Prior distributions can formally
+              represent relevant knowledge available before the included study
+              results are analyzed. Study precision and the specified likelihood
+              determine each study’s contribution. Methodological limitations or
+              contextual differences should enter through explicit inclusion
+              criteria, bias analyses, covariates, or model structure rather
+              than informal quality weights.
+            </p>
+          </li>
+          <li>
+            <p>
+              Quantifies Uncertainty with Credible Intervals – These intervals
+              reflect actual probabilities, rather than confidence based on
+              repeated sampling.
+            </p>
+          </li>
+          <li>
+            <p>
+              Handles Heterogeneity More Flexibly – Bayesian models use
+              hierarchical structures to account for variability across
+              populations, settings, and designs.
+            </p>
+          </li>
+        </ul>
+        <h4>Example: Chronic Pain and Manual Therapy</h4>
+        <p>A Bayesian meta-analysis on manual therapy might:</p>
+        <ul>
+          <li>
+            <p>
+              Incorporate prior knowledge from mechanistic studies and clinical
+              expertise.
+            </p>
+          </li>
+          <li>
+            <p>
+              Represent design differences through explicit model structure,
+              bias assumptions, or sensitivity analyses rather than an informal
+              quality score.
+            </p>
+          </li>
+          <li>
+            <p>
+              Generate probability distributions for outcomes across subgroups
+              (e.g., acute vs. chronic LBP).
+            </p>
+          </li>
+        </ul>
+        <p>
+          This produces a richer synthesis—focused not just on “if it works,”
+          but how likely it is to work in real-world contexts.
+        </p>
+        <section
+          class="synthesis-lab"
+          data-bayesian-evidence-synthesis-lab
+          aria-labelledby="synthesis-lab-title"
+        >
+          <header class="synthesis-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="synthesis-lab-title">Bayesian Evidence Synthesis Lab</h3>
+            <p>
+              Combine a prior distribution with three study estimates, then
+              distinguish uncertainty about the pooled mean from uncertainty in
+              a new setting.
+            </p>
+          </header>
+          <p class="synthesis-lab__caveat">
+            This is a simplified normal-normal random-effects model for
+            instruction. Effect estimates are on an illustrative continuous
+            scale where positive values favor the intervention. The model does
+            not evaluate bias, study quality, publication bias, or causal
+            identification.
+          </p>
+          <div class="synthesis-lab__scenario">
+            <label>
+              Evidence scenario
+              <select data-synthesis-scenario>
+                <option value="consistent">
+                  Three broadly consistent studies
+                </option>
+                <option value="conflicting">
+                  Studies with conflicting estimates
+                </option>
+                <option value="imprecise">Small, imprecise studies</option>
+              </select>
+            </label>
+            <button type="button" data-synthesis-reset>Reset activity</button>
+          </div>
+          <div class="synthesis-lab__controls">
+            <fieldset>
+              <legend>Prior for the pooled mean effect</legend>
+              <label>
+                Prior mean
+                <strong data-synthesis-output="priorMeanValue">+0.00</strong>
+                <input
+                  type="range"
+                  min="-5"
+                  max="5"
+                  step="0.1"
+                  value="0"
+                  data-prior-mean
+                />
+              </label>
+              <label>
+                Prior standard deviation
+                <strong data-synthesis-output="priorStandardDeviationValue"
+                  >4.0</strong
+                >
+                <input
+                  type="range"
+                  min="0.5"
+                  max="8"
+                  step="0.1"
+                  value="4"
+                  data-prior-sd
+                />
+              </label>
+              <p>
+                A smaller standard deviation makes the prior more concentrated
+                and gives it more influence. A larger value makes it weaker.
+              </p>
+            </fieldset>
+            <fieldset>
+              <legend>Model and decision assumptions</legend>
+              <label>
+                Between-study heterogeneity, τ
+                <strong data-synthesis-output="heterogeneityValue">0.5</strong>
+                <input
+                  type="range"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="0.5"
+                  data-heterogeneity
+                />
+              </label>
+              <label>
+                Meaningful-effect threshold
+                <strong data-synthesis-output="meaningfulThresholdValue"
+                  >+2.00</strong
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="2"
+                  data-meaningful-threshold
+                />
+              </label>
+              <p>
+                Here, τ is supplied rather than estimated. The threshold is a
+                decision assumption, not a value discovered by the model.
+              </p>
+            </fieldset>
+          </div>
+          <div class="synthesis-lab__studies">
+            <div class="synthesis-lab__study-heading">
+              <span>Study</span><span>Effect estimate</span
+              ><span>Standard error</span><span>Precision contribution</span>
+            </div>
+            <div class="synthesis-lab__study-row">
+              <strong>Study 1</strong>
+              <label
+                ><span>Effect estimate</span
+                ><input
+                  type="number"
+                  step="0.1"
+                  value="3.2"
+                  data-study-1-effect
+              /></label>
+              <label
+                ><span>Standard error</span
+                ><input
+                  type="number"
+                  min="0.1"
+                  step="0.1"
+                  value="1.1"
+                  data-study-1-se
+              /></label>
+              <output data-synthesis-output="study1Weight">29.5%</output>
+            </div>
+            <div class="synthesis-lab__study-row">
+              <strong>Study 2</strong>
+              <label
+                ><span>Effect estimate</span
+                ><input
+                  type="number"
+                  step="0.1"
+                  value="2.4"
+                  data-study-2-effect
+              /></label>
+              <label
+                ><span>Standard error</span
+                ><input
+                  type="number"
+                  min="0.1"
+                  step="0.1"
+                  value="0.8"
+                  data-study-2-se
+              /></label>
+              <output data-synthesis-output="study2Weight">48.4%</output>
+            </div>
+            <div class="synthesis-lab__study-row">
+              <strong>Study 3</strong>
+              <label
+                ><span>Effect estimate</span
+                ><input
+                  type="number"
+                  step="0.1"
+                  value="3.8"
+                  data-study-3-effect
+              /></label>
+              <label
+                ><span>Standard error</span
+                ><input
+                  type="number"
+                  min="0.1"
+                  step="0.1"
+                  value="1.4"
+                  data-study-3-se
+              /></label>
+              <output data-synthesis-output="study3Weight">19.5%</output>
+            </div>
+            <p class="synthesis-lab__prior-weight">
+              Prior precision contribution:
+              <strong data-synthesis-output="priorWeight">2.7%</strong>
+            </p>
+          </div>
+          <div
+            class="synthesis-lab__plot"
+            data-synthesis-plot
+            aria-label="Forest plot of the prior, studies, pooled posterior, and new-setting prediction"
+          ></div>
+          <dl class="synthesis-lab__results">
+            <div>
+              <dt>Pooled posterior mean</dt>
+              <dd data-synthesis-output="posteriorMean">+2.84</dd>
+            </div>
+            <div>
+              <dt>95% credible interval</dt>
+              <dd data-synthesis-output="credibleInterval">+1.56 to +4.13</dd>
+            </div>
+            <div>
+              <dt>P(pooled mean &gt; 0)</dt>
+              <dd data-synthesis-output="probabilityAboveZero">100.0%</dd>
+            </div>
+            <div>
+              <dt>
+                P(pooled mean &gt;
+                <span data-synthesis-output="thresholdLabel">+2.00</span>)
+              </dt>
+              <dd data-synthesis-output="probabilityAboveThreshold">90.1%</dd>
+            </div>
+            <div>
+              <dt>95% predictive interval</dt>
+              <dd data-synthesis-output="predictiveInterval">+1.23 to +4.46</dd>
+            </div>
+            <div>
+              <dt>P(new-setting effect &gt; 0)</dt>
+              <dd data-synthesis-output="predictiveProbability">100.0%</dd>
+            </div>
+          </dl>
+          <p
+            class="synthesis-lab__interpretation"
+            data-synthesis-output="interpretation"
+          >
+            Given this prior, these estimates, and τ = 0.5, the posterior
+            probability that the pooled mean is greater than zero is 100.0%. The
+            probability that it exceeds +2.00 is 90.1%.
+          </p>
+          <div class="synthesis-lab__questions">
+            <h4>Interrogate the synthesis</h4>
+            <ul>
+              <li>
+                Make the prior skeptical and concentrated. How many precise,
+                consistent studies does it take to move the posterior?
+              </li>
+              <li>
+                Load conflicting studies and increase τ. Why can the pooled mean
+                remain fairly precise while prediction in a new setting becomes
+                uncertain?
+              </li>
+              <li>
+                Compare P(effect &gt; 0) with P(effect &gt; MCID). Which
+                question is more useful than a binary rejection decision?
+              </li>
+            </ul>
+          </div>
+          <p class="synthesis-lab__method">
+            Model: yᵢ ∼ Normal(μ, SEᵢ² + τ²), with a Normal prior on μ. The
+            displayed “precision contributions” are each source’s share of total
+            posterior precision. A full Bayesian random-effects analysis would
+            generally assign a prior to τ and estimate it rather than setting it
+            with a slider.
+          </p>
+          <p
+            class="synthesis-lab__status"
+            data-synthesis-status
+            role="status"
+            aria-live="polite"
+          ></p>
+          <noscript>
+            <p class="synthesis-lab__method">
+              Enable JavaScript to change the prior, study estimates,
+              heterogeneity, and meaningful-effect threshold. The initial
+              scenario combines three broadly consistent studies with a weak,
+              zero-centered prior.
+            </p>
+          </noscript>
+        </section>
+        <h2>Bayesian Approaches to Causal Inference</h2>
+        <p>
+          Cause-and-effect reasoning is central to research, yet traditional
+          statistical models often blur the line between association and
+          causation.
+        </p>
+        <p>
+          Bayesian networks represent conditional dependencies within a
+          specified graph and can update probabilities as evidence is entered. A
+          network supports causal interpretation only when its arrows encode
+          defensible causal assumptions and the relevant identification
+          conditions are satisfied. Bayesian estimation does not turn an
+          associational graph into evidence of causation.
+        </p>
+        <h4>Estimation Frameworks and Causal Models</h4>
+        <p>
+          Causal assumptions come from the study design and causal model, not
+          from choosing a frequentist or Bayesian estimator. Either framework
+          can estimate quantities defined by a defensible causal model:
+        </p>
+        <ul>
+          <li><p>Updates beliefs continuously with new evidence</p></li>
+          <li>
+            <p>
+              Represents uncertainty about model parameters and derived causal
+              quantities through posterior distributions
+            </p>
+          </li>
+          <li>
+            <p>
+              Makes prior assumptions available for inspection and sensitivity
+              analysis
+            </p>
+          </li>
+        </ul>
+        <h4>Example: Stroke Rehabilitation</h4>
+        <p>In a Bayesian causal model of motor recovery:</p>
+        <ul>
+          <li>
+            <p>
+              Prior beliefs are informed by neuroplasticity research and
+              clinical data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Ongoing patient responses update likelihoods of treatment success.
+            </p>
+          </li>
+          <li>
+            <p>
+              Subgroup-specific inferences (e.g., age, severity) emerge
+              naturally from the model.
+            </p>
+          </li>
+        </ul>
+        <p>
+          This aligns closely with real-world clinical inquiry—where causality
+          is proposed, not proven, and must be refined iteratively.
+        </p>
+        <h2>Bayesian Reasoning in Critical Realist Reviews (CCRRs)</h2>
+        <p>
+          Critical realist reviews aim to move beyond surface-level correlations
+          to uncover why interventions work, for whom, and under what
+          conditions. They emphasize causal mechanisms, context, and structural
+          influences—making Bayesian logic a natural fit.
+        </p>
+        <p>Why Bayesian Reasoning Supports CCRRs:</p>
+        <ul>
+          <li>
+            <p>
+              Models Context and Mechanisms – Bayesian models accommodate
+              variables from the empirical, actual, and real domains.
+            </p>
+          </li>
+          <li>
+            <p>
+              Supports Abductive and Inductive Inference – Bayesian updates
+              mirror the recursive reasoning central to critical realism.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enhances Interpretability – Rather than a singular “effect size,”
+              Bayesian CCRRs offer context-specific probability estimates.
+            </p>
+          </li>
+        </ul>
+        <h4>Example: Manual Therapy Revisited</h4>
+        <p>
+          A frequentist review might conclude that manual therapy has mixed
+          evidence for low back pain. A Bayesian CCRR would instead:
+        </p>
+        <ol>
+          <li>
+            <p>
+              Begin with priors informed by biomechanical, neurophysiological,
+              and contextual mechanisms.
+            </p>
+          </li>
+          <li>
+            <p>
+              Adjust estimates based on study context (e.g., patient type,
+              clinician skill, setting).
+            </p>
+          </li>
+          <li>
+            <p>
+              Identify plausible generative mechanisms in specific populations,
+              even where pooled effects are “non-significant.”
+            </p>
+          </li>
+        </ol>
+        <p>
+          The result? A deeper understanding of why and when manual therapy
+          might work—not just whether it does. Meaning - research evidence
+          doesn’t just have to answer “does it work” but it should also dig into
+          why, when, how, where and to what extent.
+        </p>
+        <h2>From Bayesian Research to Models4PT</h2>
+        <p>
+          Models4PT is an open research platform for building, curating,
+          integrating, and maintaining computable population-level causal
+          knowledge in physical therapy and rehabilitation science. Its
+          canonical product is curated knowledge, not a collection of diagrams
+          or an automated clinical decision tool. Models4PT keeps concepts,
+          measurements, mechanisms, causal claims, evidence, provenance,
+          uncertainty, disagreement, and researcher review connected.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Bayesian research can contribute probability distributions,
+              uncertainty estimates, and evidence that remain linked to their
+              assumptions and sources.
+            </p>
+          </li>
+          <li>
+            <p>
+              Causal models can organize population-level claims and mechanisms,
+              but their causal meaning depends on scientific justification, not
+              on Bayesian estimation alone.
+            </p>
+          </li>
+          <li>
+            <p>
+              Researchers remain responsible for reviewing, qualifying, and
+              revising candidate knowledge before it becomes part of a curated
+              repository.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Models4PT is currently in an early research and software-design stage,
+          with a tested initial domain model rather than a deployable platform.
+          It constructs population-level knowledge; patient-specific diagnosis,
+          prognosis, treatment recommendations, and probabilistic reasoning
+          belong to the separate Clinical Inference Engine.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Models4PT project and source:
+              <a href="https://github.com/scollinspt/Models4PT"
+                >https://github.com/scollinspt/Models4PT</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Temporary interactive resource:
+              <a
+                href="https://chatgpt.com/g/g-679ca6a74500819194951cd65f1256bc-models4pt"
+                >Models4PT GPT</a
+              >. This OpenAI GPT offers an interim way to explore Models4PT
+              ideas while the platform is being developed. It is not the
+              Models4PT knowledge repository or software platform, and its
+              output should be treated as candidate content requiring human
+              scientific review.
+            </p>
+          </li>
+        </ul>
+        <h2>What’s Next?</h2>
+        <p>
+          Bayesian methods can update uncertainty, but they do not determine
+          whether the variables in a model are the right ones or whether a
+          population result applies to a particular context. Lesson 6 turns to
+          mechanisms, context, and the limits of population models.
+        </p>
+      </article>
+      <nav class="lesson-nav" aria-label="Lesson navigation">
+        <a href="lesson-4-bayes-theorem-in-clinical-decision.html"
+          >&larr; Previous lesson</a
+        >
+        <a href="lesson-6-beyond-data-mechanisms-and-structures.html"
+          >Next lesson &rarr;</a
+        >
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>stats4PT by Sean M. Collins, PT, ScD</span>
+        <nav aria-label="Author and project links">
+          <a href="https://scollinspt.github.io/">Portfolio</a>
+          <a href="https://scollinspt.github.io/about.html">About</a>
+          <a href="https://github.com/scollinspt">GitHub</a>
+          <a href="https://www.linkedin.com/in/sean-collins-868b3a391/"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/scollinspt/stats4PT">Source</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="../assets/bayesian-evidence-synthesis-lab.js"></script>
+  </body>
+</html>

@@ -11,7 +11,7 @@
 - [x] Enable and verify HTTPS after DNS propagation.
 - [x] Redirect `www.stats4PT.org` to canonical `https://stats4PT.org/`.
 - [x] Update the README and main portfolio to use the canonical URL.
-- [ ] Add canonical metadata to the stats4PT pages.
+- [x] Add canonical and Open Graph metadata to the stats4PT pages.
 
 ### Registrar recommendation
 
@@ -79,19 +79,39 @@ if its caching or security features are actually needed.
 
 - [ ] Inventory existing Physiolog simulations that can support stats4PT lessons.
 - [ ] Match each useful simulation to a lesson and a specific learning objective.
-- [ ] Prototype an embedded simulation in one lesson with a non-embedded fallback
-      link for accessibility and restrictive browsers.
-- [ ] Build a sampling-distribution simulation for sample size, standard error,
+- [x] Prototype an interactive simulation in one lesson with useful fallback
+      content for browsers where the activity is unavailable.
+- [x] Build a sampling-distribution simulation for sample size, standard error,
       and confidence intervals.
-- [ ] Build a Bayesian updating simulation using prevalence, sensitivity,
-      specificity, and sequential evidence.
-- [ ] Build an interactive causal-model exercise for confounders, mediators,
-      colliders, and backdoor paths as discovery-oriented instruction; hand off
-      comprehensive model building to Models4PT.
-- [ ] Add instructions, reflection prompts, and interpretation questions around
-      each simulation rather than presenting it as an isolated widget.
-- [ ] Verify keyboard access, mobile behavior, reduced-motion support, and useful
-      fallback content for every simulation.
+- [x] Build Lesson 2 activities for causal ambiguity, mechanism-context
+      contingency, and Bhaskar's empirical, actual, and real domains.
+- [x] Build a Lesson 3 Bayesian updating simulation using two priors, fixed
+      evidence properties, natural frequencies, likelihood ratios, and posterior
+      probabilities.
+- [x] Build a Lesson 4 clinical updating simulation using sensitivity,
+      specificity, likelihood ratios, and sequential evidence.
+- [x] Build a Lesson 5 Bayesian evidence synthesis simulation using an explicit
+      prior, study precision, heterogeneity, posterior probabilities, credible
+      intervals, and new-setting prediction.
+- [x] Build a Lesson 6 population-to-context transportability lab that separates
+      target differences, supported effect modifiers, untested mechanisms, and
+      limits of the source evidence; distinguish this population/setting
+      inference from patient-specific clinical instantiation.
+- [x] Build a Lesson 7 Path and Adjustment Lab for confounders, mediators,
+      colliders, open and closed paths, and total-effect adjustment as
+      discovery-oriented instruction; hand off arbitrary graph analysis to
+      DAGitty and comprehensive model building to Models4PT.
+- [x] Build a Lesson 8 Causal Claim Audit that distinguishes overlapping
+      statistical errors, study biases, causal limitations, cognitive biases,
+      and narrative errors before selecting a warranted claim and
+      discriminating next step.
+- [x] Preserve clinical instantiation as a future Clinical Inference Engine
+      app/game rather than adding patient-specific reasoning to stats4PT.
+- [x] Add instructions, reflection prompts, and interpretation questions around
+      each currently implemented simulation rather than presenting it as an
+      isolated widget.
+- [x] Verify keyboard access, mobile behavior, reduced-motion support, and useful
+      fallback content for the currently implemented simulations.
 
 ### Videos
 

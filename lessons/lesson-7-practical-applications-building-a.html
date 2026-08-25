@@ -8,6 +8,35 @@
       name="description"
       content="Learn to read and draft directed acyclic graphs that make causal assumptions, bias, and missing knowledge visible."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-7-practical-applications-building-a.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Making Causal Assumptions Visible with DAGs | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Learn to read and draft directed acyclic graphs that make causal assumptions, bias, and missing knowledge visible."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-7-practical-applications-building-a.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
   </head>
   <body>
@@ -36,7 +65,7 @@
               evidence or mechanism knowledge.
             </li>
           </ul>
-          <p><strong>Estimated time:</strong> 35-45 minutes</p>
+          <p><strong>Estimated time:</strong> 40-50 minutes</p>
           <p><strong>Prerequisite:</strong> Lesson 6</p>
           <p>
             <strong>Key terms:</strong> node, edge, directed acyclic graph,
@@ -223,9 +252,12 @@
           <li>
             <p><strong>Label what’s empirical vs. theoretical.</strong></p>
             <p>
-              Note which nodes are based on observed data (empirical), inferred
-              mechanisms (actual), or deeper structures (real). This adds
-              clarity to what you’re claiming and where uncertainty lives.
+              Note which variables are empirically measured, which actual events
+              are inferred to have occurred, and which real mechanisms or
+              structures are hypothesized to generate those events. These labels
+              describe the evidence and ontological claims behind a node;
+              measurement does not move the thing represented from one domain to
+              another.
             </p>
           </li>
           <li>
@@ -239,6 +271,15 @@
               </li>
               <li><p>Are mediators appropriately placed?</p></li>
             </ul>
+            <p>
+              A variable’s role depends on the causal question and graph, not
+              its name. A common cause of exposure and outcome can open a
+              backdoor path; a mediator lies on a directed pathway from exposure
+              to outcome; and a collider is caused by two variables on a path.
+              Adjustment can close a confounding path, remove part of the effect
+              through a mediator, or open a path through a collider. More
+              adjustment is therefore not automatically better.
+            </p>
           </li>
           <li>
             <p><strong>Pause to reflect.</strong></p>
@@ -256,21 +297,116 @@
           model is not a final answer. It’s a structured starting point for
           deeper reasoning and better questions.
         </p>
+        <section
+          class="path-lab"
+          data-path-adjustment-lab
+          aria-labelledby="path-lab-title"
+        >
+          <header class="path-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="path-lab-title">Path and Adjustment Lab</h3>
+            <p>
+              Condition on variables and observe whether noncausal paths close,
+              causal pathways are blocked, or collider paths open.
+            </p>
+          </header>
+          <p class="path-lab__caveat">
+            These are fixed teaching graphs for estimating a total effect. They
+            demonstrate selected path consequences rather than implementing a
+            general d-separation or adjustment-set solver. Use DAGitty to
+            analyze arbitrary DAGs.
+          </p>
+          <div class="path-lab__scenario">
+            <label>
+              Graph structure
+              <select data-path-scenario>
+                <option value="confounder">Common cause</option>
+                <option value="mediator">Mediator</option>
+                <option value="collider">Collider</option>
+                <option value="mixed">Mixed structure</option>
+              </select>
+            </label>
+            <button type="button" data-path-reset>Reset activity</button>
+          </div>
+          <div class="path-lab__question">
+            <p class="eyebrow">Target causal question</p>
+            <p data-path-question></p>
+          </div>
+          <div class="path-lab__workspace">
+            <div class="path-lab__graph-panel">
+              <h4>Assumed graph</h4>
+              <div class="path-lab__graph" data-path-graph></div>
+              <p>
+                A filled node is conditioned on. Conditioning can mean
+                adjustment, stratification, restriction, or selection.
+              </p>
+            </div>
+            <div class="path-lab__control-panel">
+              <h4>Choose a conditioning set</h4>
+              <div class="path-lab__controls" data-path-controls></div>
+              <p>
+                The goal is a sufficient set for the stated total-effect
+                question, not the largest possible set.
+              </p>
+            </div>
+          </div>
+          <div class="path-lab__paths">
+            <h4>Relevant path states</h4>
+            <ul data-path-list></ul>
+          </div>
+          <section class="path-lab__result" data-path-result aria-live="polite">
+            <p class="eyebrow">Adjustment consequence</p>
+            <h4 data-path-result-label></h4>
+            <p data-path-result-explanation></p>
+          </section>
+          <div class="path-lab__questions">
+            <h4>Questions to carry forward</h4>
+            <ul>
+              <li>
+                Is the variable a common cause, mediator, or collider relative
+                to this exposure and outcome?
+              </li>
+              <li>
+                Is the target the total effect, a direct effect, or another
+                causal contrast?
+              </li>
+              <li>
+                Which paths are open before adjustment, and what changes after
+                conditioning?
+              </li>
+            </ul>
+          </div>
+          <noscript>
+            <p class="path-lab__noscript">
+              JavaScript is unavailable. On paper, compare these structures: X
+              &larr; C &rarr; Y, X &rarr; M &rarr; Y, and X &rarr; K &larr; Y.
+              For a total-effect question, ask which variable closes
+              confounding, blocks mediation, or opens a collider path when
+              conditioned on.
+            </p>
+          </noscript>
+          <p
+            class="path-lab__status"
+            data-path-status
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
         <h2>
-          <strong>IV. From a Clinical Question to DAGitty</strong>
+          <strong>IV. From a Research Question to DAGitty</strong>
         </h2>
         <p>
           A durable modeling workflow should not depend on any particular AI
-          assistant. Begin with a clinical or research question, identify the
-          variables and causal contrast, draft the assumptions in plain
+          assistant. Begin with a research question and causal contrast,
+          identify the relevant variables, draft the assumptions in plain
           language, and then represent them in DAGitty.
         </p>
         <p>The workflow includes:</p>
         <ul>
           <li>
             <p>
-              Extracting exposures, outcomes, confounders, and mediators from
-              clinical questions or texts.
+              Extracting exposures, outcomes, and candidate causal variables
+              from research questions or texts.
             </p>
           </li>
           <li>
@@ -281,8 +417,8 @@
           </li>
           <li>
             <p>
-              Identifying bias and confounding, using backdoor and frontdoor
-              logic.
+              Identifying open backdoor paths and evaluating candidate
+              adjustment sets.
             </p>
           </li>
           <li>
@@ -413,18 +549,18 @@ InsuranceStatus -&gt; Adherence
           more complex, theory-informed causal modeling.
         </p>
         <p>
-          Each version of the model reflects an increasing depth of
-          reasoning—starting with empirical observations, integrating
-          confounders and effect modifiers, and ending with actual events and
-          unmeasured mechanisms or structures in Bhaskar’s real domain.
+          Each version of the model adds different assumptions—starting with a
+          simple exposure-outcome claim, then adding candidate common causes,
+          and finally proposing mediating mechanisms and structures. Additional
+          detail makes assumptions more visible; it does not by itself make the
+          graph more accurate.
         </p>
         <p>
           Begin by reading the review for its exposure, outcomes, eligibility
           criteria, analyses, and stated assumptions. Then draft a basic
-          exposure-outcome DAG that is consistent with the statistical model
-          used to investigate the review’s hypotheses. The graph remains a
-          proposed causal interpretation, not something generated or validated
-          by the statistical model alone.
+          exposure-outcome DAG for a causal question suggested by the review.
+          The graph remains a proposed causal interpretation, not something
+          generated or validated by the statistical model alone.
         </p>
         <h4><strong>1. Basic Exposure–Outcome DAG</strong></h4>
         <p>
@@ -550,29 +686,27 @@ InsuranceStatus -&gt; Adherence
         </div>
         <p>
           <code> </code><strong>Key connection to earlier material</strong>:
-          Each arrow represents a causal assumption grounded in the authors’
-          interpretations of the evidence—this is exactly the kind of structure
-          we discussed in Section I: From Statistics to Causal Reasoning. This
-          model is a statistical model—those based only on empirical
-          regularities. A statistical model describes what we’ve observed,
-          typically without addressing why or how those relationships exist.
+          Each arrow represents a causal assumption offered for critique. The
+          outcome variables came from a statistical analysis, but this DAG is
+          not itself the review’s statistical model. Statistical models can
+          describe distributions and estimate associations or effects under
+          assumptions; the DAG separately states a proposed causal structure.
         </p>
         <h4>
-          <strong
-            >2. Intermediate DAG with Confounders and Effect Modifiers</strong
-          >
+          <strong>2. Intermediate DAG with Candidate Common Causes</strong>
         </h4>
         <p><em>Extends Section II: What Is a Causal Model?</em></p>
         <p>
           We now add
-          <strong>unobserved but clinically relevant variables</strong> (e.g.,
-          PsychologicalFactors, Chronicity, Cointerventions) that plausibly
-          influence both the intervention and its outcomes. This layer reflects
-          <strong>real-world complexity</strong>—not all effects are cleanly
-          measured, and not all variation is random. These additions are
-          hypotheses offered for critique. Each would need a clear definition,
-          supporting rationale, and reconsideration in light of the target
-          causal question.
+          <strong>hypothetical common causes</strong> (e.g.,
+          PsychologicalFactors, Chronicity, TherapistExpertise) that might
+          influence both treatment received and outcomes in a nonrandomized
+          setting. They are potential confounders only relative to that
+          exposure, outcome, timing, and graph. If the exposure is randomized
+          assignment in a well-conducted trial, baseline variables do not cause
+          assignment and these arrows would require a different rationale. The
+          additions below are hypotheses offered for critique, not variables
+          identified as confounders or effect modifiers by the review.
         </p>
         <pre><code>dag {
 // Exposure and outcomes from above included with this comment excluded
@@ -686,13 +820,13 @@ TherapistExpertise -&gt; PainIntensity
         <h4><strong>3. Critical Realist DAG with Ontological Depth</strong></h4>
         <p><em>Directly builds on Bhaskar’s domains</em></p>
         <p>
-          This final version introduces underlying causal mechanisms that are
-          not directly measured in the Sánchez-Infante study but are essential
-          for explanation—such as NeurophysiologicalModulation and
-          PlaceboExpectancyMechanism. These nodes are proposed from theory and
-          background knowledge rather than identified by the review itself.
-          Additional mechanistic literature would be needed to justify, refine,
-          or reject them before integration into a broader causal model.
+          This final version introduces candidate mediating mechanisms that are
+          not directly measured in the Sánchez-Infante review—such as
+          NeurophysiologicalModulation and PlaceboExpectancyMechanism. These
+          nodes are proposed from theory and background knowledge rather than
+          identified by the review itself. Additional mechanistic literature
+          would be needed to justify, refine, or reject them before integration
+          into a broader causal model.
         </p>
         <pre><code>dag {
   // Nodes and arrows from earlier versions...
@@ -795,16 +929,17 @@ TherapistExpertise -&gt; PainIntensity
           </figure>
         </div>
         <p>
-          <strong>Relevance</strong>: This is the domain of the actual and
-          real—as described in Section II. These mechanisms are not statistical
-          artifacts; they are causal powers we theorize based on physiology,
-          neuroscience, and therapeutic interaction. They help us explain
-          <em>why</em> the arrows in the earlier models might exist at all.
+          <strong>Relevance</strong>: The proposed mechanisms belong to the real
+          domain as hypothesized causal powers. Their activation and effects are
+          events in the actual domain, some of which may become empirically
+          observed. Adding these nodes expresses an explanatory hypothesis about
+          <em>why</em> earlier arrows might exist; it does not establish that
+          the mechanisms are present, active, or correctly specified.
         </p>
         <h3>
           <strong
-            >Critical Reflection – When to Override the Model (Meehl,
-            1973)</strong
+            >Critical Reflection – What a Richer DAG Does and Does Not
+            Justify</strong
           >
         </h3>
         <p>
@@ -813,29 +948,28 @@ TherapistExpertise -&gt; PainIntensity
             ><a href="lesson-6-beyond-data-mechanisms-and-structures.html"
               >Lesson 6</a
             ></strong
-          >, we explored Paul Meehl’s famous caution to clinicians:
+          >, we explored a caution associated with Paul Meehl:
         </p>
         <blockquote>
           <p>
             <em
-              >“Only override the model if you have causal knowledge the model
-              doesn’t.”</em
+              >Do not depart from a model merely on intuition; identify relevant
+              causes the model omits.</em
             >
           </p>
           <p>—Paul Meehl, 1973</p>
         </blockquote>
         <p>
-          Here, Meehl was talking about
-          <strong>statistical models</strong>—those based only on empirical
-          regularities. These models describe what we’ve observed, typically
-          without addressing why or how those relationships exist.
+          Statistical models and predictive rules are limited by their
+          variables, structure, target population, and assumptions. A DAG can
+          make proposed omitted causes visible, but drawing them does not turn
+          them into established causal knowledge.
         </p>
         <p>
-          In this lesson, we’ve expanded beyond that. The
-          <strong>basic DAG</strong>—linking DryNeedling to outcomes like Pain
-          Intensity or Disability—is structurally similar to a statistical
-          model. It shows us what was measured and assumed based on group-level
-          data.
+          The <strong>basic DAG</strong> links DryNeedling to measured outcomes.
+          It is already causal because each arrow asserts an effect. The later
+          graphs add possible common causes and mediating mechanisms, making
+          more assumptions explicit without validating them.
         </p>
         <p>
           But the <strong>critical realist DAG</strong> we’ve built includes:
@@ -843,10 +977,10 @@ TherapistExpertise -&gt; PainIntensity
         <ul>
           <li>
             <p>
-              Confounders and effect modifiers informed by clinical knowledge
-              (e.g., PsychologicalFactors, TherapistExpertise), that can (and
-              should) be controlled or adjusted for in the statistical analysis;
-              and
+              Candidate common causes informed by background knowledge (e.g.,
+              PsychologicalFactors, TherapistExpertise). Whether they require
+              adjustment depends on the causal question, timing, and complete
+              path structure; and
             </p>
           </li>
           <li>
@@ -857,19 +991,18 @@ TherapistExpertise -&gt; PainIntensity
           </li>
         </ul>
         <p>
-          These additions represent
-          <strong>causal knowledge the statistical model doesn’t have</strong>.
-          They’re not overrides—they’re <strong>extensions</strong>. This is
-          what Meehl would have meant by <em>justified deviation</em> from a
-          purely statistical model: adding inferences based on theory,
-          experience, and mechanistic insight.
+          These additions represent candidate causal knowledge not encoded in
+          the statistical analysis. They are proposed extensions whose sources,
+          uncertainty, alternatives, and empirical implications must be
+          examined.
         </p>
         <p>
-          In this context we’re not <em>violating</em> Meehl’s warning, we’re
-          fulfilling it. We’re acknowledging that to act responsibly as
-          clinicians and researchers, we must often go beyond the data. But we
-          must do so explicitly and transparently, with our assumptions made
-          visible, as we’ve done in each version of the DAG above.
+          The responsible move is therefore not to “override” evidence with a
+          richer story. It is to state omitted-cause hypotheses explicitly,
+          compare them with alternatives, and seek evidence that could support
+          or disconfirm them. stats4PT teaches that discovery-oriented critique;
+          integrating supported claims into a curated population model belongs
+          to Models4PT.
         </p>
         <h2><strong>V. Reflective Wrap-Up</strong></h2>
         <p>
@@ -883,12 +1016,10 @@ TherapistExpertise -&gt; PainIntensity
           <em
             >Does this variable matter? Should it be observed, inferred, or
             theorized?</em
-          >—and when applying the model to a particular person, these judgments
-          invite further questions:
-          <em
-            >Is this factor present here? Is it measurable in this case? Does it
-            operate differently given this patient’s context?</em
-          >
+          >. Determining which parts of a population model are represented as
+          operative in a particular patient is the further problem of clinical
+          instantiation, which belongs to patient-specific reasoning in the
+          Clinical Inference Engine rather than this discovery exercise.
         </p>
         <p>
           In this way, every DAG is a draft of our beliefs. It can be critiqued,
@@ -945,5 +1076,6 @@ TherapistExpertise -&gt; PainIntensity
         </nav>
       </div>
     </footer>
+    <script src="../assets/path-adjustment-lab.js"></script>
   </body>
 </html>

@@ -8,6 +8,35 @@
       name="description"
       content="Apply prior probability, diagnostic information, and posterior probability to diagnosis and prognosis."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-4-bayes-theorem-in-clinical-decision.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Bayesian Updating in Diagnosis and Prognosis | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Apply prior probability, diagnostic information, and posterior probability to diagnosis and prognosis."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-4-bayes-theorem-in-clinical-decision.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
   </head>
   <body>
@@ -282,6 +311,485 @@
           sequence 1 is the prior of thought sequence 2 which generates a new
           posterior, and so it goes.
         </p>
+        <section
+          class="diagnostic-lab"
+          data-diagnostic-updating-lab
+          aria-labelledby="diagnostic-lab-title"
+        >
+          <header class="diagnostic-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="diagnostic-lab-title">Diagnostic Updating Lab</h3>
+            <p>
+              Build the conventional diagnostic 2 × 2 table, inspect test
+              properties, and update a pretest probability after positive or
+              negative findings.
+            </p>
+          </header>
+          <p class="diagnostic-lab__caveat">
+            This is an educational model, not a clinical recommendation.
+            Accuracy estimates belong to the studied population, test procedure
+            and threshold, and reference standard.
+          </p>
+          <div
+            class="diagnostic-lab__tabs"
+            role="tablist"
+            aria-label="Choose the source of the diagnostic table"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-diagnostic-mode="properties"
+            >
+              Test properties
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-diagnostic-mode="literature"
+            >
+              Literature example
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-diagnostic-mode="raw"
+            >
+              Raw 2 × 2 data
+            </button>
+          </div>
+          <div class="diagnostic-lab__panel" data-mode-panel="properties">
+            <div class="diagnostic-lab__slider-grid">
+              <label>
+                Pretest probability
+                <strong data-diagnostic-output="priorValue">10%</strong>
+                <input
+                  type="range"
+                  min="0.1"
+                  max="99.9"
+                  step="0.1"
+                  value="10"
+                  data-property-prior
+                />
+              </label>
+              <label>
+                Sensitivity
+                <strong data-diagnostic-output="sensitivityValue">80%</strong>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="80"
+                  data-property-sensitivity
+                />
+              </label>
+              <label>
+                Specificity
+                <strong data-diagnostic-output="specificityValue">80%</strong>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="80"
+                  data-property-specificity
+                />
+              </label>
+            </div>
+          </div>
+          <div
+            class="diagnostic-lab__panel diagnostic-lab__literature"
+            data-mode-panel="literature"
+            hidden
+          >
+            <div class="diagnostic-lab__literature-controls">
+              <label>
+                Literature example
+                <select data-literature-preset>
+                  <option value="spurlingA">
+                    Spurling test A: cervical radiculopathy
+                  </option>
+                  <option value="ulttA">
+                    Upper limb tension test A: cervical radiculopathy
+                  </option>
+                  <option value="sijComposite">
+                    SIJ provocation composite: symptomatic SIJ
+                  </option>
+                </select>
+              </label>
+              <label>
+                Pretest probability
+                <strong data-diagnostic-output="literaturePriorValue"
+                  >20%</strong
+                >
+                <input
+                  type="range"
+                  min="0.1"
+                  max="99.9"
+                  step="0.1"
+                  value="20"
+                  data-literature-prior
+                />
+              </label>
+            </div>
+            <dl class="diagnostic-lab__source">
+              <div>
+                <dt>Reported accuracy</dt>
+                <dd>
+                  Sensitivity
+                  <strong data-diagnostic-output="presetSensitivity">50%</strong
+                  >; specificity
+                  <strong data-diagnostic-output="presetSpecificity"
+                    >86%</strong
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>Population</dt>
+                <dd data-diagnostic-output="presetPopulation"></dd>
+              </div>
+              <div>
+                <dt>Finding and threshold</dt>
+                <dd data-diagnostic-output="presetThreshold"></dd>
+              </div>
+              <div>
+                <dt>Reference standard</dt>
+                <dd data-diagnostic-output="presetReference"></dd>
+              </div>
+              <div>
+                <dt>Source</dt>
+                <dd>
+                  <a
+                    href="https://europepmc.org/articles/PMC2200707#Tab4"
+                    target="_blank"
+                    rel="noopener"
+                    data-preset-source-link
+                    >Wainner et al. (2003), summarized by Rubinstein et al.</a
+                  >
+                </dd>
+              </div>
+            </dl>
+            <p class="diagnostic-lab__source-note">
+              These are study estimates, not universal constants. The cervical
+              examples came from a referred cohort and used an imperfect
+              electrodiagnostic reference; the SIJ study was small and used
+              response to injection as its reference.
+            </p>
+          </div>
+          <div
+            class="diagnostic-lab__panel diagnostic-lab__raw-intro"
+            data-mode-panel="raw"
+            hidden
+          >
+            <p>
+              Enter nonnegative counts directly in cells <em>a</em> through
+              <em>d</em>. The lab calculates sensitivity, specificity,
+              likelihood ratios, predictive values, and the observed condition
+              prevalence.
+            </p>
+          </div>
+          <div class="diagnostic-lab__table-region">
+            <p class="diagnostic-lab__table-label">
+              Columns classify the condition using the study’s reference
+              standard; rows classify the finding.
+            </p>
+            <div class="diagnostic-lab__table-scroll">
+              <table class="diagnostic-lab__table">
+                <caption>
+                  Conventional diagnostic two-by-two table
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Finding</th>
+                    <th scope="col">Condition present</th>
+                    <th scope="col">Condition absent</th>
+                    <th scope="col">Row total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Finding positive</th>
+                    <td>
+                      <span class="diagnostic-lab__cell-name"
+                        ><em>a</em> · true positive</span
+                      >
+                      <strong data-table-value="a">8,000</strong>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value="80"
+                        aria-label="a, true positive count"
+                        data-raw-cell="a"
+                        hidden
+                      />
+                    </td>
+                    <td>
+                      <span class="diagnostic-lab__cell-name"
+                        ><em>b</em> · false positive</span
+                      >
+                      <strong data-table-value="b">18,000</strong>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value="180"
+                        aria-label="b, false positive count"
+                        data-raw-cell="b"
+                        hidden
+                      />
+                    </td>
+                    <td>
+                      <strong data-table-value="findingPositive">26,000</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Finding negative</th>
+                    <td>
+                      <span class="diagnostic-lab__cell-name"
+                        ><em>c</em> · false negative</span
+                      >
+                      <strong data-table-value="c">2,000</strong>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value="20"
+                        aria-label="c, false negative count"
+                        data-raw-cell="c"
+                        hidden
+                      />
+                    </td>
+                    <td>
+                      <span class="diagnostic-lab__cell-name"
+                        ><em>d</em> · true negative</span
+                      >
+                      <strong data-table-value="d">72,000</strong>
+                      <input
+                        type="number"
+                        min="0"
+                        step="1"
+                        value="720"
+                        aria-label="d, true negative count"
+                        data-raw-cell="d"
+                        hidden
+                      />
+                    </td>
+                    <td>
+                      <strong data-table-value="findingNegative">74,000</strong>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">Column total</th>
+                    <td>
+                      <strong data-table-value="conditionPresent"
+                        >10,000</strong
+                      >
+                    </td>
+                    <td>
+                      <strong data-table-value="conditionAbsent">90,000</strong>
+                    </td>
+                    <td><strong data-table-value="total">100,000</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <dl class="diagnostic-lab__metrics">
+            <div>
+              <dt>Sensitivity <span>a / (a + c)</span></dt>
+              <dd data-diagnostic-output="sensitivity">80.0%</dd>
+            </div>
+            <div>
+              <dt>Specificity <span>d / (b + d)</span></dt>
+              <dd data-diagnostic-output="specificity">80.0%</dd>
+            </div>
+            <div>
+              <dt>Positive LR <span>Sn / (1 − Sp)</span></dt>
+              <dd data-diagnostic-output="positiveLikelihoodRatio">4.00</dd>
+            </div>
+            <div>
+              <dt>Negative LR <span>(1 − Sn) / Sp</span></dt>
+              <dd data-diagnostic-output="negativeLikelihoodRatio">0.25</dd>
+            </div>
+            <div>
+              <dt>Positive predictive value <span>a / (a + b)</span></dt>
+              <dd data-diagnostic-output="positivePredictiveValue">30.8%</dd>
+            </div>
+            <div>
+              <dt>Negative predictive value <span>d / (c + d)</span></dt>
+              <dd data-diagnostic-output="negativePredictiveValue">97.3%</dd>
+            </div>
+            <div>
+              <dt>Condition prevalence <span>(a + c) / total</span></dt>
+              <dd data-diagnostic-output="prevalence">10.0%</dd>
+            </div>
+          </dl>
+          <section
+            class="diagnostic-lab__update"
+            aria-labelledby="first-update-title"
+          >
+            <div class="diagnostic-lab__update-heading">
+              <div>
+                <p class="eyebrow">First update</p>
+                <h4 id="first-update-title">Choose the observed finding</h4>
+              </div>
+              <div
+                class="diagnostic-lab__choice"
+                aria-label="First finding result"
+              >
+                <button
+                  type="button"
+                  aria-pressed="true"
+                  data-first-result="positive"
+                >
+                  Positive
+                </button>
+                <button
+                  type="button"
+                  aria-pressed="false"
+                  data-first-result="negative"
+                >
+                  Negative
+                </button>
+              </div>
+            </div>
+            <div class="diagnostic-lab__equation">
+              <span>Pretest probability</span>
+              <strong data-diagnostic-output="firstPrior">10.0%</strong>
+              <span
+                >×
+                <span data-diagnostic-output="firstResultLabel"
+                  >Positive finding</span
+                >
+                LR</span
+              >
+              <strong data-diagnostic-output="firstLikelihoodRatio"
+                >4.00</strong
+              >
+              <span>= Post-test probability</span>
+              <strong data-diagnostic-output="firstPosterior">30.8%</strong>
+            </div>
+            <div class="diagnostic-lab__probability-bar" aria-hidden="true">
+              <i
+                data-diagnostic-output="firstPosteriorBar"
+                style="width: 30.8%"
+              ></i>
+            </div>
+            <p class="diagnostic-lab__odds-note">
+              The calculation converts probability to odds, multiplies by the
+              selected likelihood ratio, then converts the resulting odds back
+              to probability.
+            </p>
+          </section>
+          <details class="diagnostic-lab__sequence">
+            <summary>Add a second finding</summary>
+            <p class="diagnostic-lab__sequence-warning">
+              Sequential multiplication is most defensible when findings add
+              distinct information. Correlated findings can double-count the
+              same evidence and overstate the update.
+            </p>
+            <div class="diagnostic-lab__second-controls">
+              <label>
+                Second-finding sensitivity
+                <strong data-diagnostic-output="secondSensitivityValue"
+                  >90%</strong
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="90"
+                  data-second-sensitivity
+                />
+              </label>
+              <label>
+                Second-finding specificity
+                <strong data-diagnostic-output="secondSpecificityValue"
+                  >70%</strong
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="70"
+                  data-second-specificity
+                />
+              </label>
+              <div
+                class="diagnostic-lab__choice"
+                aria-label="Second finding result"
+              >
+                <button
+                  type="button"
+                  aria-pressed="false"
+                  data-second-result="positive"
+                >
+                  Positive
+                </button>
+                <button
+                  type="button"
+                  aria-pressed="true"
+                  data-second-result="negative"
+                >
+                  Negative
+                </button>
+              </div>
+            </div>
+            <div class="diagnostic-lab__equation">
+              <span>New pretest probability</span>
+              <strong data-diagnostic-output="secondPrior">30.8%</strong>
+              <span
+                >×
+                <span data-diagnostic-output="secondResultLabel"
+                  >Negative second finding</span
+                >
+                LR</span
+              >
+              <strong data-diagnostic-output="secondLikelihoodRatio"
+                >0.14</strong
+              >
+              <span>= New post-test probability</span>
+              <strong data-diagnostic-output="secondPosterior">6.0%</strong>
+            </div>
+            <div class="diagnostic-lab__probability-bar" aria-hidden="true">
+              <i
+                data-diagnostic-output="secondPosteriorBar"
+                style="width: 6%"
+              ></i>
+            </div>
+          </details>
+          <div class="diagnostic-lab__footer">
+            <p>
+              Natural frequencies use a reference population of 100,000 in the
+              test-property and literature modes. Decimal counts are expected
+              values, not observed people.
+            </p>
+            <button type="button" data-diagnostic-reset>Reset activity</button>
+          </div>
+          <p
+            class="diagnostic-lab__status"
+            role="status"
+            aria-live="polite"
+            data-diagnostic-status
+          ></p>
+          <noscript>
+            <p class="diagnostic-lab__noscript">
+              Enable JavaScript to change inputs and calculate diagnostic
+              updates. The initial table shows a 10% pretest probability with
+              80% sensitivity and 80% specificity.
+            </p>
+          </noscript>
+        </section>
         <h4>Quantitative Example: Diagnosing Small Pox vs. Chicken Pox</h4>
         <p>
           In
@@ -337,17 +845,15 @@
           P(E|C): Likelihood, Probability of swelling if DVT is present
           P(Swelling|DVT)- Note that empirically this is the rate of true
           positives, the sensitivity of a symptom or sign. As a side note: the
-          +LR is the ratio of the rate of true positives / rate of false
-          positives. Therefore, a high sensitivity and high specificity (1-
-          specificity is the rate of false positives) are required for a
-          clinically meaningful +LR . And, logically, if there is a high
-          sensitivity and high specificity, there will also be a clinically
-          meaningful -LR since the -LR is the rate of false negatives / rate of
-          true negatives (which is 1-sensitivity / specificity). Also note -
-          that since the P(E|C) is simply a probability related to causation
-          (how strong is the causal linkage between C and E?), then sensitivity,
-          specificity and LRs are implicitly connected to and strongly resonant
-          of causal and Bayesian reasoning.
+          +LR is the ratio of the rate of true positives to the rate of false
+          positives: sensitivity / (1 − specificity). A high specificity often
+          drives a large +LR by making false positives uncommon. The -LR is the
+          rate of false negatives divided by the rate of true negatives: (1 −
+          sensitivity) / specificity. A high sensitivity often drives a small
+          -LR by making false negatives uncommon. Sensitivity, specificity, and
+          likelihood ratios describe discrimination relative to a reference
+          standard in a studied population; they do not, by themselves,
+          establish the causal strength of the link between C and E.
         </p>
         <p>
           P(E): Marginal probability of swelling in general (DVT or not) -
@@ -358,20 +864,22 @@
           a DVT.
         </p>
         <p>
-          P(E|C): Posterior probability - our updated belief of whether there is
+          P(C|E): Posterior probability - our updated belief of whether there is
           a DVT based on the presence of swelling. Of significant importance is
           that in the sequence of clinical reasoning, this posterior probability
           becomes the Prior Probability for the next step in the sequence.
         </p>
         <p>
-          The above process can also be performed using Fagan’s nomogram which
-          relies on an estimate of the base rate and a likelihood ratio, but
-          does not explicitly consider the base rate of swelling. However,
-          Fagan’s nomogram does not account for (at least as far as I can tell)
-          the Marginal probability. It is rather intuitive that if you rule out
-          other causes, then the cause left is more likely to be the cause. Not
-          quite the same as the famous Sherlock Holmes’ quote - but close
-          enough:
+          The above process can also be performed using Fagan’s nomogram, which
+          converts a pretest probability to pretest odds, applies a likelihood
+          ratio, and converts the result to a post-test probability. It does not
+          ask for the marginal probability of swelling as a separate input
+          because the likelihood ratio already compares how often that finding
+          occurs when DVT is present with how often it occurs when DVT is
+          absent. Ruling out plausible alternatives can still change the pretest
+          probability, but it should not be treated as proof that the remaining
+          explanation is true. This is related to, but more cautious than, the
+          famous Sherlock Holmes quote:
         </p>
         <p>
           “When you have eliminated the impossible, whatever remains, however
@@ -479,7 +987,7 @@
         <a href="lesson-3-bayesian-reasoning-for-clinical-decision.html"
           >&larr; Previous lesson</a
         >
-        <a href="lesson-4-bayesian-applications-in-research.html"
+        <a href="lesson-5-bayesian-applications-in-research.html"
           >Next lesson &rarr;</a
         >
       </nav>
@@ -498,5 +1006,6 @@
         </nav>
       </div>
     </footer>
+    <script src="../assets/diagnostic-updating-lab.js"></script>
   </body>
 </html>

@@ -8,7 +8,37 @@
       name="description"
       content="Distinguish association from causation and examine events, mechanisms, and context in clinical research."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-2-understanding-causality-in-clinical.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Causality: From Association to Explanation | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Distinguish association from causation and examine events, mechanisms, and context in clinical research."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-2-understanding-causality-in-clinical.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="../assets/causality-labs.js" defer></script>
   </head>
   <body>
     <header class="container lesson-header">
@@ -92,6 +122,126 @@
           understanding, we risk discarding potentially valuable interventions
           prematurely.
         </p>
+        <section
+          class="causal-lab causal-lab--mechanism"
+          data-mechanism-lab
+          aria-labelledby="mechanism-lab-title"
+        >
+          <header class="causal-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="mechanism-lab-title">Mechanism and Context Lab</h3>
+            <p>
+              Explore a stipulated teaching model in which an intervention has
+              an effect only when a relevant mechanism and supportive context
+              are both present.
+            </p>
+          </header>
+          <noscript>
+            <p class="causal-lab__caveat">
+              Without the simulation, compare two hypothetical populations in
+              which the relevant mechanism is present in 30% versus 80% of
+              patients. Consider how the overall average could change even if
+              the effect among responsive patients remained the same.
+            </p>
+          </noscript>
+          <p class="causal-lab__caveat">
+            This hypothetical model is not evidence that traction works or that
+            any particular mechanism explains its effects.
+          </p>
+          <div class="causal-lab__slider-grid">
+            <label>
+              Mechanism present in population
+              <strong data-prevalence-value>30%</strong>
+              <input
+                type="range"
+                min="10"
+                max="90"
+                step="5"
+                value="30"
+                data-mechanism-prevalence
+              />
+            </label>
+            <label>
+              Context supports activation
+              <strong data-context-value>70%</strong>
+              <input
+                type="range"
+                min="10"
+                max="100"
+                step="5"
+                value="70"
+                data-context-support
+              />
+            </label>
+            <label>
+              Effect when mechanism activates
+              <strong data-effect-value>4 points</strong>
+              <input
+                type="range"
+                min="1"
+                max="5"
+                step="0.5"
+                value="4"
+                data-activated-effect
+              />
+            </label>
+          </div>
+          <div class="causal-lab__body">
+            <div
+              class="causal-lab__cohort"
+              data-mechanism-cohort
+              role="img"
+            ></div>
+            <p class="causal-lab__legend" aria-hidden="true">
+              <span class="causal-lab__person--activated"></span> Mechanism
+              activated
+              <span class="causal-lab__person--responsive"></span> Responsive
+              conditions, comparison group
+              <span class="causal-lab__person--treated"></span> Treated without
+              activation
+            </p>
+            <dl class="causal-lab__metrics">
+              <div>
+                <dt>Treated improvement</dt>
+                <dd data-mechanism-metric="treated"></dd>
+              </div>
+              <div>
+                <dt>Comparison improvement</dt>
+                <dd data-mechanism-metric="comparison"></dd>
+              </div>
+              <div>
+                <dt>Mechanism activated</dt>
+                <dd data-mechanism-metric="activated"></dd>
+              </div>
+            </dl>
+            <div class="causal-lab__effect-chart">
+              <div>
+                <span>Overall average effect</span>
+                <i data-effect-bar="overall"></i>
+                <strong data-mechanism-metric="overall"></strong>
+              </div>
+              <div>
+                <span>Responsive subgroup effect</span>
+                <i data-effect-bar="responsive"></i>
+                <strong data-mechanism-metric="responsive"></strong>
+              </div>
+              <div>
+                <span>Other patients' effect</span>
+                <i data-effect-bar="nonresponsive"></i>
+                <strong data-mechanism-metric="nonresponsive"></strong>
+              </div>
+            </div>
+            <button type="button" data-rerun-cohort>
+              Generate another cohort
+            </button>
+            <p class="causal-lab__reflection" data-mechanism-interpretation></p>
+          </div>
+          <p
+            class="causal-lab__status"
+            data-mechanism-status
+            aria-live="polite"
+          ></p>
+        </section>
         <h3>Bhaskar’s Domains: Expanding Our Understanding of Causality</h3>
         <p>
           When thinking about causality, it’s essential to recognize that the
@@ -121,6 +271,39 @@
             </p>
           </li>
         </ul>
+        <section
+          class="causal-lab causal-lab--sort"
+          data-domain-sort
+          aria-labelledby="domain-sort-title"
+        >
+          <header class="causal-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="domain-sort-title">Bhaskar Domain Sort</h3>
+            <p>
+              Choose the domain that best captures what each statement
+              emphasizes. Read the explanation before moving on.
+            </p>
+          </header>
+          <noscript>
+            <p class="causal-lab__caveat">
+              This classification activity requires JavaScript. The domain
+              definitions above provide the complete conceptual content.
+            </p>
+          </noscript>
+          <div class="causal-lab__body">
+            <div class="causal-lab__sort-grid" data-domain-items></div>
+            <div class="causal-lab__sort-footer">
+              <strong data-domain-progress>0 of 6 classified</strong>
+              <button type="button" data-domain-reset>Reset</button>
+            </div>
+            <p class="causal-lab__reflection" data-domain-summary hidden></p>
+          </div>
+          <p
+            class="causal-lab__status"
+            data-domain-status
+            aria-live="polite"
+          ></p>
+        </section>
         <p>
           In outcomes-based research, the focus often remains on the
           <strong>Empirical domain</strong>, while variables in the
@@ -227,10 +410,10 @@
         </ul>
         <p>
           These approaches provide critical insights into the
-          <strong>Actual domain</strong> (mechanisms driving outcomes) and the
-          <strong>Real domain</strong> (structures shaping those mechanisms),
-          enabling researchers to incorporate these insights into causal models
-          and study designs.
+          <strong>Actual domain</strong> (events and processes whether observed
+          or not) and the <strong>Real domain</strong> (mechanisms and
+          structures with causal powers), enabling researchers to incorporate
+          these insights into causal models and study designs.
         </p>
         <h4>Thoughtful Study Design in Clinical Research</h4>
         <p>
@@ -302,9 +485,10 @@
         <ul>
           <li>
             <p>
-              <strong>Hypothesis Testing:</strong> Allows researchers to
-              determine whether an observed effect is likely due to chance or a
-              causal relationship.
+              <strong>Hypothesis Testing:</strong> Quantifies how compatible an
+              observed result is with a specified null model and its
+              assumptions. It does not, by itself, distinguish a causal
+              relationship from alternative explanations.
             </p>
           </li>
           <li>
@@ -393,31 +577,13 @@
           </li>
           <li>
             <p>
-              <strong>Latent Variables:</strong> Latent variables, in contrast,
-              do not directly bias results but represent unobserved factors that
-              influence outcomes. Their presence often:
+              <strong>Latent Variables:</strong> A latent variable is
+              represented in a model but not observed directly. "Latent"
+              describes its measurement status, not its causal role. Depending
+              on the causal structure, a latent variable may confound, mediate,
+              modify, or add unexplained variation to an association. A causal
+              model is needed to state which role is being proposed.
             </p>
-            <ul>
-              <li>
-                <p>
-                  Increases apparent randomness or noise in the data, making it
-                  harder to detect strong cause-effect relationships.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Reduces the <strong>strength of association</strong> in
-                  statistical analysis, complicating causal inference.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Introduces uncertainty when applying findings to individual
-                  patients, as unobserved factors may vary across individuals
-                  and contexts.
-                </p>
-              </li>
-            </ul>
           </li>
         </ul>
         <h4>The Role of Causal Models</h4>
@@ -1010,29 +1176,41 @@
           </li>
           <li>
             <p>
-              <strong>Models4PT:</strong> This forthcoming tool aims to expand
-              on causal reasoning by integrating variables from Bhaskar’s
-              <strong>Empirical, Actual, and Real domains </strong>(among other
-              expansions). Models4PT will enable clinicians and researchers to
-              create, share, and refine causal models collaboratively, bridging
-              the gap between evidence and individualized care. Creating an open
-              source repository of models and the tools necessary to create,
-              share, refine and integrate. It is in development and I’m hoping
-              to have a beta version by end of March 2025 for use by clinical
-              inquiry fellows and PSU DPT students. It's development is only
-              possible due to the GNU Open Source Licensing of DAGitty. At a
-              minimum, it will allow interested individuals to create, share,
-              refine and integrate models as part of a PT focused repository
-              (which has been a goal of mine since 2014 - - it’s about time I
-              work on it!).
+              <strong>Models4PT:</strong> Models4PT is an open research platform
+              for building, curating, integrating, and maintaining computable
+              population-level causal knowledge in physical therapy and
+              rehabilitation science. Its intended product is not a collection
+              of diagrams, but a curated knowledge repository that keeps
+              concepts, measurements, mechanisms, causal claims, evidence,
+              assumptions, provenance, uncertainty, disagreement, and human
+              review connected. Question-specific causal models and diagrams
+              will be assembled as views of that shared knowledge. Models4PT is
+              currently in an early research and software-design stage, with a
+              tested initial domain model rather than a deployable platform. It
+              does not perform patient-specific diagnosis, prognosis, treatment
+              recommendation, or clinical reasoning; those responsibilities
+              belong to the separate Clinical Inference Engine.
             </p>
             <ul>
               <li>
                 <p>
-                  Models4PT:
+                  Models4PT project and source:
                   <a href="https://github.com/scollinspt/Models4PT"
                     >https://github.com/scollinspt/Models4PT</a
                   >
+                </p>
+              </li>
+              <li>
+                <p>
+                  Temporary interactive resource:
+                  <a
+                    href="https://chatgpt.com/g/g-679ca6a74500819194951cd65f1256bc-models4pt"
+                    >Models4PT GPT</a
+                  >. This OpenAI GPT offers an interim way to explore Models4PT
+                  ideas while the platform is being developed. It is not the
+                  Models4PT knowledge repository or software platform, and its
+                  output should be treated as candidate content requiring human
+                  scientific review.
                 </p>
               </li>
             </ul>
@@ -1045,9 +1223,9 @@
           While research often focuses on the
           <strong>Empirical domain</strong> (what we can observe), understanding
           causality requires incorporating the
-          <strong>Actual domain</strong> (mechanisms) and the
-          <strong>Real domain</strong> (structures). This expanded perspective
-          helps clinicians and researchers:
+          <strong>Actual domain</strong> (events whether observed or not) and
+          the <strong>Real domain</strong> (mechanisms, structures, and causal
+          powers). This expanded perspective helps clinicians and researchers:
         </p>
         <ul>
           <li><p>Move beyond "what works" to uncover "why it works."</p></li>
@@ -1226,10 +1404,11 @@
                   <li>
                     <p>
                       <strong>Randomized Controlled Trials (RCTs):</strong> The
-                      causal model assumes that randomization eliminates
-                      confounding by balancing unmeasured variables between
-                      groups, allowing the focus to be on the relationship
-                      between the intervention and the outcome.
+                      causal model uses randomization to balance measured and
+                      unmeasured causes between groups in expectation.
+                      Randomization strengthens causal inference but does not
+                      guarantee balance in a particular study or remove problems
+                      such as nonadherence, missing data, or measurement error.
                     </p>
                   </li>
                   <li>
@@ -1420,6 +1599,131 @@
             >
           </p>
         </blockquote>
+        <section
+          class="causal-lab causal-lab--inference"
+          data-inference-lab
+          aria-labelledby="inference-lab-title"
+        >
+          <header class="causal-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="inference-lab-title">Causal Inference Lab</h3>
+            <p>
+              Hold the observations constant while considering different causal
+              explanations, then strengthen the design to see which claims
+              become better distinguished.
+            </p>
+          </header>
+          <noscript>
+            <p class="causal-lab__caveat">
+              Without the activity, use the study abstract below to list at
+              least four explanations for pre-post improvement, then identify
+              which additional study design feature could distinguish each
+              explanation.
+            </p>
+          </noscript>
+          <p class="causal-lab__caveat">
+            These illustrative patient scores are invented for this activity;
+            they are not participant-level data from the published study.
+          </p>
+          <div class="causal-lab__body">
+            <section aria-labelledby="observed-result-title">
+              <h4 id="observed-result-title">One observed result</h4>
+              <div
+                class="causal-lab__observed-chart"
+                data-observed-chart
+                role="img"
+              ></div>
+              <p class="causal-lab__score-legend" aria-hidden="true">
+                <span></span> Before <span></span> After
+              </p>
+              <dl class="causal-lab__metrics">
+                <div>
+                  <dt>Mean before</dt>
+                  <dd data-before-mean></dd>
+                </div>
+                <div>
+                  <dt>Mean after</dt>
+                  <dd data-after-mean></dd>
+                </div>
+                <div>
+                  <dt>Mean improvement</dt>
+                  <dd data-change-mean></dd>
+                </div>
+              </dl>
+            </section>
+            <section
+              class="causal-lab__world"
+              aria-labelledby="possible-world-title"
+            >
+              <h4 id="possible-world-title">Several compatible explanations</h4>
+              <label>
+                Possible causal world
+                <select data-causal-world>
+                  <option value="breathing">Breathing-specific effect</option>
+                  <option value="conventional">Conventional PT effect</option>
+                  <option value="recovery">
+                    Natural history and regression
+                  </option>
+                  <option value="expectation">
+                    Expectation and measurement
+                  </option>
+                  <option value="mixed">Multiple contingent causes</option>
+                </select>
+              </label>
+              <div class="causal-lab__world-explanation">
+                <strong data-world-title></strong>
+                <p data-world-pathway></p>
+              </div>
+              <p class="causal-lab__reflection">
+                Changing the explanation does not change the observed data. A
+                single-group pre-post design cannot distinguish among these
+                worlds by itself.
+              </p>
+            </section>
+            <fieldset class="causal-lab__design-builder">
+              <legend>Strengthen the study design</legend>
+              <label>
+                <input type="checkbox" data-design-feature="comparison" />
+                Add a concurrent comparison group
+              </label>
+              <label>
+                <input type="checkbox" data-design-feature="randomization" />
+                Randomly assign participants
+              </label>
+              <label>
+                <input type="checkbox" data-design-feature="separateArms" />
+                Separate breathing and conventional PT arms
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  data-design-feature="mechanismMeasurement"
+                />
+                Measure the proposed mechanism over time
+              </label>
+              <label>
+                <input type="checkbox" data-design-feature="followUp" />
+                Add longer-term follow-up
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  data-design-feature="trackCointerventions"
+                />
+                Track concurrent treatments
+              </label>
+            </fieldset>
+            <section aria-labelledby="claims-title">
+              <h4 id="claims-title">Claims this design can support</h4>
+              <div class="causal-lab__claims" data-design-claims></div>
+            </section>
+          </div>
+          <p
+            class="causal-lab__status"
+            data-inference-status
+            aria-live="polite"
+          ></p>
+        </section>
         <p>
           Here is a DAG based on this study. It is based on the empirical
           variables measured in the study upon which statistical tools were
@@ -1588,8 +1892,10 @@
               </li>
               <li>
                 <p>
-                  Mechanisms in the Actual domain, such as enhanced
-                  diaphragmatic efficiency, explain the observed improvements.
+                  Candidate mechanisms in the Real domain, such as enhanced
+                  diaphragmatic efficiency, could contribute to the observed
+                  improvements. This study did not measure or distinguish those
+                  mechanisms.
                 </p>
               </li>
             </ul>
@@ -1662,18 +1968,20 @@
         <div><hr /></div>
         <h4>Implications for the Causal Model</h4>
         <p>
-          The causal model supports the study’s findings and provides a
-          framework for interpreting the observed relationships:
+          The causal model makes assumptions visible alongside the study’s
+          findings and provides a framework for identifying relationships that
+          remain to be investigated:
         </p>
         <ol>
           <li>
-            <p><strong>Mechanisms in the Actual Domain</strong>:</p>
+            <p><strong>Candidate Mechanisms in the Real Domain</strong>:</p>
             <ul>
               <li>
                 <p>
-                  Improved chest expansion and FEV1 suggest enhanced
-                  diaphragmatic and respiratory muscle efficiency, mechanisms
-                  inferred as latent variables.
+                  Improved chest expansion and FEV1 are compatible with proposed
+                  changes in diaphragmatic or respiratory muscle efficiency, but
+                  those mechanisms were not directly measured and cannot be
+                  inferred from the pre-post association alone.
                 </p>
               </li>
             </ul>

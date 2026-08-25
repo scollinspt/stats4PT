@@ -10,6 +10,35 @@
       name="description"
       content="Use Bayesian reasoning to update beliefs under uncertainty while keeping causal assumptions distinct from probability."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-3-bayesian-reasoning-for-clinical-decision.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Bayesian Reasoning: Updating Beliefs Under Uncertainty | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Use Bayesian reasoning to update beliefs under uncertainty while keeping causal assumptions distinct from probability."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-3-bayesian-reasoning-for-clinical-decision.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
   </head>
   <body>
@@ -186,16 +215,20 @@
         </p>
         <p>
           P(E|X): means the probability of E given X, whether X is a cause or
-          condition (C), a hypothesis (H) or a disease or disorder (D). What is
-          meant by the “|” (given) is basically a conditional (an implication if
-          you’re logically inclined: “IF X occurs (or has occurred) then the
-          probability of E occurring is….
+          condition (C), a hypothesis (H), or a disease or disorder (D). The
+          vertical bar means “given” or “conditional on”: restrict attention to
+          situations in which X holds, then ask how often or how plausibly E
+          occurs. This is not the same as the logical implication X → E. An
+          implication asserts a truth-functional relationship; a conditional
+          probability can take any value from 0 to 1.
         </p>
         <p>
-          In traditional (classical, standard, propositional) logic - these
-          probabilities are all treated as 0 (certainly not true) or 1
-          (certainly true). To say an event is not true is to say the event
-          didn’t to doesn’t occur.
+          Traditional classical propositional logic is bivalent: a proposition
+          is assigned one of two truth values, true or false. In Boolean
+          notation those truth values can be represented as 1 and 0, but they
+          are not probabilities. Probability provides room between certainty and
+          impossibility by representing uncertainty about propositions or events
+          on a scale from 0 to 1.
         </p>
         <p>
           Bayes’ Theorem, describes how to update our beliefs when new
@@ -250,6 +283,172 @@
             </p>
           </li>
         </ol>
+        <section
+          class="bayes-lab"
+          data-bayesian-updating-lab
+          aria-labelledby="bayesian-updating-lab-title"
+        >
+          <header class="bayes-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="bayesian-updating-lab-title">Bayesian Updating Lab</h3>
+            <p>
+              Hold the evidence properties constant while comparing two
+              populations. The counts show exactly where each posterior comes
+              from.
+            </p>
+          </header>
+          <div class="bayes-lab__controls">
+            <label>
+              Prior in World A
+              <strong data-bayes-output="firstPriorValue">10%</strong>
+              <input
+                data-first-prior
+                type="range"
+                min="0.1"
+                max="90"
+                step="0.1"
+                value="10"
+              />
+            </label>
+            <label>
+              Prior in World B
+              <strong data-bayes-output="secondPriorValue">50%</strong>
+              <input
+                data-second-prior
+                type="range"
+                min="0.1"
+                max="90"
+                step="0.1"
+                value="50"
+              />
+            </label>
+            <label>
+              P(E|H): evidence when H holds
+              <strong data-bayes-output="evidenceGivenHypothesisValue"
+                >80%</strong
+              >
+              <input
+                data-evidence-given-hypothesis
+                type="range"
+                min="1"
+                max="100"
+                step="1"
+                value="80"
+              />
+            </label>
+            <label>
+              P(E|not H): evidence when H does not hold
+              <strong data-bayes-output="evidenceWithoutHypothesisValue"
+                >20%</strong
+              >
+              <input
+                data-evidence-without-hypothesis
+                type="range"
+                min="0"
+                max="100"
+                step="1"
+                value="20"
+              />
+            </label>
+          </div>
+          <p class="bayes-lab__ratio">
+            The evidence has a positive likelihood ratio of
+            <strong data-bayes-output="likelihoodRatio">4.0</strong>.
+          </p>
+          <div class="bayes-lab__worlds">
+            <article class="bayes-lab__world">
+              <h4>World A</h4>
+              <p>
+                Prior probability:
+                <strong data-bayes-output="firstPrior">10.0%</strong>
+              </p>
+              <dl class="bayes-lab__counts">
+                <div>
+                  <dt>Cases where H holds</dt>
+                  <dd data-bayes-output="firstHypothesis">10,000</dd>
+                </div>
+                <div>
+                  <dt>E observed when H holds</dt>
+                  <dd data-bayes-output="firstTrueEvidence">8,000</dd>
+                </div>
+                <div>
+                  <dt>E observed when H does not hold</dt>
+                  <dd data-bayes-output="firstAlternativeEvidence">18,000</dd>
+                </div>
+                <div>
+                  <dt>All cases where E is observed</dt>
+                  <dd data-bayes-output="firstEvidence">26,000</dd>
+                </div>
+              </dl>
+              <div class="bayes-lab__posterior">
+                <span>Posterior P(H|E)</span>
+                <strong data-bayes-output="firstPosterior">30.8%</strong>
+                <div aria-hidden="true">
+                  <i data-bayes-output="firstBar"></i>
+                </div>
+              </div>
+            </article>
+            <article class="bayes-lab__world">
+              <h4>World B</h4>
+              <p>
+                Prior probability:
+                <strong data-bayes-output="secondPrior">50.0%</strong>
+              </p>
+              <dl class="bayes-lab__counts">
+                <div>
+                  <dt>Cases where H holds</dt>
+                  <dd data-bayes-output="secondHypothesis">50,000</dd>
+                </div>
+                <div>
+                  <dt>E observed when H holds</dt>
+                  <dd data-bayes-output="secondTrueEvidence">40,000</dd>
+                </div>
+                <div>
+                  <dt>E observed when H does not hold</dt>
+                  <dd data-bayes-output="secondAlternativeEvidence">10,000</dd>
+                </div>
+                <div>
+                  <dt>All cases where E is observed</dt>
+                  <dd data-bayes-output="secondEvidence">50,000</dd>
+                </div>
+              </dl>
+              <div class="bayes-lab__posterior">
+                <span>Posterior P(H|E)</span>
+                <strong data-bayes-output="secondPosterior">80.0%</strong>
+                <div aria-hidden="true">
+                  <i data-bayes-output="secondBar"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p
+            class="bayes-lab__interpretation"
+            data-bayes-output="interpretation"
+          >
+            The evidence is 4.0 times as likely when H holds as when H does not
+            hold. Because that evidence is identical in both worlds, the
+            different posteriors come from the different priors.
+          </p>
+          <p class="bayes-lab__method">
+            Expected natural frequencies per 100,000 cases are shown. These are
+            transparent consequences of the selected assumptions, not patient-
+            specific predictions or evidence that H causes E.
+          </p>
+          <p class="bayes-lab__status" data-bayes-status aria-live="polite"></p>
+          <noscript>
+            <p class="bayes-lab__method">
+              Enable JavaScript to change the assumptions and compare posterior
+              probabilities.
+            </p>
+          </noscript>
+        </section>
+        <p>
+          Here, H and E remain general: H is a hypothesis that may or may not
+          hold, and E is observed evidence. In Lesson 4’s diagnostic framing, H
+          can represent a condition and E a finding. The same structure then
+          expands into the familiar 2 × 2 table used to define sensitivity,
+          specificity, and likelihood ratios.
+        </p>
         <h3>From Hypothesis and Evidence to Cause and Effect</h3>
         <p>
           The concepts for which we use Bayes’ theorem are flexible - in fact
@@ -268,10 +467,15 @@
           of the cause, and divided by the effect.
         </p>
         <p>
-          You may remember me saying either here, or in a course, that rare
-          signs (deservedly) get our attention. Notice, if a sign is rare then
-          P(E) is low, keeping all else equal dividing by a smaller number tends
-          to increase the P(C|E).
+          You may remember me saying either here, or in a course, that genuinely
+          rare signs deserve our attention. A low marginal probability P(E)
+          places a small denominator in Bayes’ theorem and, all else equal, can
+          produce a substantial posterior shift. The important qualification is
+          discrimination: the finding must be much more likely when C is present
+          than when C is absent. Because P(E) includes the finding among people
+          with C and among alternative explanations, a finding that is equally
+          rare under both does not favor C. The lab above makes that distinction
+          visible through P(E|C), P(E|not C), and their likelihood ratio.
         </p>
         <h3>
           Why This Matters for Statistical Inference and Clinical Reasoning
@@ -736,7 +940,7 @@
         <a href="lesson-2-understanding-causality-in-clinical.html"
           >&larr; Previous lesson</a
         >
-        <a href="lesson-5-bayes-theorem-in-clinical-decision.html"
+        <a href="lesson-4-bayes-theorem-in-clinical-decision.html"
           >Next lesson &rarr;</a
         >
       </nav>
@@ -755,5 +959,6 @@
         </nav>
       </div>
     </footer>
+    <script src="../assets/bayesian-updating-lab.js"></script>
   </body>
 </html>

@@ -102,6 +102,11 @@ this context?**
 
 It should consume curated population knowledge without collapsing population
 estimates into automatic diagnoses, prognoses, or treatment recommendations.
+Clinical instantiation—the recursive construction of a provisional
+patient-specific explanatory model from generic causal knowledge and evidence
+about a particular patient—therefore belongs here. A future educational app or
+game for constructing and revising instantiated models should be built from the
+Clinical Inference Engine rather than embedded in stats4PT.
 
 ## Integration rules
 

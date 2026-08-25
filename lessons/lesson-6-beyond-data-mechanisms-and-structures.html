@@ -6,7 +6,36 @@
     <title>When Does Population Evidence Apply? | stats4PT</title>
     <meta
       name="description"
-      content="Evaluate when population evidence applies by examining context, transportability, mechanisms, and omitted causes."
+      content="Distinguish transportability from clinical instantiation when reasoning from population evidence, mechanisms, context, and patient-specific evidence."
+    />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-6-beyond-data-mechanisms-and-structures.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="When Does Population Evidence Apply? | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Distinguish transportability from clinical instantiation when reasoning from population evidence, mechanisms, context, and patient-specific evidence."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-6-beyond-data-mechanisms-and-structures.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
     />
     <link rel="stylesheet" href="../assets/styles.css" />
   </head>
@@ -27,6 +56,10 @@
               relevant to a particular clinical question.
             </li>
             <li>
+              Distinguish transporting evidence to another population or setting
+              from instantiating a patient-specific explanatory model.
+            </li>
+            <li>
               Distinguish observed outcomes, events, and generative mechanisms
               using Bhaskar's domains.
             </li>
@@ -39,11 +72,12 @@
               permission to override evidence by intuition alone.
             </li>
           </ul>
-          <p><strong>Estimated time:</strong> 30-40 minutes</p>
+          <p><strong>Estimated time:</strong> 35-45 minutes</p>
           <p><strong>Prerequisite:</strong> Lesson 5</p>
           <p>
             <strong>Key terms:</strong> applicability, transportability,
-            mechanism, context, effect heterogeneity, external validity
+            clinical instantiation, generic causal model, instantiated causal
+            model, mechanism, context, effect heterogeneity, external validity
           </p>
         </section>
         <p>
@@ -173,6 +207,178 @@
           intervention itself—or from the model’s failure to recognize why that
           intervention might work in a given case?
         </p>
+        <section
+          class="applicability-lab"
+          data-applicability-lab
+          aria-labelledby="applicability-lab-title"
+        >
+          <header class="applicability-lab__header">
+            <p class="eyebrow">Interactive activity</p>
+            <h3 id="applicability-lab-title">
+              Population-to-Context Transportability Lab
+            </h3>
+            <p>
+              Compare source evidence with a target context, then decide whether
+              each difference has a warranted reason to change the expected
+              effect.
+            </p>
+          </header>
+          <p class="applicability-lab__caveat">
+            This activity evaluates the warrant for transporting a study result
+            to another population, subgroup, or service context. It does not
+            construct an explanatory model of an individual patient and
+            therefore does not perform clinical instantiation. A plausible
+            mechanism identifies a hypothesis to test; it does not by itself
+            override outcome evidence.
+          </p>
+          <div class="applicability-lab__scenario-control">
+            <label>
+              Evidence scenario
+              <select data-applicability-scenario>
+                <option value="heartFailure">Heart failure training</option>
+                <option value="traction">
+                  Traction and compressive sensitivity
+                </option>
+                <option value="tendonLoading">
+                  Progressive tendon loading
+                </option>
+              </select>
+            </label>
+            <button type="button" data-applicability-reset>
+              Reset activity
+            </button>
+          </div>
+          <div class="applicability-lab__comparison">
+            <article>
+              <p class="eyebrow">Source evidence</p>
+              <h4>What the study supports</h4>
+              <p data-applicability-study></p>
+            </article>
+            <article>
+              <p class="eyebrow">Target context</p>
+              <h4>Where we want to transport it</h4>
+              <p data-applicability-target></p>
+            </article>
+          </div>
+          <div class="applicability-lab__instructions">
+            <h4>Audit transportability</h4>
+            <p>
+              First classify the study-target relationship. Then judge the
+              evidence that the difference would modify the effect. A difference
+              is not automatically an effect modifier.
+            </p>
+          </div>
+          <div data-applicability-dimensions></div>
+          <div class="applicability-lab__actions">
+            <button type="button" data-applicability-check>
+              Check reasoning
+            </button>
+            <p>
+              The resulting warrant follows your selections. Feedback then
+              compares them with the information supplied in the scenario.
+            </p>
+          </div>
+          <section
+            class="applicability-lab__result"
+            data-applicability-result
+            aria-live="polite"
+            hidden
+          >
+            <p class="eyebrow">Transportability warrant</p>
+            <h4 data-applicability-result-label></h4>
+            <p data-applicability-result-explanation></p>
+          </section>
+          <div class="applicability-lab__questions">
+            <h4>Questions to carry forward</h4>
+            <ul>
+              <li>
+                Which judgment describes a target difference, and which one
+                claims that the difference changes the effect?
+              </li>
+              <li>
+                What observation or study would turn a plausible mechanism into
+                a supported effect modifier?
+              </li>
+              <li>
+                Does the proposed adaptation preserve the intervention that
+                generated the source evidence?
+              </li>
+            </ul>
+          </div>
+          <noscript>
+            <p class="applicability-lab__noscript">
+              JavaScript is unavailable. For each scenario, compare the
+              population, intervention, outcome, setting, and mechanism. Mark
+              whether each is aligned, uncertain, or materially different, then
+              ask whether the difference is measured, externally supported,
+              merely plausible, or outside the source evidence.
+            </p>
+          </noscript>
+          <p
+            class="applicability-lab__status"
+            data-applicability-status
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
+        <h2>From Transportability to Clinical Instantiation</h2>
+        <p>
+          The activity stops at a population or setting boundary.
+          <strong>Transportability</strong> asks whether evidence generated in a
+          source population or setting warrants an inference about a different
+          target population or setting. Differences in eligibility, baseline
+          risk, intervention delivery, outcomes, context, and effect modifiers
+          can all limit that inference.
+        </p>
+        <p>
+          Reasoning about one particular patient introduces a different problem.
+          In
+          <a href="https://philpapers.org/rec/COLFPK"
+            ><em
+              >From Population Knowledge to Patient Reasoning: Instantiation and
+              Dynamic Clinical Inquiry</em
+            ></a
+          >, Collins calls this representational transformation
+          <strong>clinical instantiation</strong>. Scientific knowledge provides
+          a generic causal model: a fallible representation of mechanisms,
+          relationships, interventions, and uncertainty across a class of
+          possible cases. Patient-specific evidence then constrains which parts
+          of that representational space are hypothesized to be operative in one
+          patient at a particular time.
+        </p>
+        <p>
+          The result is an <strong>instantiated causal model</strong>: the
+          clinician's provisional explanatory representation of the patient, not
+          the patient's causal reality itself. Instantiation does not make a
+          mechanism operative and does not infer an individual conclusion
+          directly from an average effect. It represents, fallibly, which
+          scientifically supported causal possibilities may explain the current
+          presentation.
+        </p>
+        <p>
+          <strong
+            >Generic causal model + patient-specific evidence &rarr;
+            instantiated causal model</strong
+          >
+        </p>
+        <p>
+          This distinction locates the lab in a longer reasoning sequence. A
+          transportability audit helps determine which population findings and
+          causal relationships remain relevant resources. Clinical instantiation
+          then combines those generic resources with evidence from the
+          particular patient to construct an explanatory representation.
+          Bayesian updating, mechanistic reasoning, prediction, and decision
+          making can operate within that representation, but they do not remove
+          its provisional character.
+        </p>
+        <p>
+          Clinical inquiry is dynamic because the representation must change as
+          the patient and the evidence change. History, examination, testing,
+          intervention, and reassessment generate new evidence. That evidence
+          can support, refine, or overturn the current model, producing a
+          successive instantiation rather than a final description of the
+          patient.
+        </p>
         <h2>The Mechanistic Middle: Where Our Judgment Lives</h2>
         <p>Let’s take a step deeper.</p>
         <p>
@@ -257,7 +463,10 @@
           complex systems. But more importantly, she identifies an applicative
           role: mechanisms help clinicians judge when population-level findings
           apply to individual patients. This is where mechanisms earn their
-          keep—not in prediction, but in translation.
+          keep—not in prediction, but in translation. In the terminology
+          introduced above, that applicative role contributes to clinical
+          instantiation by helping constrain which generative mechanisms are
+          represented as plausibly operative in the patient.
         </p>
         <p>That’s the real work of reasoning in rehab.</p>
         <p>
@@ -462,6 +671,12 @@
           still need to be examined.
         </p>
         <p>
+          Questioning transportability is therefore not yet a patient-specific
+          explanation. Clinical instantiation requires the further,
+          evidence-constrained construction of a provisional model of which
+          causal processes are hypothesized to be operative in this patient now.
+        </p>
+        <p>
           That is clinical expertise: knowing when the model applies, and when
           the phenomenon demands something more.
         </p>
@@ -582,7 +797,7 @@
         </div>
       </article>
       <nav class="lesson-nav" aria-label="Lesson navigation">
-        <a href="lesson-4-bayesian-applications-in-research.html"
+        <a href="lesson-5-bayesian-applications-in-research.html"
           >&larr; Previous lesson</a
         >
         <a href="lesson-7-practical-applications-building-a.html"
@@ -604,5 +819,6 @@
         </nav>
       </div>
     </footer>
+    <script src="../assets/applicability-lab.js"></script>
   </body>
 </html>

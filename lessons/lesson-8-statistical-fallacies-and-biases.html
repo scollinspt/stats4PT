@@ -10,6 +10,35 @@
       name="description"
       content="Recognize statistical fallacies, cognitive biases, and causal illusions in clinical research and experience."
     />
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/lessons/lesson-8-statistical-fallacies-and-biases.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="stats4PT" />
+    <meta
+      property="og:title"
+      content="Statistical Fallacies and Biases in Clinical Research | stats4PT"
+    />
+    <meta
+      property="og:description"
+      content="Recognize statistical fallacies, cognitive biases, and causal illusions in clinical research and experience."
+    />
+    <meta
+      property="og:url"
+      content="https://stats4pt.org/lessons/lesson-8-statistical-fallacies-and-biases.html"
+    />
+    <meta
+      property="og:image"
+      content="https://stats4pt.org/img/Stats4PT_long.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="3169" />
+    <meta property="og:image:height" content="734" />
+    <meta
+      property="og:image:alt"
+      content="stats4PT logo with overlapping statistical distributions"
+    />
     <link rel="stylesheet" href="../assets/styles.css" />
   </head>
   <body>
@@ -29,6 +58,11 @@
               causal illusions in research and clinical experience.
             </li>
             <li>
+              Distinguish statistical error, study bias, causal fallacy,
+              cognitive bias, and narrative persuasion when several threaten the
+              same claim.
+            </li>
+            <li>
               Explain how design choices affect internal validity, external
               validity, and vulnerability to bias.
             </li>
@@ -41,7 +75,7 @@
               evaluating a scientific claim.
             </li>
           </ul>
-          <p><strong>Estimated time:</strong> 35-45 minutes</p>
+          <p><strong>Estimated time:</strong> 45-60 minutes</p>
           <p><strong>Prerequisite:</strong> Lesson 7</p>
           <p>
             <strong>Key terms:</strong> bias, confounding, causal illusion,
@@ -69,7 +103,7 @@
           persistently mislead us, even when the statistics seem sound. These
           are not just “errors in math”, they are errors in meaning.
         </p>
-        <h3>The Spectrum of Study Designs: Control vs. Context</h3>
+        <h3>Study Designs Answer Different Questions</h3>
         <p>
           Before we explore specific fallacies, it’s important to zoom out and
           consider the landscape in which they occur. Not all clinical studies
@@ -78,38 +112,39 @@
           care.
         </p>
         <p>
-          There’s a spectrum of clinical study designs that stretches from
-          highly controlled to deeply contextual:
+          Clinical study designs differ in the questions they can answer, the
+          assumptions they require, and the biases to which they are vulnerable.
+          They do not occupy a single continuum from causal rigor to real-world
+          relevance:
         </p>
         <ul>
           <li>
             <p>
-              At one end, Randomized Controlled Trials (RCTs) aim to minimize
-              bias through strict randomization, blinding, and control. They’re
-              engineered for causal clarity, but often sacrifice ecological
-              validity. These studies tell us if something can work under ideal
-              and very closed (isolated) conditions. As such they require lots
-              of assumptions when entering, such as applying results, in (to) an
-              open (real) system context.
+              Randomized controlled trials use random assignment to make
+              treatment groups exchangeable in expectation. Explanatory trials
+              may emphasize tightly specified conditions, while pragmatic trials
+              may be conducted in routine care. Randomization does not prevent
+              attrition, nonadherence, measurement problems, selective
+              reporting, or limited transportability.
             </p>
           </li>
           <li>
             <p>
-              In the middle are observational studies, where data is collected
-              from real-world settings without intervention. They offer richer
-              context. More variation, comorbidities, and practice patterns, but
-              invite more ambiguity. Without randomization, we must wrestle with
-              confounding, selection bias, and the illusion of control.
+              Observational studies investigate exposures without random
+              assignment. They can represent varied populations and settings or
+              highly selected ones. Causal interpretation requires explicit
+              assumptions about confounding, selection, measurement, timing, and
+              the analysis used to address them.
             </p>
           </li>
           <li>
             <p>
-              At the other end lie case reports and case series. These are the
-              raw stories of clinical life. Narrative-rich, emotionally salient,
-              and highly specific. They capture what it’s like to be a
-              practitioner or a patient. But they are also the natural habitat
-              of cognitive bias: they are especially vulnerable to post hoc
-              reasoning, confirmation bias, and causal coherence illusions.
+              Case reports and case series provide detailed observations about
+              unusual or informative events. Without a concurrent comparison,
+              they usually cannot distinguish treatment effects from natural
+              history, regression to the mean, cointerventions, expectations, or
+              measurement change. Their detail is valuable, but detail alone
+              does not identify a cause.
             </p>
           </li>
         </ul>
@@ -202,101 +237,64 @@
         </div>
         <p>Here’s the core lesson:</p>
         <p>
-          As we move from RCTs to case reports, we gain context but lose
-          control. We gain realism, but we invite fallacy.
+          Changing design changes the inferential task. A pragmatic randomized
+          trial can have substantial contextual relevance; an observational
+          dataset can be highly restricted; and a detailed case can reveal a
+          signal without estimating a treatment effect.
         </p>
         <p>
           None of these designs is “wrong.” Each serves a purpose. But each
           amplifies different risks, and those risks must be understood if we
           are to interpret findings with epistemic care.
         </p>
-        <p>
-          This spectrum is not just methodological. It mirrors the tension
-          between two core values in evidence-based practice:
-        </p>
+        <p>Good appraisal therefore asks two separate questions:</p>
         <ul>
-          <li><p>The desire for causal clarity, and</p></li>
-          <li><p>The need for contextual relevance.</p></li>
+          <li>
+            <p>What claim can this design identify under its assumptions?</p>
+          </li>
+          <li>
+            <p>
+              To which population, intervention, outcome, and setting might that
+              claim transport?
+            </p>
+          </li>
         </ul>
         <p>
-          It is precisely in this tension that many statistical and cognitive
-          fallacies thrive.
+          Confusing those questions creates fertile ground for statistical,
+          causal, and narrative errors.
         </p>
-        <h3>The Illusion of Causality: Three Faces of the Fallacy</h3>
+        <h3>Where an Error Enters the Inquiry</h3>
         <p>
-          The illusion of causality does not arise from thin air. It emerges
-          from the structure of our research, the way we interpret data, and the
-          stories we tell ourselves and others. Each of these illusions is
-          shaped and magnified differently across the spectrum of study designs.
+          One useful dimension is <em>where</em> a problem enters. It may enter
+          through study design and conduct, through interpretation of an
+          otherwise sound result, or through unstructured learning from
+          experience. This dimension is different from the <em>kind</em> of
+          problem involved. Selection bias is a study bias; confounding
+          threatens a causal contrast; multiplicity is a statistical problem;
+          and confirmation bias is cognitive. Several can occur in the same
+          claim.
         </p>
-        <h4>Illusions Embedded in Study Design</h4>
+        <h4>Design and Conduct</h4>
         <p>
-          Some illusions are baked into the very architecture of research. When
-          a study appears to show a treatment works, its design might silently
-          introduce bias, especially if the controls for confounding or temporal
-          sequence are weak.
+          Eligibility, treatment assignment, follow-up, measurement, analysis,
+          and reporting determine which comparisons are available and whether
+          they remain credible. Randomization addresses baseline treatment
+          assignment; it does not repair every later source of bias.
         </p>
+        <h4>Interpretation</h4>
         <p>
-          These illusions are more likely to surface as we move away from
-          randomized control and toward more naturalistic or open-system
-          research designs:
+          A well-estimated result can still be exaggerated by treating
+          statistical significance as practical importance, ignoring base rates,
+          reversing causal direction, overlooking uncertainty, or transporting
+          the estimate beyond the population and setting it supports.
         </p>
-        <h5>Post Hoc Ergo Propter Hoc</h5>
+        <h4>Experience and Narrative</h4>
         <p>
-          Mistaking temporal succession for causation, especially in
-          before/after studies or case series and definitely in clinical
-          practice and patient stories.
-        </p>
-        <h5>Confounding Bias</h5>
-        <p>
-          Arises when a third factor explains both the “cause” and “effect.”
-          This is especially problematic in observational studies lacking
-          randomization, or when randomization doesn’t work well or there are
-          other study design flaws.
-        </p>
-        <h5>Over reliance on Randomization</h5>
-        <p>
-          Assuming that randomization alone guarantees causal validity, ignoring
-          the need for mechanistic understanding or consideration of external
-          validity. This fallacy can obscure contextual or biological complexity
-          even in well-conducted RCTs. “Statistical associations in RCTs often
-          lack causal depth. A treatment may appear effective on average, but
-          without investigating underlying mechanisms, we risk mistaking
-          correlation for causation.” Anjum et al., Rethinking Causality
-        </p>
-        <h4>Illusions Arising in Interpretation</h4>
-        <p>
-          Even when studies are well-designed, they can be misread or
-          misrepresented. These interpretive fallacies often stem not from the
-          data itself, but from how we frame or consume it. This is particularly
-          true under pressure to translate findings into clinical action.
-        </p>
-        <p>
-          These are common in observational studies and RCTs alike, but become
-          more acute when results are reduced to headlines, p-values, or
-          overconfident summaries.
-        </p>
-        <h5>Magnitude Fallacy</h5>
-        <p>
-          Treating statistical significance as if it were clinical significance.
-        </p>
-        <h5>Base Rate Neglect</h5>
-        <p>
-          Ignoring the prior probability or incidence of an event when
-          interpreting predictive values.
-        </p>
-        <h5>Reverse Causality</h5>
-        <p>
-          Misjudging the direction of cause and effect, a common trap in
-          observational data where temporal relationships are unclear or
-          unmeasured.
-        </p>
-        <h4>Personal Experience as a Source of Causal Belief</h4>
-        <p>
-          The most pervasive illusions arise not from published research, but
-          from firsthand experience. These are the “felt truths” that clinicians
-          and patients derive from their day-to-day encounters: emotionally
-          resonant, cognitively sticky, and often misleading.
+          Firsthand experience can detect patterns and generate hypotheses, but
+          it does not provide its own counterfactual comparison. Temporal
+          sequence, vivid outcomes, repeated action, and a coherent story can
+          produce strong causal belief even when alternative explanations remain
+          compatible with what was observed.
         </p>
         <p>
           These illusions dominate at the case report and anecdotal level, where
@@ -312,30 +310,32 @@
           </li>
         </ul>
         <p>
-          These are examples of personal induction, our natural tendency to
+          These are examples of personal induction: the natural tendency to
           extract causal meaning from co-occurrence, especially when outcomes
-          are emotionally or socially reinforced.
+          are emotionally or socially reinforced. Such observations can begin
+          inquiry, but their causal interpretation requires structured
+          comparison and attempts to discriminate among alternatives.
         </p>
         <p>
           These stories are powerful because they feel true, and because they’re
           rarely subject to structured scrutiny.
         </p>
         <p>
-          These illusions are structured patterns of reasoning that surface
-          repeatedly across clinical studies and practice. Below, we organize
-          them into statistical, cognitive, and narrative categories, each with
-          characteristic vulnerabilities and strategies for resistance.
+          The categories below classify what kind of inferential problem is
+          present. They are not mutually exclusive and should not be treated as
+          a one-label taxonomy.
         </p>
         <h3>Core Fallacies and Biases in Clinical Research</h3>
         <p>
-          Below we categorize fallacies and biases into three domains:
-          statistical, cognitive, and narrative.
+          Below we distinguish statistical errors, study biases, causal
+          fallacies, cognitive biases, and narrative errors.
         </p>
         <h4>Statistical Fallacies</h4>
-        <h5>Multiple Comparisons Bias</h5>
+        <h5>Multiplicity and Selective Emphasis</h5>
         <p>
-          What it is: The risk of finding at least one statistically significant
-          result purely by chance when multiple hypotheses are tested.
+          What it is: Testing many hypotheses increases the probability of at
+          least one false-positive result when error rates are not addressed.
+          Selectively emphasizing favorable analyses adds a reporting problem.
         </p>
         <p>
           When to look for it: Any study reporting many outcomes, subgroup
@@ -383,6 +383,76 @@
             </p>
           </li>
         </ul>
+        <h5>Statistical Significance as Practical Importance</h5>
+        <p>
+          What it is: Treating evidence against a null value as evidence that
+          the estimated effect is large, precise, patient-relevant, or worth its
+          costs and harms.
+        </p>
+        <p>
+          How to guard against it: Examine the effect estimate, compatibility or
+          credible interval, meaningful-effect threshold, outcome validity, and
+          consequences rather than the p-value alone.
+        </p>
+        <h5>Base-Rate Neglect</h5>
+        <p>
+          What it is: Ignoring prior probability or prevalence when interpreting
+          predictive values or posterior probabilities.
+        </p>
+        <p>
+          How to guard against it: Translate sensitivity, specificity, and
+          likelihood ratios through a relevant pre-evidence probability, as in
+          Lesson 4.
+        </p>
+        <h4>Study Biases</h4>
+        <h5>Selection and Attrition Bias</h5>
+        <p>
+          Selection bias occurs when inclusion or analysis depends on variables
+          that distort the target comparison. Attrition can create selection
+          bias when loss to follow-up differs in ways related to treatment and
+          outcome. Compare who enters, remains, and is analyzed across groups.
+        </p>
+        <h5>Measurement and Detection Bias</h5>
+        <p>
+          Measurement error becomes bias when variables are measured
+          systematically differently across groups or relevant states. Awareness
+          of treatment, unequal assessment, changing instruments, and
+          differential outcome surveillance can all distort estimates.
+        </p>
+        <h5>Performance and Co-intervention Bias</h5>
+        <p>
+          Groups may receive different attention, concurrent treatment, or
+          implementation beyond the intervention being compared. Blinding,
+          protocol monitoring, and transparent reporting help evaluate these
+          differences but do not guarantee their absence.
+        </p>
+        <h4>Causal Fallacies</h4>
+        <h5>Post Hoc Ergo Propter Hoc</h5>
+        <p>
+          What it is: Inferring that X caused Y because Y followed X. Natural
+          history, regression to the mean, cointerventions, expectations, and
+          measurement change may remain compatible with the sequence.
+        </p>
+        <h5>Confounding</h5>
+        <p>
+          What it is: An open noncausal path creates an association between
+          exposure and outcome. A DAG can state the assumed structure; design
+          and an appropriate adjustment set are needed to address it.
+        </p>
+        <h5>Reverse Causality</h5>
+        <p>
+          What it is: Attributing X as a cause of Y when Y causes X, or when
+          timing is insufficient to distinguish the direction. Longitudinal
+          measurement helps establish temporal order but does not resolve every
+          causal ambiguity.
+        </p>
+        <h5>Collider and Overadjustment Bias</h5>
+        <p>
+          Conditioning on a collider can open a noncausal path. Conditioning on
+          a mediator can remove part of the total effect. Variable inclusion
+          should follow the causal question and graph rather than a rule to
+          control every available covariate.
+        </p>
         <h4>Cognitive Biases</h4>
         <h5>Confirmation Bias</h5>
         <p>
@@ -451,7 +521,12 @@
               causation.
             </p>
           </li>
-          <li><p>Apply Hill’s criteria to evaluate causal claims.</p></li>
+          <li>
+            <p>
+              Use causal diagrams and structured causal considerations to expose
+              the assumptions behind the claim.
+            </p>
+          </li>
           <li>
             <p>
               Ask: What other explanations are consistent with this sequence?
@@ -512,29 +587,31 @@
             al., 2015
           </p>
         </blockquote>
-        <h3>Integrating CR-GCMs to Recognize and Resist Fallacies</h3>
+        <h3>Using Critical Realist Models to Expose Assumptions</h3>
         <p>
-          Critical Realist Graphical Causal Models (CR-GCMs) help identify where
-          fallacies take root:
+          A Critical Realist Graphical Causal Model (CR-GCM) can distinguish
+          what was observed from the events and causal powers proposed to
+          explain it. That distinction makes assumptions available for
+          criticism, but a more detailed graph is not automatically less biased
+          or more accurate:
         </p>
         <ul>
           <li>
             <p>
-              Empirical Domain: Where illusions are observed, e.g., improved
-              pain scores after intervention.
+              Empirical domain: experiences and measurements, such as a recorded
+              pain score after intervention.
             </p>
           </li>
           <li>
             <p>
-              Actual Domain: Where real mechanisms may (or may not) operate,
-              e.g., neuromuscular adaptation.
+              Actual domain: events that occur whether or not they are observed,
+              such as participation in loading or a change in motor behavior.
             </p>
           </li>
           <li>
             <p>
-              Real Domain: Underlying causal structures, e.g., biological
-              plasticity, social behavior norms, that may not be directly
-              observed but exert real generative effects
+              Real domain: mechanisms and structures with causal powers, such as
+              adaptive capacity, social constraints, and learning processes.
             </p>
           </li>
         </ul>
@@ -626,22 +703,24 @@
           </figure>
         </div>
         <p>
-          By explicitly modeling unobserved mechanisms and structures, CR-GCMs
-          move beyond surface correlations to causal depth, guarding against
-          both statistical and narrative illusions.
+          Explicitly modeling proposed mechanisms can reveal where a causal
+          explanation depends on background knowledge rather than the study’s
+          observations. It can also create a more persuasive but unsupported
+          story. The protection comes from provenance, alternatives, empirical
+          implications, and criticism—not from causal depth alone.
         </p>
         <p>
-          Here is a full Critical Realist Graphical Causal Model (CR-GCM)
-          visualizing:
+          Here is one proposed Critical Realist Graphical Causal Model (CR-GCM)
+          that distinguishes:
         </p>
         <ul>
-          <li><p>Empirical variables (what is observed and tested),</p></li>
+          <li><p>Empirical measurements and experiences,</p></li>
           <li>
-            <p>Actual-level processes (mechanisms mediating the effects),</p>
+            <p>Actual events and processes that may occur, and</p>
           </li>
           <li>
             <p>
-              Real-level structures (deep causal influences and conditions).
+              Real mechanisms and structures proposed to generate those events.
             </p>
           </li>
         </ul>
@@ -745,6 +824,124 @@
           but what exists is not determined by whether a particular study
           observes it.
         </p>
+        <section
+          class="claim-audit"
+          data-causal-claim-audit
+          aria-labelledby="claim-audit-title"
+        >
+          <header class="claim-audit__header">
+            <p class="eyebrow">Interactive capstone</p>
+            <h3 id="claim-audit-title">Causal Claim Audit</h3>
+            <p>
+              Separate observations from claims, identify overlapping threats,
+              and choose evidence that could distinguish the live explanations.
+            </p>
+          </header>
+          <p class="claim-audit__caveat">
+            Real claims can fail in more than one way. Select every threat
+            supported by the scenario rather than forcing one label, then revise
+            the conclusion to match what the design can identify.
+          </p>
+          <div class="claim-audit__scenario">
+            <label>
+              Claim scenario
+              <select data-audit-scenario>
+                <option value="prepost">Improvement after treatment</option>
+                <option value="multiplicity">One favorable result</option>
+                <option value="confounding">
+                  Treatment chosen in practice
+                </option>
+                <option value="selection">
+                  Analysis of follow-up completers
+                </option>
+                <option value="outcomeDensity">
+                  A treatment that usually works
+                </option>
+              </select>
+            </label>
+            <button type="button" data-audit-reset>Reset audit</button>
+          </div>
+          <div class="claim-audit__evidence">
+            <article>
+              <p class="eyebrow">Design and observation</p>
+              <p data-audit-design></p>
+            </article>
+            <article>
+              <p class="eyebrow">Claim under review</p>
+              <p data-audit-claim></p>
+            </article>
+          </div>
+          <fieldset class="claim-audit__step">
+            <legend><span>1</span> Identify every supported threat</legend>
+            <p>
+              Categories may overlap. Do not select a threat unless the scenario
+              gives a reason for it.
+            </p>
+            <div class="claim-audit__threats" data-audit-threats></div>
+          </fieldset>
+          <fieldset class="claim-audit__step">
+            <legend><span>2</span> Choose the warranted conclusion</legend>
+            <div class="claim-audit__warrants" data-audit-warrants></div>
+          </fieldset>
+          <fieldset class="claim-audit__step">
+            <legend>
+              <span>3</span> Choose the most discriminating next step
+            </legend>
+            <label class="claim-audit__next-step">
+              Evidence or design response
+              <select data-audit-next-step></select>
+            </label>
+          </fieldset>
+          <div class="claim-audit__actions">
+            <button type="button" data-audit-check>Check claim audit</button>
+            <p>
+              Feedback evaluates the complete threat set, the strength of the
+              rewritten claim, and whether the next step addresses the live
+              alternatives.
+            </p>
+          </div>
+          <section
+            class="claim-audit__feedback"
+            data-audit-feedback
+            aria-live="polite"
+            hidden
+          >
+            <p class="eyebrow">Audit feedback</p>
+            <h4 data-audit-feedback-heading></h4>
+            <p data-audit-feedback-body></p>
+          </section>
+          <div class="claim-audit__questions">
+            <h4>Capstone habits</h4>
+            <ul>
+              <li>
+                Describe the observation before evaluating the explanation.
+              </li>
+              <li>
+                Keep statistical error, design bias, causal structure,
+                cognition, and narrative distinct even when they overlap.
+              </li>
+              <li>
+                Prefer new evidence that discriminates among explanations over
+                evidence that merely makes one story more vivid.
+              </li>
+            </ul>
+          </div>
+          <noscript>
+            <p class="claim-audit__noscript">
+              JavaScript is unavailable. For each example, write down what was
+              observed, the additional causal claim, every compatible threat, a
+              conclusion no stronger than the design supports, and the next
+              observation or comparison most likely to distinguish the live
+              explanations.
+            </p>
+          </noscript>
+          <p
+            class="claim-audit__status"
+            data-audit-status
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
         <h3>Debiasing Strategies for Clinicians and Researchers</h3>
         <ol>
           <li>
@@ -761,10 +958,11 @@
           </li>
           <li>
             <p>
-              Check Against Hill’s Criteria: Use structured frameworks like
-              Hill’s to assess whether associations might reflect true
-              causation. While not definitive, they prompt attention to key
-              dimensions:
+              Use Bradford Hill’s considerations carefully: They are prompts for
+              examining an association, not a checklist that establishes
+              causation. Temporality is necessary for a cause to produce an
+              effect; the other considerations can strengthen or weaken an
+              argument without being individually necessary or sufficient:
             </p>
             <ol>
               <li><p>Temporality: Did the cause precede the effect?</p></li>
@@ -794,8 +992,9 @@
           </li>
           <li>
             <p>
-              Engage in Critical Realist Review: Evaluate evidence across
-              empirical, actual, and real domains.
+              Use Critical Realist Review: Distinguish observations, events, and
+              proposed mechanisms while asking what evidence supports each
+              representational claim.
             </p>
           </li>
           <li>
@@ -808,14 +1007,14 @@
         </ol>
         <h3>Conclusion</h3>
         <p>
-          The final lesson in Stats4PT reveals that the greatest threat to
-          scientific reasoning is not poor statistics, but seductive stories and
-          cognitive illusions in studies and experiences. It is not enough to
-          know how to calculate; we must know how not to believe too quickly.
+          Scientific claims can fail through statistical error, biased design or
+          conduct, unsupported causal inference, cognitive bias, and persuasive
+          narrative. Calculation matters, but so does knowing what a design can
+          identify and what alternatives remain compatible with the evidence.
         </p>
         <p>
-          Understanding and resisting illusions of causality is essential for
-          truly evidence-based, and person-centered practice.
+          Recognizing these failure modes is essential to discovery that remains
+          open to correction.
         </p>
         <blockquote>
           <p>
@@ -870,12 +1069,24 @@
           persistent fallacies are shields. Sometimes, to see clearly is to feel
           vulnerable.
         </p>
+        <aside class="lesson-boundary">
+          <h3>Where critique goes next</h3>
+          <p>
+            stats4PT teaches how to identify threats to evidence and causal
+            claims. Models4PT performs the separate integrative work of curating
+            population-level causal knowledge with its provenance, uncertainty,
+            alternatives, and disagreement visible. The Clinical Inference
+            Engine uses such generic knowledge with individual evidence for
+            patient-specific instantiation and practice reasoning. No one layer
+            makes the others immune to bias.
+          </p>
+        </aside>
         <h3>Carry the Method Forward</h3>
         <p>
           The course began with observations and the claims we build from them.
           It then separated association from causation, made uncertainty
-          explicit through Bayesian updating, examined the difficult move from
-          populations to individuals, and used DAGs to expose causal
+          explicit through Bayesian updating, distinguished transportability
+          from patient-specific instantiation, and used DAGs to expose causal
           assumptions. This final lesson adds the discipline of looking for the
           ways every one of those steps can fail.
         </p>
@@ -909,5 +1120,6 @@
         </nav>
       </div>
     </footer>
+    <script src="../assets/causal-claim-audit.js"></script>
   </body>
 </html>
