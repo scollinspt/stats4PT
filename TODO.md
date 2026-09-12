@@ -2,6 +2,13 @@
 
 ## Next session
 
+- [ ] Build the one-hour Clinical Inquiry I presentation, "Causal Models: From
+      What We Know to What We Think Is Happening," as a standalone classroom
+      resource. Use the verified heart failure/NMES artifacts from Models4PT,
+      explicitly reference the Clinical Inference Engine preprint on clinical
+      instantiation, and follow the teaching, sourcing, accessibility, and
+      validation requirements in
+      `docs/CAUSAL_MODELS_PRESENTATION_PLAN.md`.
 - [ ] Replace the contact email addresses across stats4PT with Sean's personal
       email address.
 
