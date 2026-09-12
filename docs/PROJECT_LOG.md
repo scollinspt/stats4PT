@@ -42,8 +42,25 @@
 - Generated and inspected a 16-page Letter-landscape PDF; corrected print-only
   responsive stacking so the title, DAG, instantiation equation, and closing
   synthesis render without clipping.
-- Verified the slide 1 download link returns the 968,168-byte PDF as
-  `application/pdf` and is omitted from the printed artifact.
+- Verified the attribution does not overlap the controls or cause horizontal
+  overflow at 1,440 x 900 or 390 x 844, and that all five final-slide resource
+  links use protected new-tab behavior.
+- Regenerated and inspected the 16-page PDF with attribution on every page and
+  no footer-only extra page.
+- Verified the live slide 1 download link returns the 995,505-byte PDF as
+  `application/pdf`.
+
+### Release
+
+- Presentation release commit: `3a4f663be423baaa1fbe9def8df5ac7bbe3097c7`
+  (`Add causal models clinical reasoning presentation`).
+- Attribution update commit: `e0940037de24e463ad6a894e95047961a6fbf2a9`
+  (`Add presentation author attribution`).
+- Branch: `main`.
+- GitHub Pages workflow run: `34709306683` (`success`).
+- GitHub Pages deployment: `6412592266` (`success`).
+- Published presentation:
+  <https://stats4pt.org/presentations/causal-models-clinical-reasoning.html>.
 
 ### Next priority
 
