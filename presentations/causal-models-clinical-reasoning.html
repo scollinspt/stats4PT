@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A Clinical Inquiry I classroom presentation about causal knowledge representation and patient-specific reasoning."
+    />
+    <meta name="theme-color" content="#17242b" />
+    <title>Causal Models | stats4PT Classroom Presentation</title>
+    <link
+      rel="canonical"
+      href="https://stats4pt.org/presentations/causal-models-clinical-reasoning.html"
+    />
+    <link rel="stylesheet" href="../assets/presentation-causal-models.css" />
+    <script src="../assets/presentation-causal-models.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#slide-1">Skip to presentation</a>
+
+    <header class="presentation-header">
+      <a class="presentation-brand" href="../index.html" aria-label="stats4PT home">
+        <span>stats4PT</span>
+        <small>Classroom presentation</small>
+      </a>
+      <div class="presentation-progress" aria-hidden="true">
+        <span id="progress-bar"></span>
+      </div>
+      <div class="presentation-status" aria-live="polite" aria-atomic="true">
+        <span id="slide-counter">1 / 16</span>
+      </div>
+    </header>
+
+    <main id="presentation" class="presentation" tabindex="-1">
+      <section class="slide slide--title" id="slide-1" data-title="Causal Models" tabindex="-1">
+        <div class="slide__content title-layout">
+          <div>
+            <p class="slide-kicker">Clinical Inquiry I · 2026</p>
+            <h1>Causal Models</h1>
+            <p class="title-question">
+              Representing population knowledge and reasoning about an individual patient
+            </p>
+            <p class="subtitle">From what we know to what we think is happening</p>
+            <a class="presentation-download" href="causal-models-clinical-reasoning.pdf" download>
+              <span aria-hidden="true">↓</span> Download PDF
+            </a>
+          </div>
+          <div class="title-mark" aria-hidden="true">
+            <span>population</span>
+            <i></i>
+            <span>patient</span>
+          </div>
+        </div>
+        <aside class="presenter-notes">
+          Open by naming the transition, not the technology. The hour asks how causal
+          knowledge becomes useful for reasoning about one person without pretending that
+          a population model determines the answer.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-2" data-title="Same outcome, same cause?" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Opening problem</p>
+          <h2>Same outcome. Same cause?</h2>
+          <div class="patient-compare patient-compare--opening">
+            <article>
+              <span class="patient-label">Patient A</span>
+              <strong>Reduced six-minute walk distance</strong>
+              <p>Marked quadriceps weakness. Stable cardiovascular response. Preserved balance.</p>
+            </article>
+            <div class="same-result" aria-label="Same measured result">
+              <span>same measured result</span>
+              <b>6MWD ↓</b>
+            </div>
+            <article>
+              <span class="patient-label">Patient B</span>
+              <strong>Reduced six-minute walk distance</strong>
+              <p>Adequate isolated strength. Early dyspnea. Abnormal exertional response.</p>
+            </article>
+          </div>
+          <p class="prompt">Would you expect the same explanation or the same intervention?</p>
+        </div>
+        <aside class="presenter-notes">
+          Ask for a show of hands before revealing details. Let students name why an outcome
+          measure does not identify the pathway that produced it. Do not resolve the case yet.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-3" data-title="What you already bring" tabindex="-1">
+        <div class="slide__content">
+          <h2>What you already bring</h2>
+          <div class="prior-knowledge">
+            <div><b>Claims</b><span>An association is not, by itself, evidence of causation.</span></div>
+            <div><b>Conditions</b><span>Causes operate through mechanisms and within contexts.</span></div>
+            <div><b>Reality</b><span>What we observe does not exhaust what occurs or what can generate events.</span></div>
+            <div><b>Models</b><span>Every analysis presupposes some account of the causal structure.</span></div>
+          </div>
+          <p class="case-return"><b>Back to the opening problem:</b> the same 6MWD invites different counterfactuals.</p>
+          <div class="counterfactual-examples">
+            <article>
+              <span>Patient A</span>
+              <p>Had quadriceps weakness been absent, would the 6MWD still have been reduced?</p>
+            </article>
+            <article>
+              <span>Patient B</span>
+              <p>Had exertional dyspnea been absent, would the 6MWD still have been reduced?</p>
+            </article>
+            <article>
+              <span>Same intervention?</span>
+              <p>Had each patient received strengthening, would each patient have improved?</p>
+            </article>
+          </div>
+          <p class="counterfactual-reminder">
+            A counterfactual evaluates a specified causal contrast. The observed outcome alone
+            does not tell us which contrast is clinically relevant.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          Ask students to explain one tile to a neighbor, then return explicitly to Patients A and
+          B. Invite them to propose one more counterfactual for either patient. Emphasize that a
+          counterfactual can estimate the effect of a specified contrast, but selecting a useful
+          contrast requires a causal account of the patient's limitation. Hill's considerations
+          belong under causal claims; Bhaskar's Empirical, Actual, and Real domains support the
+          distinction between observations and causal reality.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-4" data-title="What remains unresolved" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">The population-to-patient problem</p>
+          <h2>What remains unresolved?</h2>
+          <div class="shared-model-flow">
+            <article class="shared-model-flow__research">
+              <span>Sample → population</span>
+              <h3>Research builds the model</h3>
+              <p>Accumulating studies slowly expand and revise how well it represents population knowledge.</p>
+            </article>
+            <div class="model-relationship model-relationship--build" aria-label="Research primarily builds and revises the causal model">
+              <b>builds</b><i aria-hidden="true">→</i><small>revises</small>
+            </div>
+            <figure class="critical-realist-model" aria-label="A causal model organized across empirical, actual, and real domains">
+              <div class="critical-realist-model__network" aria-hidden="true">
+                <svg viewBox="0 0 300 110">
+                  <defs>
+                    <marker id="causal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 0 L 10 5 L 0 10 z"></path>
+                    </marker>
+                  </defs>
+                  <g class="model-graph-edges">
+                    <line x1="43" y1="23" x2="140" y2="37"></line>
+                    <line x1="43" y1="53" x2="140" y2="40"></line>
+                    <line x1="43" y1="57" x2="140" y2="70"></line>
+                    <line x1="43" y1="87" x2="140" y2="73"></line>
+                    <line x1="167" y1="40" x2="257" y2="53"></line>
+                    <line x1="167" y1="70" x2="257" y2="57"></line>
+                  </g>
+                  <g class="model-graph-nodes">
+                    <circle cx="30" cy="21" r="13"></circle><text x="30" y="21">1</text>
+                    <circle cx="30" cy="55" r="13"></circle><text x="30" y="55">2</text>
+                    <circle cx="30" cy="89" r="13"></circle><text x="30" y="89">3</text>
+                    <circle cx="154" cy="38" r="13"></circle><text x="154" y="38">4</text>
+                    <circle cx="154" cy="72" r="13"></circle><text x="154" y="72">5</text>
+                    <circle cx="270" cy="55" r="13"></circle><text x="270" y="55">6</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="critical-realist-model__domains">
+                <span><b>Empirical</b>observed events</span>
+                <span><b>Actual</b>operative mechanisms</span>
+                <span><b>Real</b>generative mechanisms</span>
+              </div>
+              <figcaption>Representative causal model of current knowledge</figcaption>
+            </figure>
+            <div class="model-relationship model-relationship--use" aria-label="Patient reasoning primarily uses the causal model and may also revise it">
+              <b>uses</b><i aria-hidden="true">→</i><small>findings may revise ←</small>
+            </div>
+            <article class="shared-model-flow__patient">
+              <span>Population → patient</span>
+              <h3>Clinical reasoning uses the model</h3>
+              <p>Patient evidence constrains which represented mechanisms could be operative now.</p>
+              <strong>Still unknown: which causal configuration is operative in this patient?</strong>
+            </article>
+          </div>
+          <p class="prompt">
+            Both sides can modify the same model. Research primarily builds it; clinical
+            reasoning primarily uses it.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          This is the new problem for today. Sample-based research accumulates slowly into a
+          representative causal model of population knowledge. A critical realist model reaches
+          beyond observed empirical events toward operative and generative mechanisms. Clinical
+          reasoning uses that same model to interpret a patient's evidence. Patient findings can
+          expose anomalies and motivate revision, but they do not by themselves establish a
+          population claim. Return briefly to Patients A and B from slide 2.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-5" data-title="Today's next step" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Today's next step</p>
+          <h2>From observations to causal diagrams to patient-specific explanation</h2>
+          <div class="next-step-grid">
+            <article>
+              <span>Population knowledge</span>
+              <h3>Models4PT</h3>
+              <p>
+                Represents causal claims together with mechanisms, evidence, context,
+                provenance, uncertainty, and disagreement.
+              </p>
+            </article>
+            <i aria-hidden="true">→</i>
+            <article>
+              <span>Patient reasoning</span>
+              <h3>Clinical instantiation</h3>
+              <p>
+                Uses generic causal knowledge and current patient evidence to construct a
+                provisional patient-specific explanation.
+              </p>
+            </article>
+          </div>
+          <p class="boundary-statement">
+            The causal model represents population knowledge that constrains patient reasoning. It
+            does not determine the answer.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          Preview the destination without defining every term yet. Models4PT addresses knowledge
+          representation; the Clinical Inference Engine addresses reasoning about a particular
+          patient. Slides 8–13 develop this distinction.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-6" data-title="The 2015 diagram" tabindex="-1">
+        <div class="slide__content image-slide">
+          <div class="image-slide__heading">
+            <div>
+              <p class="slide-kicker">Historical foundation</p>
+              <h2>Clinical inquiry diagram</h2>
+            </div>
+            <p class="discussion-prompt">How should knowledge move between research and practice?</p>
+          </div>
+          <figure class="historical-image">
+            <img
+              src="../img/presentations/2015-clinical-inquiry-curriculum.png"
+              alt="Clinical inquiry curriculum diagram showing facts and observations moving by induction to universals, causal models connecting universals with particulars, and deduction and abduction linking particulars with practice, all within overlapping knowledge-development and practice domains."
+            />
+            <figcaption>
+              Plymouth State DPT clinical inquiry curriculum materials, 2015.
+              Image provided by the course author.
+            </figcaption>
+          </figure>
+        </div>
+        <aside class="presenter-notes">
+          Show the image without interpretation first. Ask students where research ends and
+          clinical inquiry begins. Name a limitation of the 2015 diagram: it does not depict
+          clearly enough how observations, patterns, and anomalies from practice generate
+          candidate claims and questions that research can structure for population inference.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-7" data-title="Particulars and universals" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Reading the 2015 logic</p>
+          <h2>Clinical inquiry moves between particulars and universals</h2>
+          <div class="inquiry-flow" aria-label="Flow from observations to causal networks and back to a patient">
+            <div><span>particulars</span><strong>observations</strong></div>
+            <i>→</i>
+            <div><span>scientific inquiry</span><strong>research + statistics</strong></div>
+            <i>→</i>
+            <div class="inquiry-flow__universal"><span>universals</span><strong>population causal knowledge</strong></div>
+            <i>→</i>
+            <div><span>clinical reasoning</span><strong>this patient</strong></div>
+          </div>
+          <div class="reasoning-modes">
+            <p><b>Induction</b><span>particular observations → general claims</span></p>
+            <p><b>Deduction</b><span>general knowledge → expected findings</span></p>
+            <p><b>Abduction</b><span>findings → best current explanation</span></p>
+          </div>
+          <div class="return-flow">
+            <strong>Practice to research</strong><span>clinical experience</span><i>→</i><span>patterns + anomalies</span><i>→</i><span>candidate claims + questions</span><i>→</i><span>structured research</span><i>→</i><span>population knowledge</span>
+          </div>
+          <p class="purpose-distinction">
+            A clinical encounter may be structured for patient care. Clinical experience as a
+            whole is not structured to support population inference.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          Use clinical inquiry for the entire process represented on this slide: clinically
+          relevant observations and questions move through scientific inquiry, population
+          knowledge representation, and clinical reasoning, with experience in practice feeding
+          new questions back toward research. Scientific inquiry builds generalizable knowledge;
+          clinical reasoning uses that knowledge for a particular patient. The Clinical Inference
+          Engine supports clinical reasoning. It is not itself the whole of clinical inquiry.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-8" data-title="Structured claims" tabindex="-1">
+        <div class="slide__content split-layout split-layout--model">
+          <div>
+            <p class="slide-kicker">Generic causal model</p>
+            <h2>A model is a structured set of claims</h2>
+            <blockquote>
+              An epistemological representation of the causal structure believed to
+              characterize a class of systems or patients.
+            </blockquote>
+            <p class="source-line">Adapted from Collins, 2026 preprint</p>
+          </div>
+          <div class="model-anatomy-panel">
+            <dl class="model-anatomy">
+              <div><dt>Nodes</dt><dd>variables or concepts selected for the purpose</dd></div>
+              <div><dt>Arrows</dt><dd>candidate claims about causal direction or influence</dd></div>
+              <div><dt>Paths</dt><dd>possible mechanisms and competing explanations</dd></div>
+              <div><dt>Graph form</dt><dd>cyclic models retain feedback paths; acyclic models prohibit return paths for a defined, often time-ordered analysis</dd></div>
+              <div><dt>Boundary</dt><dd>what the representation includes and omits</dd></div>
+            </dl>
+            <figure class="complex-model-icon" aria-label="A complex causal system with branching, converging, and feedback pathways">
+              <svg viewBox="0 0 270 125" role="img">
+                <defs>
+                  <marker id="complex-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z"></path>
+                  </marker>
+                </defs>
+                <g class="complex-model-icon__edges">
+                  <path d="M28 22 L61 18"></path><path d="M28 25 L62 50"></path>
+                  <path d="M28 61 L62 53"></path><path d="M28 65 L62 91"></path>
+                  <path d="M28 101 L62 94"></path><path d="M80 18 L116 31"></path>
+                  <path d="M80 52 L116 34"></path><path d="M80 55 L116 74"></path>
+                  <path d="M80 93 L116 77"></path><path d="M134 32 L171 19"></path>
+                  <path d="M134 35 L171 56"></path><path d="M134 75 L171 59"></path>
+                  <path d="M134 78 L171 96"></path><path d="M189 20 L226 47"></path>
+                  <path d="M189 58 L226 50"></path><path d="M189 61 L226 90"></path>
+                  <path d="M189 98 L226 93"></path>
+                  <path class="feedback" d="M180 49 C164 4 123 4 125 24"></path>
+                  <path class="feedback" d="M234 84 C213 117 143 118 127 86"></path>
+                </g>
+                <g class="complex-model-icon__nodes">
+                  <circle cx="20" cy="22" r="8"></circle><circle cx="20" cy="62" r="8"></circle><circle cx="20" cy="102" r="8"></circle>
+                  <circle cx="72" cy="17" r="8"></circle><circle cx="72" cy="52" r="8"></circle><circle cx="72" cy="94" r="8"></circle>
+                  <circle cx="125" cy="33" r="9"></circle><circle cx="125" cy="76" r="9"></circle>
+                  <circle cx="180" cy="18" r="8"></circle><circle cx="180" cy="58" r="9"></circle><circle cx="180" cy="98" r="8"></circle>
+                  <circle cx="235" cy="49" r="9"></circle><circle cx="235" cy="92" r="9"></circle>
+                </g>
+              </svg>
+            </figure>
+          </div>
+        </div>
+        <aside class="presenter-notes">
+          Stress epistemological representation: this is a fallible account of a system, not
+          the system itself. Variable choice depends on purpose, so no graph is simply a neutral
+          picture of everything that exists. The icon is intentionally cyclic: a spatial model
+          can represent feedback in a dynamic causal system without claiming simultaneous
+          self-causation. A later DAG may select and time-order part of this richer structure for
+          a particular inferential purpose.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-9" data-title="Models across scales" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Critical realist stratification</p>
+          <h2>Causal models represent knowledge across scales</h2>
+          <div class="stratified-model">
+            <div class="stratified-model__overview" aria-label="At a broader scale, muscle function influences walking capacity">
+              <span>muscle function</span><i>→</i><span>walking capacity</span>
+            </div>
+            <div class="stratified-model__expansions">
+              <article>
+                <span class="scale-label">A model within muscle function</span>
+                <div class="scale-model" aria-label="Excitation, regulation, structure, and energetics converge on tension">
+                  <div class="scale-model__sources">
+                    <b>excitation</b><b>regulation</b><b>structure</b><b>energetics</b>
+                  </div>
+                  <i aria-hidden="true">→</i>
+                  <strong>tension</strong>
+                </div>
+              </article>
+              <article>
+                <span class="scale-label">A model within walking capacity</span>
+                <div class="scale-model" aria-label="Propulsion, balance, oxygen transport, and pacing converge on sustained walking">
+                  <div class="scale-model__sources">
+                    <b>propulsion</b><b>balance</b><b>oxygen transport</b><b>pacing</b>
+                  </div>
+                  <i aria-hidden="true">→</i>
+                  <strong>sustained walking</strong>
+                </div>
+              </article>
+            </div>
+          </div>
+          <p class="scale-statement">
+            A node at one scale can open into another causal model. At every scale, the model is
+            a fallible representation of what we know, not the generative system itself.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          Connect stratification to critical realism: reality contains mechanisms operating at
+          multiple levels, and higher-scale phenomena are not exhausted by one lower-scale
+          description. Muscle function and walking capacity can be nodes in one model while each
+          becomes the explanandum of another model. The boundaries shown are purpose-dependent;
+          causal relations can also cross scales. These are still causal models representing
+          population knowledge. Evidence, provenance, qualification, and uncertainty remain
+          necessary at every scale and return explicitly on slide 11.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-10" data-title="Population model" tabindex="-1">
+        <div class="slide__content">
+          <div class="slide-heading-row">
+            <div>
+              <p class="slide-kicker">Developmental teaching model</p>
+              <h2>Several pathways can limit walking</h2>
+            </div>
+            <span class="status-label status-label--draft">Draft · not validated</span>
+          </div>
+          <figure class="model-dag" tabindex="0" aria-label="Scrollable revised Model 4D causal graph">
+            <svg viewBox="0 0 1180 455" role="img" aria-labelledby="model-4d-title model-4d-description">
+              <title id="model-4d-title">Revised draft Model 4D causal DAG for heart failure and neuromuscular electrical stimulation</title>
+              <desc id="model-4d-description">Eighteen variables connected by twenty-nine directed edges. Aerobic training causes balance, cardiac output, mechanical efficiency, and muscle function. Neuromuscular electrical stimulation and strength training cause muscle function. Muscle function causes arteriovenous oxygen difference, anaerobic threshold, and balance. Arteriovenous oxygen difference and cardiac output cause VO2 max. VO2 max causes anaerobic threshold and biological or physiological status. Anaerobic threshold, balance, gait speed, and mechanical efficiency cause six-minute walk distance; balance also causes gait speed. Six-minute walk distance causes functional status. Biological or physiological status causes functional and symptom status. Social factors cause functional status, health-related quality of life, and health perception. Symptom status causes functional status, health-related quality of life, and health perception. Functional status and health perception cause health-related quality of life.</desc>
+              <defs>
+                <marker id="dag-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z"></path>
+                </marker>
+              </defs>
+              <g class="model-dag__edges">
+                <path d="M130 45 L210 45"></path>
+                <path d="M130 51 C160 51 170 125 210 125"></path>
+                <path d="M130 55 C155 55 164 215 210 215"></path>
+                <path d="M130 58 C150 58 158 305 210 305"></path>
+                <path d="M130 125 L210 125"></path>
+                <path d="M130 205 C175 205 170 142 225 142"></path>
+                <path d="M330 115 L385 105"></path>
+                <path d="M330 130 C470 130 540 145 690 145"></path>
+                <path d="M270 142 L270 198"></path>
+                <path d="M330 45 C420 45 460 85 535 85"></path>
+                <path d="M505 105 L535 92"></path>
+                <path d="M655 85 C675 85 675 45 690 45"></path>
+                <path d="M655 91 C675 91 675 137 690 137"></path>
+                <path d="M330 215 L535 215"></path>
+                <path d="M330 221 C520 221 680 202 875 202"></path>
+                <path d="M655 215 L875 215"></path>
+                <path d="M330 305 C560 305 690 235 875 220"></path>
+                <path d="M810 145 C840 145 845 190 875 190"></path>
+                <path d="M950 227 C950 255 950 275 950 298"></path>
+                <path d="M790 62 C850 100 840 285 915 305"></path>
+                <path d="M790 62 C845 90 840 285 790 315"></path>
+                <path d="M130 385 C380 385 650 315 915 315"></path>
+                <path d="M130 391 C470 410 790 410 900 397"></path>
+                <path d="M130 398 C500 445 920 445 1060 370"></path>
+                <path d="M810 330 L915 320"></path>
+                <path d="M810 338 C850 338 860 395 900 395"></path>
+                <path d="M810 343 C900 355 970 365 1060 365"></path>
+                <path d="M1035 315 C1060 315 1050 350 1060 350"></path>
+                <path d="M1020 395 C1045 395 1045 375 1060 375"></path>
+              </g>
+              <g class="model-dag__nodes">
+                <g transform="translate(20 28)"><rect width="110" height="34"></rect><text x="55" y="17">Aerobic</text><text x="55" y="29">Training</text></g>
+                <g transform="translate(20 108)"><rect width="110" height="34"></rect><text x="55" y="22">NMES</text></g>
+                <g transform="translate(20 188)"><rect width="110" height="34"></rect><text x="55" y="17">Strength</text><text x="55" y="29">Training</text></g>
+                <g transform="translate(20 368)"><rect width="110" height="34"></rect><text x="55" y="22">Social</text></g>
+                <g transform="translate(210 28)"><rect width="120" height="34"></rect><text x="60" y="22">Cardiac Output</text></g>
+                <g transform="translate(210 108)"><rect width="120" height="34"></rect><text x="60" y="22">Muscle Function</text></g>
+                <g transform="translate(210 198)"><rect width="120" height="34"></rect><text x="60" y="22">Balance</text></g>
+                <g transform="translate(210 288)"><rect width="120" height="34"></rect><text x="60" y="17">Mechanical</text><text x="60" y="29">Efficiency</text></g>
+                <g transform="translate(385 88)"><rect width="120" height="34"></rect><text x="60" y="22">(a-v)O₂</text></g>
+                <g transform="translate(535 68)"><rect width="120" height="34"></rect><text x="60" y="22">VO₂ max</text></g>
+                <g transform="translate(535 198)"><rect width="120" height="34"></rect><text x="60" y="22">Gait Speed</text></g>
+                <g transform="translate(690 28)"><rect width="120" height="34"></rect><text x="60" y="17">Bio/Physio</text><text x="60" y="29">Status</text></g>
+                <g transform="translate(690 128)"><rect width="120" height="34"></rect><text x="60" y="17">Anaerobic</text><text x="60" y="29">Threshold</text></g>
+                <g transform="translate(690 315)"><rect width="120" height="34"></rect><text x="60" y="22">Symptom Status</text></g>
+                <g class="outcome" transform="translate(875 185)"><rect width="120" height="42"></rect><text x="60" y="26">6MWD</text></g>
+                <g transform="translate(915 298)"><rect width="120" height="34"></rect><text x="60" y="22">Functional Status</text></g>
+                <g transform="translate(900 378)"><rect width="120" height="34"></rect><text x="60" y="17">Health</text><text x="60" y="29">Perception</text></g>
+                <g class="outcome" transform="translate(1060 343)"><rect width="110" height="42"></rect><text x="55" y="26">HRQOL</text></g>
+              </g>
+            </svg>
+            <figcaption>
+              Model 4D, revised · 18 variables · 29 proposed causal claims
+            </figcaption>
+          </figure>
+          <p class="model-caption"><b>Back to Patients A and B:</b> Their findings direct attention to different regions of the same population causal model. They do not yet identify the operative pathway.</p>
+        </div>
+        <aside class="presenter-notes">
+          This revises the historical Model 4D by adding Strength Training → Muscle Function and
+          Muscle Function → Balance; it is not a pathway summary. Models remain mutable as causal
+          knowledge is criticized and refined.
+          Return to Patients A and B and ask which regions their findings bring into focus;
+          emphasize that neither pattern establishes an operative pathway. Every edge remains
+          a proposed causal claim without attached per-edge evidence, pending author review.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-11" data-title="Models4PT" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Population knowledge representation</p>
+          <h2>The graph shows the claim, not why we should trust it</h2>
+          <div class="claim-warrant">
+            <div class="claim-warrant__edge" aria-label="Muscle function causes six-minute walk distance">
+              <span>muscle function</span><i>→</i><span>6MWD</span>
+            </div>
+            <div class="claim-warrant__questions">
+              <p><b>Meaning</b>What precisely does each variable represent?</p>
+              <p><b>Mechanism</b>What lower-scale pathways does this arrow collapse?</p>
+              <p><b>Evidence</b>What observations or studies support the arrow?</p>
+              <p><b>Scope</b>For whom, when, and under what conditions?</p>
+              <p><b>Provenance</b>Where did the claim come from, and who revised it?</p>
+              <p><b>Uncertainty</b>How strong, disputed, or incomplete is the claim?</p>
+            </div>
+          </div>
+          <p class="claim-warrant__conclusion"><b>Models4PT</b> connects causal structure to meaning, mechanisms, evidence, provenance, context, and uncertainty.</p>
+        </div>
+        <aside class="presenter-notes">
+          Contrast this purpose-built higher-scale claim with the more detailed paths on slide 10.
+          Muscle Function → 6MWD collapses multiple lower-scale mechanisms and intermediary
+          variables. That makes it wrong as an exhaustive description but potentially useful for
+          a particular purpose. The arrow makes a proposed causal claim inspectable, but its
+          geometry does not carry its warrant or the detail it omits. Models4PT connects that
+          structure to the knowledge needed to interpret, criticize, revise, and use the claim.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-12" data-title="The patient is particular" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">The transition to patient reasoning</p>
+          <h2>The population model does not identify a patient's causal configuration</h2>
+          <div class="configuration-bridge">
+            <div class="configuration-source">generic causal model</div>
+            <i aria-hidden="true">↓</i>
+            <div class="configuration-set" aria-label="Three plausible causal configurations represented by the population model">
+              <article>
+                <b>muscular</b>
+                <div><span>muscle function</span><i>→</i><span>6MWD</span></div>
+              </article>
+              <article>
+                <b>cardiovascular</b>
+                <div><span>cardiac output</span><i>→</i><span>6MWD</span></div>
+              </article>
+              <article>
+                <b>balance / gait</b>
+                <div><span>balance</span><i>→</i><span>6MWD</span></div>
+              </article>
+            </div>
+            <div class="configuration-plus" aria-hidden="true">+</div>
+            <div class="patient-evidence"><span>current patient evidence</span><b>findings · context · response over time</b></div>
+            <i aria-hidden="true">↓</i>
+            <div class="configuration-question"><span>Which mechanisms may be operative?</span><b>provisional patient-specific explanation</b></div>
+          </div>
+          <p class="configuration-statement">
+            Population knowledge defines scientifically plausible possibilities. Patient evidence
+            constrains which may explain this patient, here and now.
+          </p>
+        </div>
+        <aside class="presenter-notes">
+          This is not a population-average versus individual comparison. The generic model defines
+          a representational space containing several scientifically plausible configurations.
+          Patient evidence constrains that space but does not automatically select one path.
+          Slide 13 names the construction of the provisional patient-specific representation.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-13" data-title="Clinical instantiation" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Patient-specific representation</p>
+          <h2>Clinical instantiation</h2>
+          <p class="instantiation-definition">
+            Generic causal knowledge and current patient evidence jointly constrain a
+            <strong>provisional model of what may be happening in this patient now.</strong>
+          </p>
+          <div class="instantiation-equation" aria-label="I of M and E at time t equals M sub p comma t">
+            <span>generic model</span>
+            <b>+</b>
+            <span>evidence now</span>
+            <b>→</b>
+            <strong>ℐ(M, E<sub>t</sub>) = M<sub>p,t</sub></strong>
+          </div>
+            <p class="equation-translation"><b>In words:</b> Applying clinical instantiation to generic causal knowledge and the evidence currently available for a patient produces a provisional patient-specific causal representation.<strong>We must understand this process because it's what we're trying to teach future clinicians!</strong></p>
+          <div class="distinction-row">
+            <p><span>ℐ</span>constructs a patient-specific representation</p>
+            <p><span>do(X)</span>represents an intervention within a specified causal model</p>
+          </div>
+          <p class="source-line">Clinical instantiation is a potentially composite process, not a settled mathematical operator or automated answer.</p>
+        </div>
+        <aside class="presenter-notes">
+          Introduce the sentence before the notation. An instantiated model represents the
+          clinician's fallible hypothesis; it does not create mechanisms, exhaust the patient,
+          or infer an individual conclusion directly from an average.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-14" data-title="Paired activity" tabindex="-1">
+        <div class="slide__content activity-slide">
+          <div class="slide-heading-row">
+            <div>
+              <p class="slide-kicker">Paired activity · 9 minutes</p>
+              <h2>Build two provisional models</h2>
+            </div>
+            <span class="status-label">Fictional cases</span>
+          </div>
+          <p class="activity-setup">Use the population causal model from slide 10 to construct a provisional explanation for each patient.</p>
+          <div class="patient-compare">
+            <article>
+              <span class="patient-label">Patient A · difficulty attaining</span>
+              <ul>
+                <li>Marked quadriceps weakness</li>
+                <li>Stable cardiovascular response</li>
+                <li>Preserved balance</li>
+                <li>Cannot generate enough force to rise and initiate walking</li>
+              </ul>
+            </article>
+            <article>
+              <span class="patient-label">Patient B · difficulty sustaining</span>
+              <ul>
+                <li>Adequate isolated strength</li>
+                <li>Early dyspnea</li>
+                <li>Abnormal exertional response</li>
+                <li>Preserved gait mechanics</li>
+              </ul>
+            </article>
+          </div>
+          <ol class="activity-prompts">
+            <li>Which path is currently foregrounded?</li>
+            <li>What competing explanation remains plausible?</li>
+            <li>What one observation would discriminate between them?</li>
+            <li>Would strength training or NMES target the represented limitation?</li>
+          </ol>
+        </div>
+        <aside class="presenter-notes">
+          Give pairs four minutes per patient and one minute to prepare a comparison. This asks
+          students to enact clinical instantiation: use the generic model and current evidence to
+          construct a provisional patient-specific explanation. Ask for a foregrounded path, a
+          competitor, and one discriminating observation—not diagnosis or prescription.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-15" data-title="Revise with evidence" tabindex="-1">
+        <div class="slide__content">
+          <p class="slide-kicker">Debrief · new evidence</p>
+          <h2>A useful model remains provisional and revisable</h2>
+          <div class="revision-grid">
+            <article>
+              <span>Patient A</span>
+              <p><b>New finding:</b> repeated contractions fatigue rapidly despite improved initial force.</p>
+              <p><b>Revision:</b> add a sustain/endurance hypothesis; do not discard the strength finding.</p>
+            </article>
+            <article>
+              <span>Patient B</span>
+              <p><b>New finding:</b> exertional dyspnea coincides with new pulmonary crackles and an S3.</p>
+              <p><b>Revision:</b> increase concern for a disease-specific limitation and reconsider intervention priorities.</p>
+            </article>
+          </div>
+          <p class="opening-resolution">
+            <b>Return to the opening problem:</b> The same reduced 6MWD supports different
+            provisional explanations. For Patient A, muscle function appears most relevant, with
+            new evidence that endurance may also limit performance. For Patient B, the findings
+            increase concern for a disease-specific exertional limitation. The model guides
+            different next questions and intervention priorities; it does not provide a certain
+            final answer.
+          </p>
+          <div class="recursive-loop" aria-label="Evidence leads to instantiation, reasoning, action, and new evidence">
+            <span>evidence</span><i>→</i><span>instantiation</span><i>→</i><span>reasoning</span><i>→</i><span>action</span><i>→</i><span>new evidence</span>
+          </div>
+          <p class="draft-banner">Educational cases only. The findings illustrate model revision, not patient-specific recommendations.</p>
+        </div>
+        <aside class="presenter-notes">
+          Ask what changed in each model and what did not. Clinical action extends inquiry:
+          response, nonresponse, and unanticipated outcomes all provide evidence for the next
+          instantiation. Strength training or NMES may address part of Patient A's represented
+          limitation. They do not directly target Patient B's currently foregrounded pathway.
+        </aside>
+      </section>
+
+      <section class="slide" id="slide-16" data-title="From knowledge to reasoning" tabindex="-1">
+        <div class="slide__content closing-slide">
+          <p class="slide-kicker">A long journey toward greater clarity</p>
+          <h2>Represent population knowledge. Reason about the particular.</h2>
+          <div class="closing-flow" aria-label="Scientific inquiry produces a generic causal model which combines with patient evidence through clinical instantiation to produce a provisional patient-specific model that supports clinical reasoning">
+            <div><span>scientific inquiry</span><strong>stats4PT + Physiolog</strong></div>
+            <i>→</i>
+            <div><span>generic causal model</span><strong>Models4PT</strong></div>
+            <b>+</b>
+            <div><span>current patient evidence</span><strong>findings · context · response</strong></div>
+            <i>→</i>
+            <div><span>clinical instantiation</span><strong>ℐ(M, E<sub>t</sub>)</strong></div>
+            <i>→</i>
+            <div><span>provisional patient model</span><strong>M<sub>p,t</sub></strong></div>
+            <i>→</i>
+            <div><span>clinical reasoning</span><strong>supported by CIE</strong></div>
+          </div>
+          <div class="clinical-inquiry-cycle">
+            <i aria-hidden="true">↶</i>
+            <p><b>Clinical inquiry</b> questions · observations · action · new evidence · revision</p>
+          </div>
+          <div class="closing-points">
+            <p>Causal models organize population knowledge; they remain fallible and revisable.</p>
+            <p>Clinical instantiation uses current evidence to construct a provisional patient-specific explanation.</p>
+            <p>Clinical inquiry continually tests and revises that explanation through questions, observations, and action.</p>
+          </div>
+          <nav class="resources" aria-label="Presentation resources">
+            <a href="https://doi.org/10.1097/CPT.0000000000000101">2018 causal models synthesis</a>
+            <a href="https://philpapers.org/rec/COLFPK">2026 clinical instantiation preprint</a>
+            <a href="https://doi.org/10.1093/ptj/pzz127">Heart failure clinical practice guideline</a>
+            <a href="https://github.com/scollinspt/Models4PT">Models4PT</a>
+            <a href="../lessons/lesson-7-practical-applications-building-a.html">stats4PT DAG lesson</a>
+          </nav>
+        </div>
+        <aside class="presenter-notes">
+          Return physically to the historical diagram after the flow. Clinical inquiry is the
+          umbrella for the recursive patient-facing cycle; the Clinical Inference Engine supports
+          reasoning within it rather than replacing it. Close with: We must understand this
+          movement from population knowledge to patient-specific explanation because it is what
+          we are trying to teach future clinicians.
+        </aside>
+      </section>
+    </main>
+
+    <nav class="presentation-controls" aria-label="Slide controls">
+      <button id="previous-slide" type="button" aria-label="Previous slide" title="Previous slide (Left arrow)">←</button>
+      <button id="overview-toggle" type="button" aria-pressed="false" title="Slide overview (O)">Overview</button>
+      <button id="notes-toggle" type="button" aria-pressed="false" title="Presenter notes (N)">Notes</button>
+      <button id="fullscreen-toggle" type="button" title="Full screen (F)">Full screen</button>
+      <button id="next-slide" type="button" aria-label="Next slide" title="Next slide (Right arrow)">→</button>
+    </nav>
+    <noscript>
+      <p class="no-script">JavaScript is off. All slides remain available in reading order; interactive navigation is unavailable.</p>
+    </noscript>
+  </body>
+</html>

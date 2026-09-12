@@ -41,6 +41,7 @@ Therapy Program at Plymouth State University.
 
 - A dedicated course homepage (`/index.html`) for the stats4PT project
 - Eight complete, self-hosted lesson pages in `/lessons`
+- Standalone classroom resources in `/presentations`
 - Local copies of all lesson figures in `/img/lessons`
 - Lightweight shared styling (`/assets/styles.css`)
 - An image folder for logos (`/img`)

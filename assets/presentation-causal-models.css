@@ -1,0 +1,467 @@
+:root {
+  --ink: #17242b;
+  --muted: #52646d;
+  --paper: #fbfcfa;
+  --soft: #e8f0ed;
+  --line: #b9cbc7;
+  --teal: #006b7e;
+  --teal-dark: #004d5c;
+  --coral: #c9583c;
+  --gold: #a77918;
+  --patient: #2e6e54;
+  --surface: #ffffff;
+  --header-height: 3.5rem;
+  --control-height: 4.25rem;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+.presentation-brand,
+.slide-kicker,
+.patient-label,
+.status-label,
+.source-line,
+.model-caption,
+.resources,
+.no-script,
+.slide figcaption {
+  font-family: "Avenir Next", Avenir, "Century Gothic", sans-serif;
+}
+
+button { font: inherit; }
+
+a { color: var(--teal-dark); }
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 20;
+  padding: 0.65rem 0.9rem;
+  background: var(--paper);
+  color: var(--ink);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.presentation-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: grid;
+  min-height: var(--header-height);
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.55rem clamp(1rem, 3vw, 2.5rem);
+  background: rgba(23, 36, 43, 0.97);
+  color: #f6faf8;
+}
+
+.presentation-brand {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.presentation-brand small { color: #a9bbb7; font-size: 0.68rem; font-weight: 500; }
+
+.presentation-progress { height: 2px; background: #496068; }
+.presentation-progress span { display: block; width: 6.25%; height: 100%; background: #ef8b69; transition: width 180ms ease; }
+.presentation-status { min-width: 4rem; font-family: "SFMono-Regular", Consolas, monospace; font-size: 0.78rem; text-align: right; }
+
+.presentation { padding-top: var(--header-height); }
+
+.slide {
+  display: grid;
+  min-height: calc(100svh - var(--header-height));
+  place-items: center;
+  scroll-margin-top: var(--header-height);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, transparent 49.9%, rgba(0, 107, 126, 0.035) 50%, transparent 50.1%),
+    var(--paper);
+}
+
+.slide:nth-child(4n + 2) { background-color: #f1f6f3; }
+.slide:nth-child(4n + 3) { background-color: #f8f4ed; }
+
+.slide__content {
+  width: min(1180px, calc(100% - clamp(2rem, 8vw, 8rem)));
+  margin: auto;
+  padding-block: clamp(3.5rem, 7vh, 6rem) calc(var(--control-height) + 2rem);
+}
+
+.slide h1,
+.slide h2,
+.slide h3 {
+  margin: 0;
+  font-family: "Avenir Next", Avenir, "Century Gothic", sans-serif;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.slide h1 { max-width: 10ch; font-size: clamp(3.8rem, 10vw, 8.5rem); }
+.slide h2 { max-width: 20ch; font-size: clamp(2.35rem, 5vw, 5.25rem); }
+#slide-2 h2, #slide-5 h2 { max-width: none; }
+.slide p, .slide li { font-size: clamp(1.05rem, 1.7vw, 1.45rem); line-height: 1.5; }
+.slide-kicker { margin: 0 0 0.7rem; color: var(--teal); font-size: 0.82rem !important; font-weight: 800; text-transform: uppercase; }
+.subtitle { max-width: 38rem; color: var(--muted); }
+.title-question { max-width: 18ch; margin: 0.8rem 0; color: var(--coral); font-family: "Avenir Next", Avenir, sans-serif; font-size: clamp(1.6rem, 3vw, 2.7rem) !important; font-weight: 650; line-height: 1.2 !important; }
+.presentation-download { display: inline-flex; gap: 0.55rem; align-items: center; margin-top: 1.25rem; border-bottom: 2px solid var(--teal); padding: 0.45rem 0.1rem; color: var(--teal-dark); font: 800 0.82rem "Avenir Next", Avenir, sans-serif; text-decoration: none; text-transform: uppercase; }
+.presentation-download span { color: var(--coral); font-size: 1.25rem; line-height: 1; }
+.presentation-download:hover { border-color: var(--coral); color: var(--coral); }
+
+.slide--title { background: var(--soft); }
+.title-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr); gap: 5vw; align-items: center; }
+.title-mark { display: grid; gap: 1rem; justify-items: center; color: var(--teal-dark); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; }
+.title-mark span { display: grid; width: clamp(8rem, 15vw, 12rem); aspect-ratio: 1; place-items: center; border: 2px solid currentColor; border-radius: 50%; }
+.title-mark span:last-child { width: clamp(6rem, 11vw, 9rem); color: var(--patient); }
+.title-mark i { width: 2px; height: 3rem; background: var(--coral); }
+
+.patient-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.patient-compare article { min-width: 0; border-top: 5px solid var(--teal); padding: 1.25rem 1.5rem; background: var(--surface); box-shadow: 0 12px 30px rgba(23, 36, 43, 0.08); }
+.patient-compare article:last-child { border-color: var(--coral); }
+.patient-compare strong { display: block; margin-top: 0.7rem; font-family: "Avenir Next", Avenir, sans-serif; font-size: clamp(1.15rem, 2vw, 1.55rem); }
+.patient-label { color: var(--teal-dark); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; }
+.patient-compare ul { margin-bottom: 0; padding-left: 1.2rem; }
+.patient-compare--opening { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
+.same-result { display: grid; gap: 0.5rem; justify-items: center; color: var(--muted); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.75rem; text-transform: uppercase; }
+.same-result b { color: var(--ink); font-size: 1.5rem; }
+.prompt { margin: 2rem auto 0; border-left: 4px solid var(--coral); padding-left: 1.25rem; font-weight: 700; }
+
+.split-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr); column-gap: clamp(2rem, 7vw, 6rem); row-gap: 2rem; align-items: center; }
+.split-layout .boundary-statement { grid-column: 1 / -1; }
+.big-copy { max-width: 40rem; color: var(--muted); font-size: clamp(1.25rem, 2.3vw, 2rem) !important; }
+.big-copy--center { margin: 0.75rem auto; text-align: center; }
+.question-stack { border-top: 1px solid var(--line); }
+.question-stack p { margin: 0; border-bottom: 1px solid var(--line); padding: 0.85rem 0; }
+.question-stack span { display: block; color: var(--coral); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+.boundary-statement, .draft-banner { margin-top: 2rem; padding: 0.8rem 1rem; background: var(--ink); color: #f5f8f6; font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.9rem !important; }
+
+.counterfactual { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: stretch; margin-top: 3rem; }
+.counterfactual > div:not(.counterfactual-divider) { display: grid; min-height: 14rem; align-content: center; gap: 0.7rem; border: 1px solid var(--line); padding: 2rem; background: var(--surface); text-align: center; }
+.counterfactual span { color: var(--teal); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+.counterfactual strong { font-size: clamp(1.2rem, 2vw, 1.65rem); }
+.counterfactual b { color: var(--coral); font-size: 1.35rem; }
+.counterfactual-divider { align-self: center; color: var(--muted); font-style: italic; }
+
+.prior-knowledge { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 2.5rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.prior-knowledge div { min-height: 12rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.35rem; background: var(--surface); }
+.prior-knowledge b, .prior-knowledge span { display: block; }
+.prior-knowledge b { color: var(--coral); font: 800 0.78rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.prior-knowledge span { margin-top: 1rem; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.4; }
+.case-return { margin: 1.25rem 0 0.75rem; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.2rem) !important; }
+.counterfactual-examples { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.counterfactual-examples article { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.9rem 1rem; background: var(--surface); }
+.counterfactual-examples span { color: var(--teal); font: 800 0.72rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.counterfactual-examples p { margin: 0.45rem 0 0; font-size: clamp(0.9rem, 1.25vw, 1.08rem); line-height: 1.35; }
+.counterfactual-reminder { margin: 1.5rem 0 0; border-left: 4px solid var(--teal); padding-left: 1rem; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.25rem) !important; }
+
+.shared-model-flow { display: grid; grid-template-columns: minmax(0, 1fr) 5rem minmax(220px, 0.9fr) 6rem minmax(0, 1fr); gap: 1rem; align-items: center; margin-top: 2rem; }
+.shared-model-flow article { min-height: 15rem; border-top: 4px solid var(--teal); padding: 1.2rem 1.3rem; background: var(--surface); box-shadow: 0 12px 30px rgba(23, 36, 43, 0.08); }
+.shared-model-flow__patient { border-color: var(--coral) !important; }
+.shared-model-flow article > span { color: var(--teal); font: 800 0.7rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.shared-model-flow article h3 { margin-top: 0.55rem; font-size: clamp(1.25rem, 1.8vw, 1.55rem); }
+.shared-model-flow article p { margin: 0.8rem 0 0; color: var(--muted); font-size: clamp(0.9rem, 1.25vw, 1.05rem); line-height: 1.4; }
+.shared-model-flow__patient strong { display: block; margin-top: 0.9rem; border-top: 1px solid var(--line); padding-top: 0.8rem; font-size: clamp(0.95rem, 1.3vw, 1.1rem); line-height: 1.35; }
+.model-relationship { display: grid; justify-items: center; color: var(--muted); font-family: "Avenir Next", Avenir, sans-serif; text-align: center; }
+.model-relationship b { color: var(--teal-dark); font-size: 0.72rem; text-transform: uppercase; }
+.model-relationship i { color: var(--coral); font-size: 2.2rem; font-style: normal; line-height: 1; }
+.model-relationship small { margin-top: 0.25rem; font-size: 0.68rem; line-height: 1.2; }
+.critical-realist-model { margin: 0; border: 2px solid var(--teal); background: var(--surface); box-shadow: 0 12px 30px rgba(23, 36, 43, 0.08); }
+.critical-realist-model__network { height: 6.7rem; border-bottom: 1px solid var(--line); background: var(--soft); }
+.critical-realist-model__network svg { display: block; width: 100%; height: 100%; }
+.model-graph-edges line { stroke: var(--coral); stroke-width: 2; marker-end: url("#causal-arrow"); }
+.critical-realist-model__network marker path { fill: var(--coral); }
+.model-graph-nodes circle { fill: var(--surface); stroke: var(--teal); stroke-width: 2.5; }
+.model-graph-nodes text { fill: var(--ink); font: 800 12px "Avenir Next", Avenir, sans-serif; text-anchor: middle; dominant-baseline: central; }
+.critical-realist-model__domains { display: grid; }
+.critical-realist-model__domains span { display: grid; grid-template-columns: 4.8rem 1fr; gap: 0.45rem; border-bottom: 1px solid var(--line); padding: 0.42rem 0.6rem; color: var(--muted); font: 0.68rem "Avenir Next", Avenir, sans-serif; }
+.critical-realist-model__domains b { color: var(--ink); }
+.critical-realist-model figcaption { padding: 0.55rem 0.65rem; color: var(--teal-dark); font-size: 0.68rem; font-weight: 700; line-height: 1.25; text-align: center; }
+
+.next-step-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; margin-top: 2.5rem; }
+.next-step-grid article { min-height: 15rem; border-top: 5px solid var(--teal); padding: 1.4rem 1.6rem; background: var(--surface); box-shadow: 0 12px 30px rgba(23, 36, 43, 0.08); }
+.next-step-grid article:last-child { border-color: var(--patient); }
+.next-step-grid h3 { margin: 0.45rem 0 0; font-size: clamp(1.45rem, 2.5vw, 2rem); }
+.next-step-grid p { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+.next-step-grid > i { color: var(--coral); font-size: 2rem; }
+
+.claim-expansion { display: grid; grid-template-columns: minmax(200px, 0.6fr) auto minmax(390px, 1.4fr); gap: 2rem; align-items: center; margin-top: 2.5rem; }
+.mini-claim { display: flex; gap: 0.8rem; align-items: center; justify-content: center; }
+.mini-claim span { display: grid; width: 5rem; aspect-ratio: 1; place-items: center; border: 2px solid var(--teal); border-radius: 50%; font: 700 1.5rem "Avenir Next", Avenir, sans-serif; }
+.mini-claim i { color: var(--muted); }
+.expansion-arrow { color: var(--coral); font-size: 2rem; }
+.mini-network { position: relative; min-height: 18rem; }
+.mini-network .node { position: absolute; z-index: 2; display: grid; min-width: 6rem; min-height: 3rem; place-items: center; border: 2px solid var(--teal); border-radius: 50%; padding: 0.6rem; background: var(--surface); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.75rem; font-weight: 700; text-align: center; }
+.node--a { left: 3%; top: 2%; }.node--b { left: 8%; top: 65%; }.node--c { left: 40%; top: 35%; }.node--d { right: 3%; top: 35%; }.node--e { right: 3%; top: 2%; }
+.mini-network .edge { position: absolute; z-index: 1; height: 2px; background: var(--coral); transform-origin: left center; }
+.edge--1 { width: 38%; left: 19%; top: 23%; transform: rotate(28deg); }.edge--2 { width: 35%; left: 23%; top: 75%; transform: rotate(-31deg); }.edge--3 { width: 35%; left: 53%; top: 46%; }.edge--4 { width: 35%; left: 69%; top: 18%; transform: rotate(73deg); }
+.compact-list { padding-left: 1.2rem; }
+.compact-list--horizontal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; padding: 0; list-style: none; }
+.compact-list--horizontal li { border-top: 2px solid var(--line); padding-top: 0.8rem; font-size: 1rem; }
+
+.image-slide { display: grid; grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.image-slide__heading { display: grid; align-content: center; }
+.image-slide__heading h2 { max-width: 12ch; }
+.slide-heading-row { display: flex; gap: 2rem; align-items: end; justify-content: space-between; }
+.discussion-prompt { max-width: 18rem; margin: 2rem 0 0; color: var(--coral); font-weight: 700; }
+.historical-image { margin: 0; }
+.historical-image img { display: block; width: 100%; max-height: min(66vh, 560px); object-fit: contain; background: white; }
+.historical-image figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.76rem; }
+
+.inquiry-flow { display: grid; grid-template-columns: repeat(7, auto); gap: 0.8rem; align-items: center; margin-top: 3rem; }
+.inquiry-flow div { display: grid; min-height: 8rem; align-content: center; border: 1px solid var(--line); padding: 1rem; background: var(--surface); text-align: center; }
+.inquiry-flow div span { color: var(--teal); font: 800 0.68rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.inquiry-flow div strong { margin-top: 0.4rem; font-size: 1.1rem; }
+.inquiry-flow i { color: var(--coral); font-size: 1.5rem; }
+.inquiry-flow .inquiry-flow__universal { border-color: var(--teal); background: var(--teal-dark); color: white; }
+.inquiry-flow__universal span { color: #8fd3d8 !important; }
+.reasoning-modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.reasoning-modes p { margin: 0; border-top: 3px solid var(--coral); padding-top: 0.75rem; }
+.reasoning-modes b, .reasoning-modes span { display: block; }
+.reasoning-modes b { font-family: "Avenir Next", Avenir, sans-serif; }.reasoning-modes span { color: var(--muted); font-size: 0.95rem; }
+.return-flow { display: flex; flex-wrap: wrap; gap: 0.55rem; align-items: center; justify-content: center; margin-top: 1.5rem; padding: 0.7rem 1rem; background: var(--ink); color: white; font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.78rem; font-weight: 700; }
+.return-flow strong { color: #8fd3d8; text-transform: uppercase; }
+.return-flow i { color: #ef8b69; }
+.purpose-distinction { max-width: 58rem; margin: 0.7rem auto 0; color: var(--muted); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.78rem !important; text-align: center; }
+
+.split-layout--model blockquote { max-width: 32rem; margin: 2rem 0 0.5rem; border-left: 4px solid var(--coral); padding-left: 1.4rem; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.45; }
+.source-line { color: var(--muted); font-size: 0.78rem !important; }
+.model-anatomy-panel { display: grid; gap: 1.25rem; }
+.model-anatomy { margin: 0; border-top: 1px solid var(--line); }
+.model-anatomy div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; border-bottom: 1px solid var(--line); padding: 1rem 0; }
+.model-anatomy dt { color: var(--coral); font: 800 0.8rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.model-anatomy dd { margin: 0; font-size: 1.05rem; }
+.complex-model-icon { height: 10rem; margin: 0; border: 1px solid var(--line); background: var(--soft); }
+.complex-model-icon svg { display: block; width: 100%; height: 100%; }
+.complex-model-icon__edges path { fill: none; stroke: var(--coral); stroke-width: 1.7; marker-end: url("#complex-arrow"); }
+.complex-model-icon marker path { fill: var(--coral); }
+.complex-model-icon__edges .feedback { stroke: var(--gold); stroke-dasharray: 3 2; }
+.complex-model-icon__nodes circle { fill: var(--surface); stroke: var(--teal); stroke-width: 2; }
+
+.stratified-model { margin-top: 1.5rem; }
+.stratified-model__overview { display: flex; gap: 1.25rem; align-items: center; justify-content: center; }
+.stratified-model__overview span { display: grid; min-width: 12rem; min-height: 4rem; place-items: center; border: 2px solid var(--teal); padding: 0.75rem 1rem; background: var(--surface); font: 800 1.05rem "Avenir Next", Avenir, sans-serif; text-align: center; }
+.stratified-model__overview span:last-child { border-color: var(--patient); }
+.stratified-model__overview i { color: var(--coral); font-size: 2rem; }
+.stratified-model__expansions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 1.25rem; }
+.stratified-model__expansions article { position: relative; border: 1px solid var(--line); padding: 1rem 1.2rem 1.2rem; background: var(--surface); }
+.stratified-model__expansions article::before { position: absolute; bottom: 100%; left: 50%; width: 1px; height: 1.25rem; background: var(--line); content: ""; }
+.scale-label { color: var(--teal-dark); font: 800 0.72rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.scale-model { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(8rem, 0.42fr); gap: 0.8rem; align-items: center; margin-top: 0.8rem; }
+.scale-model__sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+.scale-model__sources b, .scale-model > strong { display: grid; min-height: 2.8rem; place-items: center; border: 1px solid var(--teal); padding: 0.45rem; font: 700 0.76rem "Avenir Next", Avenir, sans-serif; text-align: center; }
+.scale-model > i { color: var(--coral); font-size: 1.5rem; }
+.scale-model > strong { min-height: 6.1rem; border-width: 2px; border-color: var(--patient); }
+.scale-statement { max-width: 60rem; margin: 1.2rem auto 0; border-left: 4px solid var(--coral); padding-left: 1rem; color: var(--muted); font-size: clamp(0.95rem, 1.35vw, 1.15rem) !important; }
+
+.status-label { display: inline-block; flex: none; border: 1px solid var(--teal); padding: 0.4rem 0.65rem; color: var(--teal-dark); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
+.status-label--draft { border-color: var(--coral); color: #843620; }
+#slide-10 h2 { max-width: none; font-size: clamp(2.35rem, 3.8vw, 4rem); }
+.model-dag { margin: 1rem 0 0; overflow-x: auto; }
+.model-dag svg { display: block; width: 100%; min-width: 880px; height: auto; max-height: 29rem; }
+.model-dag__edges path { fill: none; stroke: var(--coral); stroke-width: 1.7; marker-end: url("#dag-arrow"); }
+.model-dag marker#dag-arrow path { fill: var(--coral); }
+.model-dag__nodes rect { fill: var(--surface); stroke: var(--teal); stroke-width: 2; }
+.model-dag__nodes text { fill: var(--ink); font: 700 12px "Avenir Next", Avenir, sans-serif; text-anchor: middle; }
+.model-dag__nodes .outcome rect { fill: #e8f3eb; stroke: var(--patient); stroke-width: 3; }
+.model-dag figcaption { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 0.45rem; color: var(--muted); font: 700 0.7rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.model-caption { max-width: 55rem; margin: 0.75rem 0 0; color: var(--muted); font-size: 0.82rem !important; }
+#slide-10 .model-caption { width: 100%; max-width: none; margin-top: 0.65rem; border-top: 1px solid var(--line); padding-top: 0.65rem; font-size: clamp(0.95rem, 1.15vw, 1.05rem) !important; }
+
+#slide-11 h2 { max-width: none; font-size: clamp(2.35rem, 4vw, 4.25rem); }
+.claim-warrant { display: grid; grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.8fr); gap: 2rem; align-items: stretch; margin-top: 1.5rem; }
+.claim-warrant__edge { display: flex; gap: 0.8rem; align-items: center; justify-content: center; border: 1px solid var(--line); padding: 1.2rem; background: var(--surface); }
+.claim-warrant__edge span { display: grid; min-width: 8rem; min-height: 5rem; place-items: center; border: 2px solid var(--teal); padding: 0.65rem; font: 800 0.9rem "Avenir Next", Avenir, sans-serif; text-align: center; }
+.claim-warrant__edge i { color: var(--coral); font-size: 2rem; }
+.claim-warrant__questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.claim-warrant__questions p { margin: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.85rem 1rem; background: var(--surface); font-size: clamp(0.82rem, 1.05vw, 0.95rem); }
+.claim-warrant__questions b { display: block; margin-bottom: 0.3rem; color: var(--coral); font: 800 0.7rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.claim-warrant__conclusion { margin: 1.2rem 0 0; border-left: 4px solid var(--teal); padding: 0.8rem 1rem; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.15rem) !important; }
+.claim-warrant__conclusion b { color: var(--teal-dark); }
+
+#slide-12 .slide__content { padding-block: 2rem calc(var(--control-height) + 1rem); }
+#slide-12 h2 { max-width: none; font-size: clamp(2.25rem, 3.65vw, 3.9rem); }
+.configuration-bridge { display: grid; grid-template-columns: minmax(0, 1.65fr) auto minmax(14rem, 0.7fr) auto minmax(13rem, 0.65fr); gap: 0.75rem 1rem; align-items: center; margin-top: 1.3rem; }
+.configuration-source { grid-column: 1; justify-self: center; border-bottom: 3px solid var(--teal); padding: 0.45rem 1rem; color: var(--teal-dark); font: 800 0.78rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.configuration-bridge > i:first-of-type { grid-column: 1; grid-row: 2; justify-self: center; }
+.configuration-set { display: grid; grid-column: 1; grid-row: 3 / 6; gap: 0.5rem; }
+.configuration-set article { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.75rem; align-items: center; border: 1px solid var(--line); padding: 0.6rem 0.75rem; background: var(--surface); }
+.configuration-set article > b { color: var(--coral); font: 800 0.68rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.configuration-set article > div { display: flex; gap: 0.5rem; align-items: center; }
+.configuration-set article span { flex: 1; border: 1px solid var(--teal); padding: 0.45rem; font: 700 0.72rem "Avenir Next", Avenir, sans-serif; text-align: center; }
+.configuration-set article i, .configuration-bridge > i { color: var(--coral); font-size: 1.25rem; }
+.configuration-plus { grid-column: 2; grid-row: 3 / 6; color: var(--coral); font-size: 2rem; font-weight: 800; }
+.patient-evidence { display: grid; min-height: 8rem; grid-column: 3; grid-row: 3 / 6; align-content: center; border: 2px solid var(--gold); padding: 1rem; background: #fff7dd; text-align: center; }
+.patient-evidence span, .configuration-question span { font: 800 0.82rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.patient-evidence b, .configuration-question b { margin-top: 0.55rem; color: var(--muted); font-size: 0.82rem; }
+.configuration-bridge > i:last-of-type { grid-column: 4; grid-row: 3 / 6; transform: rotate(-90deg); }
+.configuration-question { display: grid; min-height: 8rem; grid-column: 5; grid-row: 3 / 6; align-content: center; border: 3px solid var(--patient); padding: 1rem; background: #e8f3eb; text-align: center; }
+.configuration-statement { margin: 1.2rem 0 0; border-left: 4px solid var(--teal); padding: 0.7rem 1rem; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.15rem) !important; }
+
+.instantiation-definition { max-width: 52rem; font-size: clamp(1.3rem, 2.6vw, 2.15rem) !important; }.instantiation-definition strong { color: var(--teal-dark); }
+.instantiation-equation { display: grid; grid-template-columns: auto auto auto auto minmax(290px, 1fr); gap: 1rem; align-items: center; margin: 2.5rem 0; font-family: "Avenir Next", Avenir, sans-serif; }
+.instantiation-equation > span { border: 1px solid var(--line); padding: 1rem; background: var(--surface); font-weight: 700; text-align: center; }.instantiation-equation > b { color: var(--coral); font-size: 1.6rem; }.instantiation-equation > strong { padding: 1rem; background: var(--ink); color: white; font-family: Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 2rem); text-align: center; }
+.equation-translation { margin: -1.35rem 0 1.15rem; border-left: 3px solid var(--gold); padding-left: 0.8rem; color: var(--muted); font-size: clamp(0.85rem, 1.05vw, 0.95rem) !important; }
+.equation-translation b { color: var(--ink); font-family: "Avenir Next", Avenir, sans-serif; }
+.equation-translation strong { display: block; margin-top: 0.3rem; color: var(--teal-dark); font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.92em; }
+.distinction-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }.distinction-row p { margin: 0; border-top: 3px solid var(--teal); padding-top: 0.8rem; }.distinction-row span { display: block; color: var(--coral); font: 800 1.1rem "Avenir Next", Avenir, sans-serif; }
+#slide-13 .distinction-row p:first-child span { font: 700 2rem Georgia, serif; line-height: 1; }
+
+.activity-setup { margin: 0.8rem 0 0; border-left: 3px solid var(--gold); padding-left: 0.8rem; color: var(--muted); font-size: clamp(0.9rem, 1.15vw, 1rem) !important; }
+.activity-slide .patient-compare { margin-top: 1rem; }.activity-slide .patient-compare li { font-size: clamp(0.92rem, 1.35vw, 1.12rem); }.activity-prompts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.25rem 0 0; padding: 0; list-style-position: inside; }.activity-prompts li { border-top: 2px solid var(--line); padding-top: 0.75rem; font-size: 0.92rem; font-weight: 700; }
+
+.revision-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }.revision-grid article { border-top: 4px solid var(--teal); padding: 1.2rem 1.4rem; background: var(--surface); }.revision-grid article:last-child { border-color: var(--coral); }.revision-grid span { color: var(--teal-dark); font: 800 0.78rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }.revision-grid p { font-size: clamp(0.95rem, 1.35vw, 1.15rem); }
+.recursive-loop { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; justify-content: center; margin: 2rem 0; font-family: "Avenir Next", Avenir, sans-serif; font-weight: 700; }.recursive-loop span { border: 1px solid var(--line); padding: 0.65rem 0.8rem; background: var(--surface); }.recursive-loop i { color: var(--coral); }
+.opening-resolution { margin: 1rem 0 0; border-left: 4px solid var(--coral); padding: 0.7rem 1rem; background: var(--surface); color: var(--muted); font-size: clamp(0.9rem, 1.15vw, 1.02rem) !important; }
+#slide-15 h2 { max-width: none; font-size: clamp(2.35rem, 3.8vw, 4rem); }
+#slide-15 .revision-grid { margin-top: 1.15rem; }
+#slide-15 .revision-grid article { padding: 0.8rem 1.1rem; }
+#slide-15 .revision-grid p { margin: 0.45rem 0 0; font-size: clamp(0.9rem, 1.15vw, 1rem); }
+#slide-15 .recursive-loop { margin: 0.9rem 0; }
+#slide-15 .recursive-loop span { padding: 0.45rem 0.7rem; }
+#slide-15 .draft-banner { margin-top: 0; padding: 0.45rem 0.75rem; font-size: 0.75rem !important; }
+
+.closing-slide h2 { max-width: 18ch; }
+.closing-flow { display: grid; grid-template-columns: 1.15fr auto 1fr auto 1.15fr auto 0.9fr auto 1fr auto 1fr; gap: 0.45rem; align-items: center; margin-top: 1.25rem; }
+.closing-flow div { display: grid; min-width: 0; min-height: 5.5rem; align-content: center; border: 1px solid var(--line); padding: 0.65rem; background: var(--surface); text-align: center; }
+.closing-flow span { color: var(--teal); font: 800 0.55rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.closing-flow strong { margin-top: 0.35rem; overflow-wrap: anywhere; font: 700 0.72rem "Avenir Next", Avenir, sans-serif; }
+.closing-flow div:nth-of-type(4) strong, .closing-flow div:nth-of-type(5) strong { font-family: Georgia, serif; font-size: 1rem; }
+.closing-flow > b, .closing-flow > i { color: var(--coral); font-size: 1.15rem; }
+.clinical-inquiry-cycle { display: flex; gap: 0.75rem; align-items: center; justify-content: flex-end; margin-top: 0.65rem; color: var(--muted); }
+.clinical-inquiry-cycle i { color: var(--coral); font-size: 1.6rem; }
+.clinical-inquiry-cycle p { margin: 0; font-size: 0.78rem !important; }
+.clinical-inquiry-cycle b { color: var(--teal-dark); font-family: "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
+.closing-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1rem; }.closing-points p { margin: 0; border-top: 3px solid var(--coral); padding-top: 0.6rem; font-size: clamp(0.82rem, 1.05vw, 0.95rem); font-weight: 700; }
+.resources { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin-top: 0.9rem; font-size: 0.7rem; font-weight: 700; }
+
+.presenter-notes { display: none; }
+.presentation.show-notes .slide[aria-hidden="false"] .presenter-notes,
+body:not(.presentation-mode) .presenter-notes { margin: 0 auto 6rem; border-left: 4px solid var(--gold); padding: 1rem 1.25rem; background: #fff8df; font-size: 1rem; line-height: 1.5; }
+.presentation.show-notes .slide[aria-hidden="false"] .presenter-notes { display: block; width: min(900px, calc(100% - 4rem)); }
+
+.presentation-controls { position: fixed; right: 1rem; bottom: 1rem; z-index: 12; display: flex; gap: 0.35rem; padding: 0.4rem; border: 1px solid #4a5c63; background: rgba(23, 36, 43, 0.96); }
+.presentation-controls button { min-width: 2.75rem; min-height: 2.75rem; border: 1px solid #6c8086; border-radius: 0; padding: 0.55rem 0.8rem; background: transparent; color: white; cursor: pointer; font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.78rem; font-weight: 700; }
+.presentation-controls button:hover, .presentation-controls button[aria-pressed="true"] { border-color: #ef8b69; background: var(--coral); }.presentation-controls button:focus-visible, a:focus-visible { outline: 3px solid #efb766; outline-offset: 3px; }.presentation-controls button:disabled { opacity: 0.35; cursor: default; }
+.no-script { position: fixed; left: 1rem; bottom: 1rem; z-index: 15; max-width: 30rem; padding: 0.7rem 1rem; background: #fff8df; font-size: 0.8rem; }
+
+body.presentation-mode { overflow: hidden; }
+body.presentation-mode .presentation { height: 100svh; padding-top: var(--header-height); }
+body.presentation-mode .slide { display: none; height: calc(100svh - var(--header-height)); min-height: 0; overflow: auto; border: 0; }
+body.presentation-mode .slide[aria-hidden="false"] { display: grid; }
+body.overview-mode { overflow: auto; }
+body.overview-mode .presentation { display: grid; height: auto; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; padding: calc(var(--header-height) + 1rem) 1rem calc(var(--control-height) + 1rem); background: #d9e4e1; }
+body.overview-mode .slide { display: grid; min-height: 260px; height: auto; overflow: hidden; border: 3px solid transparent; cursor: pointer; }
+body.overview-mode .slide[aria-hidden="false"] { border-color: var(--coral); }
+body.overview-mode .slide__content { width: 100%; padding: 1.5rem; transform: scale(0.42); transform-origin: top left; }
+body.overview-mode .slide__content { width: 238%; }
+body.overview-mode .presenter-notes { display: none !important; }
+
+@media (max-width: 820px) {
+  .presentation-header { gap: 0.6rem; }.presentation-brand small { display: none; }
+  .slide__content { width: min(100% - 2rem, 680px); }
+  .title-layout, .split-layout, .image-slide { grid-template-columns: 1fr; }
+  .image-slide { gap: 1.5rem; }
+  .image-slide__heading h2 { max-width: none; }
+  .title-mark { display: none; }
+  .patient-compare--opening { grid-template-columns: 1fr; }.same-result { order: -1; }
+  .counterfactual { grid-template-columns: 1fr; gap: 0.8rem; }.counterfactual-divider { justify-self: center; }.counterfactual > div:not(.counterfactual-divider) { min-height: 9rem; }
+  .prior-knowledge { grid-template-columns: repeat(2, 1fr); }
+  .shared-model-flow, .next-step-grid { grid-template-columns: 1fr; }
+  .model-relationship, .next-step-grid > i { justify-self: center; }
+  .model-relationship i { transform: rotate(90deg); }
+  .model-relationship--use small { transform: rotate(0); }
+  .claim-expansion { grid-template-columns: 1fr; }.expansion-arrow { justify-self: center; transform: rotate(90deg); }.mini-network { min-height: 16rem; }
+  .stratified-model__expansions { grid-template-columns: 1fr; }
+  .claim-warrant { grid-template-columns: 1fr; }
+  .compact-list--horizontal, .knowledge-ledger, .activity-prompts, .closing-points { grid-template-columns: repeat(2, 1fr); }
+  .inquiry-flow { grid-template-columns: 1fr; }.inquiry-flow i { justify-self: center; transform: rotate(90deg); }.inquiry-flow div { min-height: 5rem; }
+  .configuration-bridge { display: flex; flex-direction: column; }
+  .configuration-set, .patient-evidence, .configuration-question { width: 100%; }
+  .configuration-bridge > i:last-of-type { transform: none; }
+  .model-dag svg { width: 880px; }
+  .instantiation-equation { grid-template-columns: 1fr; }.instantiation-equation > b { justify-self: center; }.distinction-row { grid-template-columns: 1fr; }
+  .closing-flow { display: flex; flex-direction: column; }.closing-flow div { width: 100%; }.closing-flow > b, .closing-flow > i { transform: rotate(90deg); }
+}
+
+@media (max-width: 560px) {
+  :root { --header-height: 3.25rem; }
+  .slide h1 { font-size: 3.2rem; }.slide h2 { font-size: 2.15rem; }
+  .slide__content { width: calc(100% - 1.4rem); padding-top: 2.5rem; }
+  .patient-compare, .revision-grid, .reasoning-modes, .compact-list--horizontal, .knowledge-ledger, .prior-knowledge, .counterfactual-examples, .activity-prompts, .closing-points { grid-template-columns: 1fr; }
+  .claim-warrant__questions { grid-template-columns: 1fr; }
+  .slide-heading-row { display: block; }.discussion-prompt, .status-label { margin-top: 0.8rem; }
+  .model-anatomy div { grid-template-columns: 1fr; gap: 0.25rem; }
+  .knowledge-ledger div { min-height: 6rem; }.knowledge-ledger span { margin-top: 0.5rem; }
+  .project-boundary { grid-template-columns: 1fr; gap: 0.4rem; }
+  .population-patient { grid-template-columns: 1fr; gap: 1rem; }.not-equal { justify-self: center; transform: rotate(90deg); }
+  .presentation-controls { right: 0.5rem; bottom: 0.5rem; left: 0.5rem; justify-content: center; }.presentation-controls button { flex: 1 1 auto; min-width: 0; padding-inline: 0.35rem; }.presentation-controls button:nth-child(3), .presentation-controls button:nth-child(4) { font-size: 0; }.presentation-controls button:nth-child(3)::after { content: "N"; font-size: 0.8rem; }.presentation-controls button:nth-child(4)::after { content: "F"; font-size: 0.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  @page { size: landscape; margin: 0.35in; }
+  body { background: white; }
+  .presentation-header, .presentation-controls, .presentation-download, .skip-link, .no-script { display: none !important; }
+  .presentation { display: block !important; height: auto !important; padding: 0 !important; }
+  .slide, body.presentation-mode .slide { display: grid !important; min-height: 7in; height: 7in; overflow: hidden; break-after: page; border: 1px solid #bbb; }
+  .slide__content { width: calc(100% - 0.7in); padding: 0.35in 0; }
+  .presenter-notes { display: none !important; }
+  .slide h1 { font-size: 52pt; }.slide h2 { font-size: 30pt; }.slide p, .slide li { font-size: 13pt; }
+  .title-layout { grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr); }
+  .title-mark { display: grid; }
+  .split-layout { grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr); }
+  .image-slide { grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr); }
+  .image-slide__heading h2 { max-width: 12ch; }
+  .patient-compare--opening { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .same-result { order: initial; }
+  .counterfactual { grid-template-columns: 1fr auto 1fr; gap: 2rem; }
+  .prior-knowledge { grid-template-columns: repeat(4, 1fr); }
+  .shared-model-flow { grid-template-columns: minmax(0, 1fr) 5rem minmax(220px, 0.9fr) 6rem minmax(0, 1fr); }
+  .model-relationship { justify-self: stretch; }
+  .model-relationship i, .model-relationship--use small { transform: none; }
+  .next-step-grid { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .next-step-grid > i { justify-self: stretch; transform: none; }
+  .claim-expansion { grid-template-columns: minmax(200px, 0.6fr) auto minmax(390px, 1.4fr); }
+  .expansion-arrow { transform: none; }
+  .mini-network { min-height: 18rem; }
+  .stratified-model__expansions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .claim-warrant { grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.8fr); }
+  .compact-list--horizontal, .activity-prompts { grid-template-columns: repeat(4, 1fr); }
+  .inquiry-flow { grid-template-columns: repeat(7, auto); }
+  .inquiry-flow i { justify-self: stretch; transform: none; }
+  .inquiry-flow div { min-height: 8rem; }
+  .configuration-bridge { display: grid; grid-template-columns: minmax(0, 1.65fr) auto minmax(14rem, 0.7fr) auto minmax(13rem, 0.65fr); }
+  .configuration-set, .patient-evidence, .configuration-question { width: auto; }
+  .configuration-bridge > i:last-of-type { transform: rotate(-90deg); }
+  .model-dag svg { width: 100%; }
+  .instantiation-equation { grid-template-columns: auto auto auto auto minmax(290px, 1fr); }
+  .instantiation-equation > b { justify-self: stretch; }
+  .distinction-row { grid-template-columns: repeat(2, 1fr); }
+  .closing-flow { display: grid; grid-template-columns: 1.15fr auto 1fr auto 1.15fr auto 0.9fr auto 1fr auto 1fr; }
+  .closing-flow div { width: auto; }
+  .closing-flow > b, .closing-flow > i { transform: none; }
+  .closing-points { grid-template-columns: repeat(3, 1fr); }
+}

@@ -197,6 +197,46 @@ a:hover {
   line-height: 1.5;
 }
 
+.presentation-band {
+  padding-block: 3.5rem;
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: #f7faf8;
+}
+
+.presentation-band__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: start;
+}
+
+.presentation-band h2,
+.presentation-band p {
+  margin-top: 0;
+}
+
+.presentation-band .eyebrow {
+  color: #75c5cf;
+}
+
+.presentation-link {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  border-bottom: 2px solid var(--coral);
+  padding-block: 0.35rem;
+  color: #f7faf8;
+  font-family: "Avenir Next", Avenir, "Century Gothic", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.presentation-link:hover {
+  color: #ef9d72;
+}
+
 .ecosystem-band {
   padding-block: 4rem;
   border-top: 1px solid var(--line);
@@ -3035,6 +3075,7 @@ a:hover {
 @media (max-width: 650px) {
   .container {
     width: min(100% - 1.5rem, 1100px);
+  .presentation-band__inner,
   }
   .masthead {
     grid-template-columns: 72px 1fr;

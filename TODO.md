@@ -2,13 +2,12 @@
 
 ## Next session
 
-- [ ] Build the one-hour Clinical Inquiry I presentation, "Causal Models: From
-      What We Know to What We Think Is Happening," as a standalone classroom
-      resource. Use the verified heart failure/NMES artifacts from Models4PT,
-      explicitly reference the Clinical Inference Engine preprint on clinical
-      instantiation, and follow the teaching, sourcing, accessibility, and
-      validation requirements in
-      `docs/CAUSAL_MODELS_PRESENTATION_PLAN.md`.
+- [ ] Review the complete clinical inquiry ecosystem across stats4PT, Physiolog,
+      Models4PT, the Clinical Inference Engine, and the main portfolio to decide
+      whether and how the causal-models presentation should be integrated into
+      each site. Preserve project ownership boundaries and distinguish
+      reciprocal links, educational context, shared representations, and
+      software or data integration before making cross-repository changes.
 - [ ] Replace the contact email addresses across stats4PT with Sean's personal
       email address.
 

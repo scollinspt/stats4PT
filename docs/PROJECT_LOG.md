@@ -1,5 +1,55 @@
 # stats4PT Project Log
 
+## 2026-09-12 - Causal Models and Clinical Reasoning Presentation
+
+### Completed
+
+- Added a 16-slide Clinical Inquiry I classroom presentation connecting
+  scientific inquiry, population causal knowledge, clinical instantiation, and
+  patient-specific reasoning across stats4PT, Physiolog, Models4PT, and the
+  Clinical Inference Engine.
+- Developed a recurring two-patient opening problem in which the same reduced
+  six-minute walk distance supports different provisional causal explanations,
+  counterfactuals, next questions, and intervention priorities.
+- Added the revised heart failure/NMES Model 4D as an 18-variable, 29-claim DAG,
+  including Strength Training -> Muscle Function and Muscle Function -> Balance,
+  while preserving its draft and unvalidated status.
+- Distinguished a causal graph from its scientific warrant by connecting causal
+  claims to meaning, mechanisms, evidence, scope, provenance, and uncertainty.
+- Presented critical-realist domains and stratification, including models nested
+  across scales and purpose-dependent abstractions that remain fallible and
+  revisable.
+- Introduced clinical instantiation as the transformation
+  `ℐ(M, E_t) = M_{p,t}` and used a paired activity and new evidence to demonstrate
+  construction and revision of provisional patient-specific explanations.
+- Added presenter notes, slide overview and navigation, responsive layouts,
+  reduced-motion support, print styles, and a direct downloadable PDF.
+- Added restrained presentation discovery to the stats4PT homepage and
+  documented presentations as a repository resource.
+
+### Validation
+
+- Verified all 16 slides at a 1,440 x 900 classroom viewport and checked narrow
+  layouts at 390 x 844 with no horizontal page overflow.
+- Verified keyboard/button navigation, hashes, presenter notes, overview,
+  fullscreen controls, semantic labels, and editor diagnostics.
+- Verified the revised Model 4D contains 18 nodes and 29 directed claims and
+  remains acyclic.
+- Generated and inspected a 16-page Letter-landscape PDF; corrected print-only
+  responsive stacking so the title, DAG, instantiation equation, and closing
+  synthesis render without clipping.
+- Verified the slide 1 download link returns the 968,168-byte PDF as
+  `application/pdf` and is omitted from the printed artifact.
+
+### Next priority
+
+- Review the complete clinical inquiry ecosystem across stats4PT, Physiolog,
+  Models4PT, the Clinical Inference Engine, and the main portfolio to decide
+  whether and how this presentation should be integrated into each site. Preserve
+  project ownership boundaries and distinguish reciprocal links, educational
+  context, shared representations, and software or data integration before
+  making cross-repository changes.
+
 ## 2026-08-25 - Lessons 7-8 Causal Modeling and Claim Audit
 
 ### Completed
