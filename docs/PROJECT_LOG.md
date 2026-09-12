@@ -22,8 +22,9 @@
 - Introduced clinical instantiation as the transformation
   `ℐ(M, E_t) = M_{p,t}` and used a paired activity and new evidence to demonstrate
   construction and revision of provisional patient-specific explanations.
-- Added presenter notes, slide overview and navigation, responsive layouts,
-  reduced-motion support, print styles, and a direct downloadable PDF.
+- Added slide overview and navigation, responsive layouts, reduced-motion
+  support, print styles, and a direct downloadable PDF. Presenter notes were
+  removed from the public deck so they are not exposed to students.
 - Added persistent author, affiliation, and portfolio attribution to the browser
   presentation and printed PDF, plus machine-readable author metadata.
 - Configured all final-slide resources to open in a new browser tab without
@@ -35,8 +36,8 @@
 
 - Verified all 16 slides at a 1,440 x 900 classroom viewport and checked narrow
   layouts at 390 x 844 with no horizontal page overflow.
-- Verified keyboard/button navigation, hashes, presenter notes, overview,
-  fullscreen controls, semantic labels, and editor diagnostics.
+- Verified keyboard/button navigation, hashes, overview, fullscreen controls,
+  semantic labels, and editor diagnostics.
 - Verified the revised Model 4D contains 18 nodes and 29 directed claims and
   remains acyclic.
 - Generated and inspected a 16-page Letter-landscape PDF; corrected print-only

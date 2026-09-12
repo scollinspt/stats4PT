@@ -4,7 +4,6 @@
   const previousButton = document.querySelector("#previous-slide");
   const nextButton = document.querySelector("#next-slide");
   const overviewButton = document.querySelector("#overview-toggle");
-  const notesButton = document.querySelector("#notes-toggle");
   const fullscreenButton = document.querySelector("#fullscreen-toggle");
   const counter = document.querySelector("#slide-counter");
   const progressBar = document.querySelector("#progress-bar");
@@ -46,11 +45,6 @@
     if (!isOverview) slides[currentIndex].focus({ preventScroll: true });
   };
 
-  const toggleNotes = () => {
-    const showNotes = presentation.classList.toggle("show-notes");
-    notesButton.setAttribute("aria-pressed", String(showNotes));
-  };
-
   const toggleFullscreen = async () => {
     try {
       if (document.fullscreenElement) {
@@ -66,7 +60,6 @@
   previousButton.addEventListener("click", () => move(-1));
   nextButton.addEventListener("click", () => move(1));
   overviewButton.addEventListener("click", toggleOverview);
-  notesButton.addEventListener("click", toggleNotes);
   fullscreenButton.addEventListener("click", toggleFullscreen);
 
   slides.forEach((slide, index) => {
@@ -97,8 +90,6 @@
       setSlide(slides.length - 1, { focus: true });
     } else if (event.key.toLowerCase() === "o") {
       toggleOverview();
-    } else if (event.key.toLowerCase() === "n") {
-      toggleNotes();
     } else if (event.key.toLowerCase() === "f") {
       toggleFullscreen();
     } else if (event.key === "Escape" && document.body.classList.contains("overview-mode")) {
