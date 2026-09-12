@@ -24,6 +24,10 @@
   construction and revision of provisional patient-specific explanations.
 - Added presenter notes, slide overview and navigation, responsive layouts,
   reduced-motion support, print styles, and a direct downloadable PDF.
+- Added persistent author, affiliation, and portfolio attribution to the browser
+  presentation and printed PDF, plus machine-readable author metadata.
+- Configured all final-slide resources to open in a new browser tab without
+  granting the destination access to the presentation's browsing context.
 - Added restrained presentation discovery to the stats4PT homepage and
   documented presentations as a repository resource.
 

@@ -34,6 +34,7 @@ button,
 .source-line,
 .model-caption,
 .resources,
+.author-attribution,
 .no-script,
 .slide figcaption {
   font-family: "Avenir Next", Avenir, "Century Gothic", sans-serif;
@@ -361,6 +362,8 @@ body:not(.presentation-mode) .presenter-notes { margin: 0 auto 6rem; border-left
 .presentation-controls { position: fixed; right: 1rem; bottom: 1rem; z-index: 12; display: flex; gap: 0.35rem; padding: 0.4rem; border: 1px solid #4a5c63; background: rgba(23, 36, 43, 0.96); }
 .presentation-controls button { min-width: 2.75rem; min-height: 2.75rem; border: 1px solid #6c8086; border-radius: 0; padding: 0.55rem 0.8rem; background: transparent; color: white; cursor: pointer; font-family: "Avenir Next", Avenir, sans-serif; font-size: 0.78rem; font-weight: 700; }
 .presentation-controls button:hover, .presentation-controls button[aria-pressed="true"] { border-color: #ef8b69; background: var(--coral); }.presentation-controls button:focus-visible, a:focus-visible { outline: 3px solid #efb766; outline-offset: 3px; }.presentation-controls button:disabled { opacity: 0.35; cursor: default; }
+.author-attribution { position: fixed; left: 1rem; bottom: 1rem; z-index: 11; display: flex; gap: 0.45rem; align-items: baseline; padding: 0.65rem 0.8rem; background: rgba(23, 36, 43, 0.96); color: #dce7e3; font-size: 0.68rem; font-weight: 600; }
+.author-attribution a { color: #fff; font-weight: 800; }
 .no-script { position: fixed; left: 1rem; bottom: 1rem; z-index: 15; max-width: 30rem; padding: 0.7rem 1rem; background: #fff8df; font-size: 0.8rem; }
 
 body.presentation-mode { overflow: hidden; }
@@ -414,6 +417,7 @@ body.overview-mode .presenter-notes { display: none !important; }
   .project-boundary { grid-template-columns: 1fr; gap: 0.4rem; }
   .population-patient { grid-template-columns: 1fr; gap: 1rem; }.not-equal { justify-self: center; transform: rotate(90deg); }
   .presentation-controls { right: 0.5rem; bottom: 0.5rem; left: 0.5rem; justify-content: center; }.presentation-controls button { flex: 1 1 auto; min-width: 0; padding-inline: 0.35rem; }.presentation-controls button:nth-child(3), .presentation-controls button:nth-child(4) { font-size: 0; }.presentation-controls button:nth-child(3)::after { content: "N"; font-size: 0.8rem; }.presentation-controls button:nth-child(4)::after { content: "F"; font-size: 0.8rem; }
+  .author-attribution { right: 0.5rem; bottom: calc(0.5rem + var(--control-height)); left: 0.5rem; justify-content: center; padding: 0.4rem 0.55rem; font-size: 0.58rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -425,8 +429,11 @@ body.overview-mode .presenter-notes { display: none !important; }
   @page { size: landscape; margin: 0.35in; }
   body { background: white; }
   .presentation-header, .presentation-controls, .presentation-download, .skip-link, .no-script { display: none !important; }
+  .author-attribution { position: fixed; right: 0.35in; bottom: 0.08in; left: 0.35in; justify-content: flex-start; padding: 0; background: transparent; color: var(--muted); font-size: 7pt; }
+  .author-attribution a { color: var(--teal-dark); }
   .presentation { display: block !important; height: auto !important; padding: 0 !important; }
   .slide, body.presentation-mode .slide { display: grid !important; min-height: 7in; height: 7in; overflow: hidden; break-after: page; border: 1px solid #bbb; }
+  .slide:last-of-type { break-after: auto; }
   .slide__content { width: calc(100% - 0.7in); padding: 0.35in 0; }
   .presenter-notes { display: none !important; }
   .slide h1 { font-size: 52pt; }.slide h2 { font-size: 30pt; }.slide p, .slide li { font-size: 13pt; }
