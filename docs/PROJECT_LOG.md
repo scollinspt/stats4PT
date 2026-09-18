@@ -1,5 +1,36 @@
 # stats4PT Project Log
 
+## 2026-09-18 - Causal Models Classroom Presentation Revision
+
+### Completed
+
+- Revised slide framing and classroom language, including the assigned-reading
+  review, the population-to-patient question, the patient causal-configuration
+  distinction, and the small-group activity label.
+- Simplified draft and timing labels, removed the ambiguous closing-loop icon,
+  and arranged the slide 11 causal claim vertically within its frame.
+- Corrected slide 9's narrow-screen causal-model layout so its nodes and labels
+  stack without horizontal clipping.
+- Regenerated the public 16-page downloadable PDF from the final presentation.
+
+### Validation
+
+- Visually reviewed all 16 Letter-landscape PDF pages for clipping and overlap.
+- Verified required revised text and removed text in the PDF, then confirmed the
+  deployed PDF exactly matches the validated local artifact.
+- Checked all 16 slides at 1,440 x 900 and 390 x 844 with no page-level
+  horizontal overflow, unexpected slide overflow, or projector-fit failures.
+- Confirmed `git diff --check` passes.
+
+### Release
+
+- Presentation revision commit: `621bca0ccf273cb8080c50a4558cb473a8ec5fe2`
+  (`Update causal models presentation for class`).
+- GitHub Pages workflow run: `35329340708` (`success`).
+- GitHub Pages deployment: `6521394557` (`success`).
+- Published presentation:
+  <https://stats4pt.org/presentations/causal-models-clinical-reasoning.html>.
+
 ## 2026-09-12 - Causal Models and Clinical Reasoning Presentation
 
 ### Completed
