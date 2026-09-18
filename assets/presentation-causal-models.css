@@ -289,9 +289,9 @@ a { color: var(--teal-dark); }
 
 #slide-11 h2 { max-width: none; font-size: clamp(2.35rem, 4vw, 4.25rem); }
 .claim-warrant { display: grid; grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.8fr); gap: 2rem; align-items: stretch; margin-top: 1.5rem; }
-.claim-warrant__edge { display: flex; gap: 0.8rem; align-items: center; justify-content: center; border: 1px solid var(--line); padding: 1.2rem; background: var(--surface); }
+.claim-warrant__edge { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; justify-content: center; border: 1px solid var(--line); padding: 1.2rem; background: var(--surface); }
 .claim-warrant__edge span { display: grid; min-width: 8rem; min-height: 5rem; place-items: center; border: 2px solid var(--teal); padding: 0.65rem; font: 800 0.9rem "Avenir Next", Avenir, sans-serif; text-align: center; }
-.claim-warrant__edge i { color: var(--coral); font-size: 2rem; }
+.claim-warrant__edge i { color: var(--coral); font-size: 2rem; transform: rotate(90deg); }
 .claim-warrant__questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .claim-warrant__questions p { margin: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.85rem 1rem; background: var(--surface); font-size: clamp(0.82rem, 1.05vw, 0.95rem); }
 .claim-warrant__questions b { display: block; margin-bottom: 0.3rem; color: var(--coral); font: 800 0.7rem "Avenir Next", Avenir, sans-serif; text-transform: uppercase; }
@@ -402,6 +402,10 @@ body.overview-mode .slide__content { width: 238%; }
   :root { --header-height: 3.25rem; }
   .slide h1 { font-size: 3.2rem; }.slide h2 { font-size: 2.15rem; }
   .slide__content { width: calc(100% - 1.4rem); padding-top: 2.5rem; }
+  .stratified-model__overview { flex-direction: column; }
+  .stratified-model__overview i, .scale-model > i { transform: rotate(90deg); }
+  .scale-model { grid-template-columns: 1fr; }
+  .scale-model > strong { min-height: 4rem; }
   .patient-compare, .revision-grid, .reasoning-modes, .compact-list--horizontal, .knowledge-ledger, .prior-knowledge, .counterfactual-examples, .activity-prompts, .closing-points { grid-template-columns: 1fr; }
   .claim-warrant__questions { grid-template-columns: 1fr; }
   .slide-heading-row { display: block; }.discussion-prompt, .status-label { margin-top: 0.8rem; }
